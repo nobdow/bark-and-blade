@@ -47,7 +47,7 @@ public class Story {
     }
 
     public void defaultSetup(){
-        player.hp = 100;
+        player.hp = 99;
         ui.hpNumberLabel.setText("" + player.hp);
         VetVisitQuest = 0;
         BlackBerriesQuest = 0;
@@ -62,7 +62,7 @@ public class Story {
         bearDead = false;
         birthdayQuest = 0;
         deathCounter = 0;
-        player.currentWeapon = new Weapon_Knife();
+        player.currentWeapon = new Weapon_None();
         ui.weaponNameLabel.setText(player.currentWeapon.name);
         playMusic(0);
     }
@@ -82,6 +82,8 @@ public class Story {
                 case "crossroads": crossroads(); break;
                 case "forest": forest(); break;
                 case "bush": bush(); break;
+                case "bushWand": bushWand(); break;
+                case "bushCoins": bushCoins(); break;
                 case "bushBandit": bushBandit(); break;
                 case "robbed": robbed(); break;
                 case "forestBanditFight": forestBanditFight(); break;
@@ -108,7 +110,7 @@ public class Story {
     }
 
     public void template(){
- //       playSoundEffect(5);
+        playSoundEffect(5);
 
         ui.mainTextArea.setText("");
         ui.choice1.setText("");
@@ -131,7 +133,7 @@ public class Story {
         ui.choice3.setText("");
         ui.choice4.setText("");
 
-        game.nextPosition1 = "troll";
+        game.nextPosition1 = "intro2";
         game.nextPosition2 = "";
         game.nextPosition3 = "";
         game.nextPosition4 = "";
@@ -177,31 +179,15 @@ public class Story {
             snugglePoint = true;
             dogPoints = dogPoints + 1;
 
-            ui.mainTextArea.setText("You feel revived and your health is restored.\nYour dog also enjoyed the snuggles and is more loyal to you now.");
-            ui.choice1.setText("Continue");
-            ui.choice2.setText("");
-            ui.choice3.setText("");
-            ui.choice4.setText("");
+            ui.mainTextArea.setText("A quick rest can't hurt.\n\nDOGNAME:\n*Woof in agreeance*\n\nYou wake up feeling fantastic and your dog seems more loyal for the affection.\n[HP restored and companion point earned]");
 
-            game.nextPosition1 = "farmHouse";
-            game.nextPosition2 = "";
-            game.nextPosition3 = "";
-            game.nextPosition4 = "";
         }
         else if(player.hp >= 100 & snugglePoint == false){
             snugglePoint = true;
             dogPoints = dogPoints + 1;
 
-            ui.mainTextArea.setText("Your dog enjoyed the snuggles and is more loyal to you now.");
-            ui.choice1.setText("Continue");
-            ui.choice2.setText("");
-            ui.choice3.setText("");
-            ui.choice4.setText("");
+            ui.mainTextArea.setText("You feel great and your dog feels more loyal for the snuggles\n[companion point earned]");
 
-            game.nextPosition1 = "farmHouse";
-            game.nextPosition2 = "";
-            game.nextPosition3 = "";
-            game.nextPosition4 = "";
         }
         else if(player.hp < 100 && snugglePoint == true){
             player.hp = 100;
@@ -210,35 +196,28 @@ public class Story {
             dogPoints = dogPoints + 1;
 
             ui.mainTextArea.setText("You feel revived and your health is restored.");
-            ui.choice1.setText("Continue");
-            ui.choice2.setText("");
-            ui.choice3.setText("");
-            ui.choice4.setText("");
-
-            game.nextPosition1 = "farmHouse";
-            game.nextPosition2 = "";
-            game.nextPosition3 = "";
-            game.nextPosition4 = "";
         }
         else if(player.hp >= 100 && snugglePoint == true){
-            ui.mainTextArea.setText("Snuggles with your dog are the best!");
+            ui.mainTextArea.setText("Snuggles with [DOGNAME] are the best!");
             ui.choice1.setText("Continue");
-            ui.choice2.setText("");
-            ui.choice3.setText("");
-            ui.choice4.setText("");
-
-            game.nextPosition1 = "farmHouse";
-            game.nextPosition2 = "";
-            game.nextPosition3 = "";
-            game.nextPosition4 = "";
         }
+
+        ui.choice1.setText("Oops, you fell asleep");
+        ui.choice2.setText("You and DOGNAME stretch");
+        ui.choice3.setText("Get off the couch");
+        ui.choice4.setText("");
+
+        game.nextPosition1 = "farmHouse";
+        game.nextPosition2 = "farmHouse";
+        game.nextPosition3 = "farmHouse";
+        game.nextPosition4 = "";
     }
 
     public void farmHouse(){
         playSoundEffect(5);
-        ui.mainTextArea.setText("You are at your cozy farm house in the living room.");
 
         if(VetVisitQuest == 0 && BlackBerriesQuest == 0 && CoatQuest == 0 && birthdayQuest == 0) {
+            ui.mainTextArea.setText("You are at your cozy farm house in the living room.");
             ui.choice1.setText("Talk to spouse");
             ui.choice2.setText("Snuggle with your dog");
             ui.choice3.setText("");
@@ -250,6 +229,7 @@ public class Story {
             game.nextPosition4 = "";
         }
         else if (VetVisitQuest != 0 && BlackBerriesQuest != 0 && CoatQuest != 0 && birthdayQuest != 0 && spouseGift == false) {
+            ui.mainTextArea.setText("You are at your cozy farm house in the living room. DOGNAME crawls into your knapsack and you hoist it onto your back.");
             ui.choice1.setText("Talk to spouse");
             ui.choice2.setText("Snuggle with your dog");
             ui.choice3.setText("Leave");
@@ -262,6 +242,7 @@ public class Story {
         }
 
         else if (VetVisitQuest != 0 && BlackBerriesQuest != 0 && CoatQuest != 0 && birthdayQuest != 0 && spouseGift == true) {
+            ui.mainTextArea.setText("You are at your cozy farm house in the living room.");
             ui.choice1.setText("Talk to spouse");
             ui.choice2.setText("Snuggle with your dog");
             ui.choice3.setText("Leave");
@@ -283,9 +264,8 @@ public class Story {
             ui.vetQuestObjectiveLabel.setText("  + visit the royal vet");
             playSoundEffect(1);
 
-
             ui.mainTextArea.setText("Spouse:\n\"Good morning dear! I hate to be a bother but don't forget that DOGNAME has an appointment in the castle with the King's Vet. It is important to get his medicine so he gets over this cold. DOGNAME loves riding in your knapsack so he should be no trouble to bring along\"");
-            ui.choice1.setText("Agree to help");
+            ui.choice1.setText("Accept Quest");
             ui.choice2.setText("");
             ui.choice3.setText("");
             ui.choice4.setText("");
@@ -307,7 +287,7 @@ public class Story {
                 ui.mainTextArea.setText("Spouse:\n\"Remember, you need a new coat. It is already snowing in the mountains. It should be easy to find one at market.\"");
             }
 
-            ui.choice1.setText("Continue");
+            ui.choice1.setText("Thank for hint");
             ui.choice2.setText("");
             ui.choice3.setText("");
             ui.choice4.setText("");
@@ -327,7 +307,7 @@ public class Story {
         playSoundEffect(5);
 
         ui.mainTextArea.setText("Spouse:\n\"Oh, also, I need black berries for cobbler tonight. Can you swing by the market and get some for me?\"");
-        ui.choice1.setText("Agree to help reluctantly");
+        ui.choice1.setText("Oops, now \"Accept Quest\"");
         ui.choice2.setText("");
         ui.choice3.setText("");
         ui.choice4.setText("");
@@ -346,7 +326,7 @@ public class Story {
         playSoundEffect(5);
 
         ui.mainTextArea.setText("Spouse:\n\"By the way, winter is coming, so you need a new coat! It is already snowing in the mountains. Brr. The tailor mentioned a new merch drop this week. Check it out!\"");
-        ui.choice1.setText("Agree to help unwillingly");
+        ui.choice1.setText("No problem, \"Accept Quest(s)\"");
         ui.choice2.setText("");
         ui.choice3.setText("");
         ui.choice4.setText("");
@@ -365,7 +345,7 @@ public class Story {
         playSoundEffect(5);
 
         ui.mainTextArea.setText("Spouse:\n\"Last thing! While grabbing your coat, if you see something I'd like, it wouldn't hurt my feelings if you got me something fun and new! It is my birthday tomorrow.\"");
-        ui.choice1.setText("Agree to help hesitantly");
+        ui.choice1.setText("Birthday Quest!");
         ui.choice2.setText("");
         ui.choice3.setText("");
         ui.choice4.setText("");
@@ -399,13 +379,13 @@ public class Story {
 
     public void crossroads(){
         playSoundEffect(5);
-        ui.mainTextArea.setText("You come up to a crossroads.");
+        ui.mainTextArea.setText("You notice a sharp chill as the wind rushes down from the mountains. You find yourself at a crossroads");
 
         if(bush == false) {
-            ui.choice1.setText("Go into town");
-            ui.choice2.setText("Go to the forest");
-            ui.choice3.setText("Go up to the mountains");
-            ui.choice4.setText("Go to your farmhouse");
+            ui.choice1.setText("Mosey over to town");
+            ui.choice2.setText("Head into the forest");
+            ui.choice3.setText("Scramble up the mountains");
+            ui.choice4.setText("Return to your farmhouse");
 
             game.nextPosition1 = "town";
             game.nextPosition2 = "bush";
@@ -426,10 +406,10 @@ public class Story {
     }
 
     public void forest(){
-        ui.mainTextArea.setText("You are in a thickly wooded forest with a little stream and a bridge cutting through trees front of you.");
+        ui.mainTextArea.setText("You hear the pleasant gurgling of a mountain stream. Soon, the small river crosses your path and a simple bridge lies before you.");
         ui.choice1.setText("Cross the bridge");
-        ui.choice2.setText("Drink from the stream");
-        ui.choice3.setText("Let your dog play in the stream");
+        ui.choice2.setText("Drink the fresh water");
+        ui.choice3.setText("Let DOGNAME go for a swim");
         ui.choice4.setText("Go to the crossroads");
 
         game.nextPosition1 = "clearing";
@@ -443,7 +423,35 @@ public class Story {
         int bushFind = new java.util.Random().nextInt(3);
         playSoundEffect(5);
 
-        ui.choice1.setText("Continue");
+        ui.mainTextArea.setText("Dog:\n\"Woof woof!\"\n\nYour dog seems to be barking at a bush.");
+        ui.choice1.setText("Shake the bush");
+        ui.choice2.setText("Avoid the bush");
+        ui.choice3.setText("");
+        ui.choice4.setText("");
+
+        game.nextPosition2 = "";
+        game.nextPosition3 = "";
+        game.nextPosition4 = "";
+
+        if(bushFind == 0){
+            game.nextPosition1 = "bushWand";
+        }
+        else if(bushFind == 1){
+            game.nextPosition1 = "bushCoins";
+        }
+        else if(bushFind == 2){
+            game.nextPosition1 = "bushBandit";
+        }
+    }
+
+    public void bushWand(){
+        playSoundEffect(5);
+        player.currentWeapon = new Weapon_ChaosWand();
+        ui.weaponNameLabel.setText(player.currentWeapon.name);
+        playSoundEffect(4);
+
+        ui.mainTextArea.setText("A beautiful maple wand falls out of the bush. It seems to be humming with magic. You have read about magic wands before, now you have one of your own! If only you could predict what it could do...\n[You obtained the chaos wand]");
+        ui.choice1.setText("You're is a wizard PLAYERNAME!");
         ui.choice2.setText("");
         ui.choice3.setText("");
         ui.choice4.setText("");
@@ -452,25 +460,24 @@ public class Story {
         game.nextPosition2 = "";
         game.nextPosition3 = "";
         game.nextPosition4 = "";
+    }
 
-        if(bushFind == 0){
-            player.currentWeapon = new Weapon_ChaosWand();
-            ui.weaponNameLabel.setText(player.currentWeapon.name);
-            playSoundEffect(4);
+    public void bushCoins(){
+        playSoundEffect(5);
+        coins = coins + 10;
+        ui.coinCountLabel.setText(coins + "");
+        playSoundEffect(6);
 
-            ui.mainTextArea.setText("Dog:\n\"Woof woof!\"\n\nYour dog seems to be barking a bush. You check behind and find a magical wand!\n(You obtained the chaos wand)");
+        ui.mainTextArea.setText("A small bag of loot falls out of the bush, you open it to find some gold pieces\n[You obtain 10 coins]");
+        ui.choice1.setText("Retrieve your plunder");
+        ui.choice2.setText("");
+        ui.choice3.setText("");
+        ui.choice4.setText("");
 
-        }
-        else if(bushFind == 1){
-            coins = coins + 10;
-            ui.coinCountLabel.setText(coins + "");
-            playSoundEffect(6);
-
-            ui.mainTextArea.setText("Dog:\n\"Woof woof!\"\n\nYour dog seems to be barking a bush. You check behind and find some coins!\n(You obtained 10 coins)");
-        }
-        else if(bushFind == 2){
-            bushBandit();
-        }
+        game.nextPosition1 = "forest";
+        game.nextPosition2 = "";
+        game.nextPosition3 = "";
+        game.nextPosition4 = "";
     }
 
     public void bushBandit(){
@@ -478,7 +485,7 @@ public class Story {
         playSoundEffect(5);
 
 
-        ui.mainTextArea.setText("Dog:\n\"Woof woof!\"\n\nYour dog seems to be barking a bush. You check behind it and a bandit popped out. He says he is here to rob you.\n\n" + enemy.name + ": " + enemy.hp + " HP");
+        ui.mainTextArea.setText("You shake it and a gnarly looking bandit appears. He says he is here to rob you.\n\n" + enemy.name + ": " + enemy.hp + " HP");
         ui.choice1.setText("Fight him");
         ui.choice2.setText("Give him your coins");
         ui.choice3.setText("Run Away");
@@ -575,12 +582,12 @@ public class Story {
         int coinFlip = new java.util.Random().nextInt(2);
         if(coinFlip == 0) {
             coins = coins + 5;
-            ui.mainTextArea.setText("You defeated the " + enemy.name.toLowerCase() + " and he dropped some coins!\n(You obtained 5 coins)");
+            ui.mainTextArea.setText("You defeated the " + enemy.name.toLowerCase() + " and he dropped some coins as he ran away!\n[You obtained 5 coins]");
 
         }
         else if (coinFlip == 1) {
             coins = coins + 10;
-            ui.mainTextArea.setText("You defeated the " + enemy.name.toLowerCase() + " and he dropped some coins!\n(You obtained 10 coins)");
+            ui.mainTextArea.setText("You defeated the " + enemy.name.toLowerCase() + " and he dropped some coins as he ran away!\n[You obtained 10 coins]");
         }
         ui.coinCountLabel.setText(coins + "");
         playSoundEffect(5);
