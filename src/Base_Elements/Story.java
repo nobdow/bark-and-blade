@@ -101,6 +101,7 @@ public class Story {
                 case "testResults": testResults(); break;
                 case "lose": lose(); break;
                 case "toTitle": toTitle(); break;
+                //case "mountain": mountain(); break;
                 case "troll": troll(); break;
                 case "trollFight": trollFight(); break;
             }
