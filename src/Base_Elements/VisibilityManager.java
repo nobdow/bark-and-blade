@@ -22,7 +22,7 @@ public class VisibilityManager {
         ui.exampleImagePanel.setVisible(false);
     }
 
-    public void titleToTown(){
+    public void titleToMainScreen(){
 
         //Hide title screen
         ui.titleNamePanel.setVisible(false);

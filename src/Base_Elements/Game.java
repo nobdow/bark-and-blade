@@ -5,11 +5,13 @@ import java.awt.event.ActionListener;
 
 public class Game {
 
-   Sound sound = new Sound();
+   Sound music = new Sound();
+   Sound soundEffect = new Sound();
+
    ChoiceHandler cHandler = new ChoiceHandler();
    UI ui = new UI();
    VisibilityManager vm = new VisibilityManager(ui);
-   Story story = new Story(this, ui, vm, sound);
+   Story story = new Story(this, ui, vm, music, soundEffect);
 
    String nextPosition1, nextPosition2, nextPosition3, nextPosition4;
 
@@ -32,7 +34,7 @@ public class Game {
             String yourChoice = event.getActionCommand();
 
             switch(yourChoice){
-                case "start": vm.titleToTown(); story.intro1(); break;
+                case "start": vm.titleToMainScreen(); story.intro1(); break;
                 case "c1": story.selectPosition(nextPosition1); break;
                 case "c2": story.selectPosition(nextPosition2); break;
                 case "c3": story.selectPosition(nextPosition3); break;
@@ -44,3 +46,4 @@ public class Game {
 
 
 // Fix missing opening quests when you snuggle dog
+// Balance audio levels
