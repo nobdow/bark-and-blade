@@ -2,31 +2,33 @@ package Base_Elements;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class UI {
 
     JFrame window;
-    JPanel titleNamePanel, startButtonPanel, mainTextPanel, choiceButtonPanel, playerPanel, exampleImagePanel;
-    JLabel titleNameLabel, hpLabel, hpNumberLabel, weaponLabel, weaponNameLabel, coinLabel, coinCountLabel, exampleImageLabel;
+    JPanel titleNamePanel, startButtonPanel, mainTextPanel, choiceButtonPanel, playerPanel, exampleImagePanel, questLogPanel;
+    JLabel titleNameLabel, hpLabel, hpNumberLabel, weaponLabel, weaponNameLabel, coinLabel, coinCountLabel, exampleImageLabel, questLogLabel, vetQuestTitleLabel, vetQuestObjectiveLabel, blackberriesQuestTitleLabel, blackberriesQuestObjectiveLabel, coatQuestTitleLabel, coatQuestObjectiveLabel, presentQuestTitleLabel, presentQuestObjectiveLabel;
     JButton startButton, choice1, choice2, choice3, choice4;
     JTextArea mainTextArea;
     Font titleFont = new Font("Alagard", Font.PLAIN,150);
     Font startFont = new Font("Alagard", Font.PLAIN,70);
     Font normalFont = new Font("Alagard", Font.PLAIN,45);
     Font statFont = new Font("Alagard", Font.PLAIN,35);
-    Font alagard;
-    ImageIcon icon = new ImageIcon(".//resources//images//Example Logo.png");
+    Font questFont = new Font("Alagard", Font.PLAIN,25);
+    Font Alagard;
+
+    ImageIcon icon = new ImageIcon(getClass().getResource("/images/Example Logo.png"));
     ImageIcon exampleImage;
 
     public void createUI(Game.ChoiceHandler cHandler){
 
         //Add fonts
         try{
-            alagard = Font.createFont(Font.TRUETYPE_FONT, new File(".//resources//fonts//alagard.ttf")).deriveFont(90f);
+            InputStream isFont = getClass().getResourceAsStream("/fonts/alagard.ttf");
             GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(".//resources//fonts//alagard.ttf")));
+            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, isFont));
         }
         catch(IOException | FontFormatException e){
 
@@ -67,7 +69,7 @@ public class UI {
 
         //Game screen
         mainTextPanel = new JPanel();
-        mainTextPanel.setBounds(510,150,900,450);
+        mainTextPanel.setBounds(560,150,900,450);
         mainTextPanel.setBackground(Color.black);
         window.add(mainTextPanel);
 
@@ -123,8 +125,53 @@ public class UI {
         choice4.setActionCommand("c4");
         choiceButtonPanel.add(choice4);
 
+        //Quest log panel & labels
+        questLogPanel = new JPanel();
+        questLogPanel.setBounds(1500,500,380,450);
+        questLogPanel.setBackground(Color.black);
+        questLogPanel.setLayout(new GridLayout(9,1));
+        window.add(questLogPanel);
+
+        questLogLabel = new JLabel("Quest Log:");
+        questLogLabel.setFont(statFont);
+        questLogLabel.setForeground(Color.white);
+        questLogPanel.add(questLogLabel);
+        vetQuestTitleLabel = new JLabel();
+        vetQuestTitleLabel.setForeground(Color.white);
+        vetQuestTitleLabel.setFont(statFont);
+        questLogPanel.add(vetQuestTitleLabel);
+        vetQuestObjectiveLabel = new JLabel();
+        vetQuestObjectiveLabel.setForeground(Color.white);
+        vetQuestObjectiveLabel.setFont(statFont);
+        questLogPanel.add(vetQuestObjectiveLabel);
+        blackberriesQuestTitleLabel = new JLabel();
+        blackberriesQuestTitleLabel.setForeground(Color.white);
+        blackberriesQuestTitleLabel.setFont(statFont);
+        questLogPanel.add(blackberriesQuestTitleLabel);
+        blackberriesQuestObjectiveLabel = new JLabel();
+        blackberriesQuestObjectiveLabel.setForeground(Color.white);
+        blackberriesQuestObjectiveLabel.setFont(statFont);
+        questLogPanel.add(blackberriesQuestObjectiveLabel);
+        coatQuestTitleLabel = new JLabel();
+        coatQuestTitleLabel.setForeground(Color.white);
+        coatQuestTitleLabel.setFont(statFont);
+        questLogPanel.add(coatQuestTitleLabel);
+        coatQuestObjectiveLabel = new JLabel();
+        coatQuestObjectiveLabel.setForeground(Color.white);
+        coatQuestObjectiveLabel.setFont(statFont);
+        questLogPanel.add(coatQuestObjectiveLabel);
+        presentQuestTitleLabel = new JLabel();
+        presentQuestTitleLabel.setForeground(Color.white);
+        presentQuestTitleLabel.setFont(statFont);
+        questLogPanel.add(presentQuestTitleLabel);
+        presentQuestObjectiveLabel = new JLabel();
+        presentQuestObjectiveLabel.setForeground(Color.white);
+        presentQuestObjectiveLabel.setFont(statFont);
+        questLogPanel.add(presentQuestObjectiveLabel);
+
+        // Player stats panel and labels
         playerPanel = new JPanel();
-        playerPanel.setBounds(1500,140,380,500);
+        playerPanel.setBounds(1500,140,380,450);
         playerPanel.setBackground(Color.black);
         playerPanel.setLayout(new GridLayout(9,1));
         window.add(playerPanel);
@@ -159,7 +206,7 @@ public class UI {
         exampleImagePanel.setBackground(Color.black);
 
         exampleImageLabel = new JLabel();
-        exampleImage = new ImageIcon(".//resources//images//Example.png");
+        exampleImage = new ImageIcon(getClass().getResource("/images/Example.png"));
         exampleImageLabel.setIcon(exampleImage);
         exampleImagePanel.add(exampleImageLabel);
         window.add(exampleImagePanel);

@@ -44,6 +44,14 @@ public class Game {
     }
 }
 
-
-// Fix missing opening quests when you snuggle dog
-// Balance audio levels
+// TO DO LIST:
+// - Balance audio levels
+// -
+// -
+// -
+// -
+// -
+// -
+// -
+// -
+// -

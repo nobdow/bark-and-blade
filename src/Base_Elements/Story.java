@@ -8,11 +8,11 @@ public class Story {
     Game game;
     UI ui;
     VisibilityManager vm;
+    Sound soundEffect;
+    Sound music;
 
     Player player = new Player();
     SuperEnemy enemy;
-    Sound soundEffect;
-    Sound music;
     public int VetVisitQuest, BlackBerriesQuest, CoatQuest, dogPoints, coins, birthdayQuest, deathCounter;
     public boolean snugglePoint, bush, spouseGift, splashPoint, hasBerries, bearDead;
 
@@ -62,7 +62,7 @@ public class Story {
         bearDead = false;
         birthdayQuest = 0;
         deathCounter = 0;
-        player.currentWeapon = new Weapon_None();
+        player.currentWeapon = new Weapon_Knife();
         ui.weaponNameLabel.setText(player.currentWeapon.name);
         playMusic(0);
     }
@@ -72,7 +72,6 @@ public class Story {
                 case "intro1": intro1(); break;
                 case "intro2": intro2(); break;
                 case "intro3": intro3(); break;
-                case "farmHouseStart": farmHouseStart(); break;
                 case "snuggleDog": snuggleDog(); break;
                 case "farmHouse": farmHouse(); break;
                 case "spouse": spouse(); break;
@@ -102,11 +101,13 @@ public class Story {
                 case "testResults": testResults(); break;
                 case "lose": lose(); break;
                 case "toTitle": toTitle(); break;
+                case "troll": troll(); break;
+                case "trollFight": trollFight(); break;
             }
     }
 
     public void template(){
-        playSoundEffect(5);
+ //       playSoundEffect(5);
 
         ui.mainTextArea.setText("");
         ui.choice1.setText("");
@@ -122,7 +123,6 @@ public class Story {
 
     public void intro1(){
         stopMusic();
-        playSoundEffect(5);
 
         ui.mainTextArea.setText("In the kingdom of Eriduun, a peaceful realm ruled by King Oswin the Noble, a dark shadow looms over the land. The legendary Crown of Radiance has been stolen!");
         ui.choice1.setText("Continue");
@@ -130,7 +130,7 @@ public class Story {
         ui.choice3.setText("");
         ui.choice4.setText("");
 
-        game.nextPosition1 = "intro2";
+        game.nextPosition1 = "troll";
         game.nextPosition2 = "";
         game.nextPosition3 = "";
         game.nextPosition4 = "";
@@ -160,26 +160,11 @@ public class Story {
         ui.choice3.setText("");
         ui.choice4.setText("");
 
-        game.nextPosition1 = "farmHouseStart";
+        game.nextPosition1 = "farmHouse";
         game.nextPosition2 = "";
         game.nextPosition3 = "";
         game.nextPosition4 = "";
 
-    }
-
-    public void farmHouseStart(){
-        playSoundEffect(5);
-
-        ui.mainTextArea.setText("You have finished most of the farm work for this week and look forward to a weekend of rest by a cozy hearth. It is the small things in life.");
-        ui.choice1.setText("Talk to SPOUSENAME");
-        ui.choice2.setText("Snuggle with your dog");
-        ui.choice3.setText("");
-        ui.choice4.setText("");
-
-        game.nextPosition1 = "spouse";
-        game.nextPosition2 = "snuggleDog";
-        game.nextPosition3 = "";
-        game.nextPosition4 = "";
     }
 
     public void snuggleDog(){
@@ -252,7 +237,18 @@ public class Story {
         playSoundEffect(5);
         ui.mainTextArea.setText("You are at your cozy farm house in the living room.");
 
-        if(spouseGift == false) {
+        if(VetVisitQuest == 0 && BlackBerriesQuest == 0 && CoatQuest == 0 && birthdayQuest == 0) {
+            ui.choice1.setText("Talk to spouse");
+            ui.choice2.setText("Snuggle with your dog");
+            ui.choice3.setText("");
+            ui.choice4.setText("");
+
+            game.nextPosition1 = "spouse";
+            game.nextPosition2 = "snuggleDog";
+            game.nextPosition3 = "";
+            game.nextPosition4 = "";
+        }
+        else if (VetVisitQuest != 0 && BlackBerriesQuest != 0 && CoatQuest != 0 && birthdayQuest != 0 && spouseGift == false) {
             ui.choice1.setText("Talk to spouse");
             ui.choice2.setText("Snuggle with your dog");
             ui.choice3.setText("Leave");
@@ -263,7 +259,8 @@ public class Story {
             game.nextPosition3 = "spouseGift";
             game.nextPosition4 = "";
         }
-        else if(spouseGift == true){
+
+        else if (VetVisitQuest != 0 && BlackBerriesQuest != 0 && CoatQuest != 0 && birthdayQuest != 0 && spouseGift == true) {
             ui.choice1.setText("Talk to spouse");
             ui.choice2.setText("Snuggle with your dog");
             ui.choice3.setText("Leave");
@@ -280,7 +277,9 @@ public class Story {
         playSoundEffect(5);
 
         if (BlackBerriesQuest == 0 && CoatQuest == 0 && VetVisitQuest == 0) {
-            BlackBerriesQuest = 1;
+            VetVisitQuest = 1;
+            ui.vetQuestTitleLabel.setText("Pup-uprofen");
+            ui.vetQuestObjectiveLabel.setText("  + visit the royal vet");
             playSoundEffect(1);
 
 
@@ -320,8 +319,10 @@ public class Story {
     }
 
     public void spouseQuest1(){
-        VetVisitQuest = 1;
+        BlackBerriesQuest = 1;
         playSoundEffect(1);
+        ui.blackberriesQuestTitleLabel.setText("Ye Olde Grocer");
+        ui.blackberriesQuestObjectiveLabel.setText("  + obtain blackberries");
         playSoundEffect(5);
 
         ui.mainTextArea.setText("Spouse:\n\"Oh, also, I need black berries for cobbler tonight. Can you swing by the market and get some for me?\"");
@@ -339,6 +340,8 @@ public class Story {
     public void spouseQuest2(){
         CoatQuest = 1;
         playSoundEffect(1);
+        ui.coatQuestTitleLabel.setText("Winter is Coming");
+        ui.coatQuestObjectiveLabel.setText("  + obtain a coat");
         playSoundEffect(5);
 
         ui.mainTextArea.setText("Spouse:\n\"By the way, winter is coming, so you need a new coat! It is already snowing in the mountains. Brr. The tailor mentioned a new merch drop this week. Check it out!\"");
@@ -356,6 +359,8 @@ public class Story {
     public void spouseQuest3(){
         birthdayQuest = 1;
         playSoundEffect(1);
+        ui.presentQuestTitleLabel.setText("That's tomorrow!?!");
+        ui.presentQuestObjectiveLabel.setText("  + obtain a gift");
         playSoundEffect(5);
 
         ui.mainTextArea.setText("Spouse:\n\"Last thing! While grabbing your coat, if you see something I'd like, it wouldn't hurt my feelings if you got me something fun and new! It is my birthday tomorrow.\"");
@@ -905,6 +910,100 @@ public class Story {
     public void toTitle(){
         defaultSetup();
         vm.showTitleScreen();
+    }
+
+    public void troll(){
+        playSoundEffect(5);
+
+        if(bearDead == false) {
+            enemy = new Troll();
+            ui.mainTextArea.setText("As you ascend the mountain, you run across a large troll!\n\n" + enemy.name + ": " + enemy.hp + " HP");
+            ui.choice1.setText("Fight him");
+            ui.choice2.setText("Run Away");
+            ui.choice3.setText("");
+            ui.choice4.setText("");
+
+            game.nextPosition1 = "trollFight";
+            game.nextPosition2 = "mountain";
+            game.nextPosition3 = "";
+            game.nextPosition4 = "";
+        }
+        else if(bearDead == true) {
+            ui.mainTextArea.setText("You look inside the den but now that the bear is gone, there is nothing to see here.");
+            ui.choice1.setText("Continue");
+            ui.choice2.setText("");
+            ui.choice3.setText("");
+            ui.choice4.setText("");
+
+            game.nextPosition1 = "mountain";
+            game.nextPosition2 = "";
+            game.nextPosition3 = "";
+            game.nextPosition4 = "";
+        }
+    }
+
+    public void trollFight(){
+        player.currentWeapon.Damage();
+        enemy.hp = enemy.hp - player.currentWeapon.damage;
+        playSoundEffect(5);
+
+        enemy.Damage();
+        player.hp = player.hp - enemy.attack;
+        ui.hpNumberLabel.setText("" + player.hp);
+
+        //Enemy dead & player alive
+        if(enemy.hp < 1 && player.hp > 0){
+            enemy.hp = 0;
+            ui.mainTextArea.setText(player.currentWeapon.attackMessage + "\n\n" + enemy.attackMessage + " You received " + enemy.attack + " damage!\n\n" + enemy.name + ": " + enemy.hp + " HP");
+
+            ui.choice1.setText("Continue");
+            ui.choice2.setText("");
+            ui.choice3.setText("");
+            ui.choice4.setText("");
+
+            game.nextPosition1 = "forestBanditWin";
+            game.nextPosition2 = "";
+            game.nextPosition3 = "";
+            game.nextPosition4 = "";
+        }
+
+        // Enemy alive & player dead
+        else if(enemy.hp > 0 && player.hp < 1){
+            player.hp = 0;
+            ui.hpNumberLabel.setText("" + player.hp);
+
+            ui.mainTextArea.setText(player.currentWeapon.attackMessage + "\n\n" + enemy.attackMessage + " You received " + enemy.attack + " damage!\n\n" + enemy.name + ": " + enemy.hp + " HP");
+            ui.choice1.setText("Continue");
+            ui.choice2.setText("");
+            ui.choice3.setText("");
+            ui.choice4.setText("");
+
+            game.nextPosition1 = "noHealth";
+            game.nextPosition2 = "";
+            game.nextPosition3 = "";
+            game.nextPosition4 = "";
+        }
+
+        // Enemy alive & player alive
+        else if(enemy.hp > 0 && player.hp > 0) {
+            ui.mainTextArea.setText(player.currentWeapon.attackMessage + "\n\n" + enemy.attackMessage + " You received " + enemy.attack + " damage!\n\n" + enemy.name + ": " + enemy.hp + " HP");
+            ui.choice1.setText("Attack again");
+            ui.choice2.setText("Run Away");
+            ui.choice3.setText("");
+            ui.choice4.setText("");
+
+            game.nextPosition1 = "trollFight";
+            game.nextPosition2 = "forest";
+            game.nextPosition3 = "";
+            game.nextPosition4 = "";
+        }
+
+        // Enemy dead & player dead
+        else if(enemy.hp < 1 && player.hp < 1) {
+            player.hp = 0;
+            ui.hpNumberLabel.setText("" + player.hp);
+            noHealth();
+        }
     }
 
 }

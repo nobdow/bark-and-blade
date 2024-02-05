@@ -20,6 +20,7 @@ public class VisibilityManager {
         ui.choiceButtonPanel.setVisible(false);
         ui.playerPanel.setVisible(false);
         ui.exampleImagePanel.setVisible(false);
+        ui.questLogPanel.setVisible(false);
     }
 
     public void titleToMainScreen(){
@@ -33,5 +34,6 @@ public class VisibilityManager {
         ui.choiceButtonPanel.setVisible(true);
         ui.playerPanel.setVisible(true);
         ui.exampleImagePanel.setVisible(true);
+        ui.questLogPanel.setVisible(true);
     }
 }

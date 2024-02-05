@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Bark and Blade:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Bark_and_Blade_jar</output-path>
+    <root id="archive" name="Bark and Blade.jar">
+      <element id="module-output" name="Bark and Blade" />
+    </root>
+  </artifact>
+</component>
