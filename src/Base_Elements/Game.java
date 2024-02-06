@@ -1,5 +1,9 @@
 package Base_Elements;
 
+import Locations.DefaultSetup;
+import Locations.Intro1;
+import Locations.SuperLocation;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -11,9 +15,13 @@ public class Game {
    ChoiceHandler cHandler = new ChoiceHandler();
    UI ui = new UI();
    VisibilityManager vm = new VisibilityManager(ui);
-   Story story = new Story(this, ui, vm, music, soundEffect);
+   SuperLocation superLocation = new SuperLocation(this, ui, vm, music, soundEffect);
+   LocationSwitch story = new LocationSwitch(this, ui, vm, music, soundEffect);
 
-   String nextPosition1, nextPosition2, nextPosition3, nextPosition4;
+   public String nextPosition1;
+   public String nextPosition2;
+   public String nextPosition3;
+   public String nextPosition4;
 
     public static void main(String[] args) {
 
@@ -23,7 +31,7 @@ public class Game {
     public Game() {
 
         ui.createUI(cHandler);
-        story.defaultSetup();
+        DefaultSetup.defaultSetup();
         vm.showTitleScreen();
     }
 
@@ -33,8 +41,11 @@ public class Game {
 
             String yourChoice = event.getActionCommand();
 
+            soundEffect.setFile(5);
+            soundEffect.play();
+
             switch(yourChoice){
-                case "start": vm.titleToMainScreen(); story.intro1(); break;
+                case "start": vm.titleToMainScreen(); Intro1.intro1(); break;
                 case "c1": story.selectPosition(nextPosition1); break;
                 case "c2": story.selectPosition(nextPosition2); break;
                 case "c3": story.selectPosition(nextPosition3); break;
@@ -48,9 +59,7 @@ public class Game {
 // - Balance audio levels
 // - End game after 5 snuggles with dog
 // - Hide spouse quests if quests complete
-// -
-// -
-// -
+// - finish troll fight locations
 // -
 // -
 // -
