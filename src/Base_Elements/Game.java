@@ -1,5 +1,7 @@
 package Base_Elements;
 
+import Locations.SuperLocation;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -11,9 +13,13 @@ public class Game {
    ChoiceHandler cHandler = new ChoiceHandler();
    UI ui = new UI();
    VisibilityManager vm = new VisibilityManager(ui);
+   SuperLocation superLocation = new SuperLocation(this, ui, vm, music, soundEffect);
    Story story = new Story(this, ui, vm, music, soundEffect);
 
-   String nextPosition1, nextPosition2, nextPosition3, nextPosition4;
+   public String nextPosition1;
+   public String nextPosition2;
+   public String nextPosition3;
+   public String nextPosition4;
 
     public static void main(String[] args) {
 
@@ -48,9 +54,9 @@ public class Game {
 // - Balance audio levels
 // - End game after 5 snuggles with dog
 // - Hide spouse quests if quests complete
-// -
-// -
-// -
+// - Add attackmessage to each enemy combat action
+// - finish troll fight locations
+// - figure out why dying on any hit from any enemy
 // -
 // -
 // -

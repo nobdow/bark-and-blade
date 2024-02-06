@@ -9,14 +9,33 @@ public class UI {
 
     JFrame window;
     JPanel titleNamePanel, startButtonPanel, mainTextPanel, choiceButtonPanel, playerPanel, exampleImagePanel, questLogPanel;
-    JLabel titleNameLabel, hpLabel, hpNumberLabel, weaponLabel, weaponNameLabel, coinLabel, coinCountLabel, exampleImageLabel, questLogLabel, vetQuestTitleLabel, vetQuestObjectiveLabel, blackberriesQuestTitleLabel, blackberriesQuestObjectiveLabel, coatQuestTitleLabel, coatQuestObjectiveLabel, presentQuestTitleLabel, presentQuestObjectiveLabel;
-    JButton startButton, choice1, choice2, choice3, choice4;
-    JTextArea mainTextArea;
+    JLabel titleNameLabel;
+    JLabel hpLabel;
+    public JLabel hpNumberLabel;
+    JLabel weaponLabel;
+    public JLabel weaponNameLabel;
+    JLabel coinLabel;
+    public JLabel coinCountLabel;
+    JLabel exampleImageLabel;
+    JLabel questLogLabel;
+    public JLabel vetQuestTitleLabel;
+    public JLabel vetQuestObjectiveLabel;
+    public JLabel blackberriesQuestTitleLabel;
+    public JLabel blackberriesQuestObjectiveLabel;
+    public JLabel coatQuestTitleLabel;
+    public JLabel coatQuestObjectiveLabel;
+    public JLabel presentQuestTitleLabel;
+    public JLabel presentQuestObjectiveLabel;
+    JButton startButton;
+    public JButton choice1;
+    public JButton choice2;
+    public JButton choice3;
+    public JButton choice4;
+    public JTextArea mainTextArea;
     Font titleFont = new Font("Alagard", Font.PLAIN,150);
     Font startFont = new Font("Alagard", Font.PLAIN,70);
     Font normalFont = new Font("Alagard", Font.PLAIN,45);
     Font statFont = new Font("Alagard", Font.PLAIN,35);
-    Font questFont = new Font("Alagard", Font.PLAIN,25);
     Font Alagard;
 
     ImageIcon icon = new ImageIcon(getClass().getResource("/images/Example Logo.png"));
