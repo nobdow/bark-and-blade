@@ -13,8 +13,6 @@ public class TrollEncounter extends SuperLocation{
     }
 
     public static void trollEncounter(){
-        playSoundEffect(5);
-
         enemy = new Troll();
         ui.mainTextArea.setText("As you ascend the mountain, you run across a large troll!\n\n" + enemy.name + ": " + enemy.hp + " HP");
         ui.choice1.setText("Fight him");

@@ -13,8 +13,6 @@ public class BearEncounter extends SuperLocation{
     }
 
     public static void bearEncounter(){
-        playSoundEffect(5);
-
         if(bearDead == false) {
             enemy = new Bear();
             ui.mainTextArea.setText("You look inside the den and see a large brown bear!\n\n" + enemy.name + ": " + enemy.hp + " HP");

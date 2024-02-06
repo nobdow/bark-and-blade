@@ -12,8 +12,6 @@ public class Clearing extends SuperLocation{
     }
 
     public static void clearing(){
-        playSoundEffect(5);
-
         ui.mainTextArea.setText("You come into a clearing and on your left are some berry bushes and on your right looks to be a den of some large animal.");
         ui.choice1.setText("Pick berries");
         ui.choice2.setText("Explore den");

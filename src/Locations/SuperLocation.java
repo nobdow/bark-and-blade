@@ -13,7 +13,7 @@ public class SuperLocation {
     public static Player player = new Player();
     public static SuperEnemy enemy;
     public static int VetVisitQuest, BlackBerriesQuest, CoatQuest, dogPoints, coins, birthdayQuest, deathCounter;
-    public static boolean snugglePoint, bush, spouseGift, splashPoint, hasBerries, bearDead;
+    public static boolean snugglePoint, bush, spouseGift, splashPoint, hasBerries, bearDead, boughtCoat, boughtFormalAttire;
 
     public SuperLocation(Game g, UI userInterface, VisibilityManager vManager, Sound sndfft, Sound msc) {
         game = g;
@@ -38,7 +38,7 @@ public class SuperLocation {
         soundEffect.play();
     }
 
-    public void stopSoundEffect(int i) {
+    public static void stopSoundEffect() {
         soundEffect.stop();
     }
 }

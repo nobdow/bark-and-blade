@@ -12,7 +12,6 @@ public class Crossroads extends SuperLocation{
     }
 
     public static void crossroads(){
-        playSoundEffect(5);
         ui.mainTextArea.setText("You notice a sharp chill as the wind rushes down from the mountains. You find yourself at a crossroads");
 
         if(bush == false) {

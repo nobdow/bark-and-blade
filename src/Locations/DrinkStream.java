@@ -1,9 +1,7 @@
 package Locations;
 
-import Base_Elements.Game;
-import Base_Elements.Sound;
-import Base_Elements.UI;
-import Base_Elements.VisibilityManager;
+import Base_Elements.*;
+
 
 public class DrinkStream extends SuperLocation{
 
@@ -12,8 +10,6 @@ public class DrinkStream extends SuperLocation{
     }
 
     public static void drinkStream(){
-        playSoundEffect(5);
-
         if (player.hp <= 70) {
             player.hp = player.hp + 30;
             ui.hpNumberLabel.setText("" + player.hp);

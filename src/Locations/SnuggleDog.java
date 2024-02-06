@@ -12,8 +12,6 @@ public class SnuggleDog extends SuperLocation{
     }
 
     public static void snuggleDog(){
-        playSoundEffect(5);
-
         if (player.hp <= 99 && snugglePoint == false){
             player.hp = 100;
             ui.hpNumberLabel.setText("" + player.hp);

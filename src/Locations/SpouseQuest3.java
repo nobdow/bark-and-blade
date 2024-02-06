@@ -13,6 +13,7 @@ public class SpouseQuest3 extends SuperLocation{
 
     public static void spouseQuest3(){
         birthdayQuest = 1;
+        stopSoundEffect();
         playSoundEffect(1);
         ui.presentQuestTitleLabel.setText("That's tomorrow!?!");
         ui.presentQuestObjectiveLabel.setText("  + obtain a gift");

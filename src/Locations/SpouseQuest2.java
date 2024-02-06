@@ -13,6 +13,7 @@ public class SpouseQuest2 extends SuperLocation{
 
     public static void spouseQuest2(){
         CoatQuest = 1;
+        stopSoundEffect();
         playSoundEffect(1);
         ui.coatQuestTitleLabel.setText("Winter is Coming");
         ui.coatQuestObjectiveLabel.setText("  + obtain a coat");

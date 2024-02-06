@@ -11,7 +11,7 @@ public class Troll extends SuperEnemy {
     public void Damage(){
         int chance = new java.util.Random().nextInt(4);
 
-        if(chance < 2) {
+        if(chance < 2 || chance >= 2 && hp > 40) {
             attack = new java.util.Random().nextInt(2) + 1;
             attack = attack * 10;
             attackMessage = "The troll smashed his club into you!";
@@ -21,10 +21,10 @@ public class Troll extends SuperEnemy {
             hp = hp + 40;
             attackMessage = "The troll recovered 40HP!";
         }
-        else if (chance >= 2 && hp > 40) {
-            attack = new java.util.Random().nextInt(2) + 1;
-            attack = attack * 10;
-            attackMessage = "The troll smashed his club into you!";
-        }
+//        else if (chance >= 2 && hp > 40) {
+//            attack = new java.util.Random().nextInt(2) + 1;
+//            attack = attack * 10;
+//            attackMessage = "The troll smashed his club into you!";
+//        }
     }
 }

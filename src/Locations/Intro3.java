@@ -9,8 +9,6 @@ public class Intro3 extends SuperLocation{
     }
 
     public static void intro3(){
-        playSoundEffect(5);
-
         ui.mainTextArea.setText("You are a humble peasant in the kingdom, having recently earned the money to buy a plot of land and start your very own farm with your lovely spouse, SPOUSENAME, who you married last summer.");
         ui.choice1.setText("Continue");
         ui.choice2.setText("");

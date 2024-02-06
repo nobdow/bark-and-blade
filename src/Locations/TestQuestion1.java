@@ -12,8 +12,6 @@ public class TestQuestion1 extends SuperLocation{
     }
 
     public static void testQuestion1(){
-        playSoundEffect(5);
-
         ui.mainTextArea.setText("Doc. Milton:\n\"All right. I'm gonna say a word. I want you to say the first thing that comes to mind. Hound.\"");
         ui.choice1.setText("Feline");
         ui.choice2.setText("Feed");

@@ -12,6 +12,7 @@ public class SpouseQuest1 extends SuperLocation {
     }
 
     public static void spouseQuest1() {
+        stopSoundEffect();
         playSoundEffect(1);
         BlackBerriesQuest = 1;
         ui.blackberriesQuestTitleLabel.setText("Ye Olde Grocer");

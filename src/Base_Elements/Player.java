@@ -4,6 +4,6 @@ import Equipment.SuperWeapon;
 
 public class Player {
 
-    public int hp;
+    public static int hp;
     public SuperWeapon currentWeapon;
 }

@@ -25,6 +25,7 @@ public class ForestBanditWin extends SuperLocation{
         }
 
         ui.coinCountLabel.setText(coins + "");
+        stopSoundEffect();
         playSoundEffect(6);
 
         ui.choice1.setText("Continue");

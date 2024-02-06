@@ -12,8 +12,6 @@ public class FarmHouse extends SuperLocation{
     }
 
     public static void farmHouse(){
-        playSoundEffect(5);
-
         if(VetVisitQuest == 0 && BlackBerriesQuest == 0 && CoatQuest == 0 && birthdayQuest == 0) {
             ui.mainTextArea.setText("You are at your cozy farm house in the living room.");
             ui.choice1.setText("Talk to spouse");

@@ -12,8 +12,6 @@ public class BearFight extends SuperLocation{
     }
 
     public static void bearFight(){
-        playSoundEffect(5);
-
         player.currentWeapon.Damage();
         enemy.hp = enemy.hp - player.currentWeapon.damage;
 
@@ -67,22 +65,5 @@ public class BearFight extends SuperLocation{
             game.nextPosition3 = "";
             game.nextPosition4 = "";
         }
-
-//        // Enemy dead & player dead
-//        else if(enemy.hp < 1 && player.hp < 1) {
-//            player.hp = 0;
-//            ui.hpNumberLabel.setText("" + player.hp);
-//
-//            ui.mainTextArea.setText(player.currentWeapon.attackMessage + "\n\n" + enemy.attackMessage + " You received " + enemy.attack + " damage!\n\n" + enemy.name + ": " + enemy.hp + " HP");
-//            ui.choice1.setText("Continue");
-//            ui.choice2.setText("");
-//            ui.choice3.setText("");
-//            ui.choice4.setText("");
-//
-//            game.nextPosition1 = "noHealth";
-//            game.nextPosition2 = "";
-//            game.nextPosition3 = "";
-//            game.nextPosition4 = "";
-//        }
     }
 }

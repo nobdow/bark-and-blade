@@ -12,8 +12,6 @@ public class Forest extends SuperLocation{
     }
 
     public static void forest(){
-        playSoundEffect(5);
-
         ui.mainTextArea.setText("You hear the pleasant gurgling of a mountain stream. Soon, the small river crosses your path and a simple bridge lies before you.");
         ui.choice1.setText("Cross the bridge");
         ui.choice2.setText("Drink the fresh water");

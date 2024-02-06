@@ -12,8 +12,6 @@ public class Berries extends SuperLocation{
     }
 
     public static void berries(){
-        playSoundEffect(5);
-
         if(hasBerries == false) {
             hasBerries = true;
             ui.mainTextArea.setText("You collect some deliciously ripe cherries but find no blackberries.\n(You obtained cherries)");

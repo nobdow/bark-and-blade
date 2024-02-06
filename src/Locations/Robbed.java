@@ -14,7 +14,6 @@ public class Robbed extends SuperLocation{
     public static void robbed(){
         coins = 0;
         ui.coinCountLabel.setText(coins + "");
-        playSoundEffect(5);
 
         ui.mainTextArea.setText("He takes your money and runs away into the forest.");
         ui.choice1.setText("Continue");

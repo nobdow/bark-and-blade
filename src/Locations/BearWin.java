@@ -14,6 +14,7 @@ public class BearWin extends SuperLocation{
     public static void bearWin(){
         ui.mainTextArea.setText("You defeated the " + enemy.name.toLowerCase() + " and skin the animal to collect his coat.\n(You obtained a fur pelt)");
         bearDead = true;
+        stopSoundEffect();
         playSoundEffect(4);
 
         ui.choice1.setText("Continue");

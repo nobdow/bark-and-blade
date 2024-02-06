@@ -12,8 +12,6 @@ public class Template extends SuperLocation{
     }
 
     public static void TEMPLATE(){
-        playSoundEffect(5);
-
         ui.mainTextArea.setText("");
         ui.choice1.setText("");
         ui.choice2.setText("");

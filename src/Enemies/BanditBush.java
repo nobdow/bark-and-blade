@@ -1,8 +1,8 @@
 package Enemies;
 
-public class Bandit_Bush extends SuperEnemy {
+public class BanditBush extends SuperEnemy {
 
-    public Bandit_Bush(){
+    public BanditBush(){
         name = "Bandit";
         hp = new java.util.Random().nextInt(2) + 3;
         hp = hp * 10;

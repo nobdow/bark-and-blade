@@ -1,5 +1,7 @@
 package Base_Elements;
 
+import Locations.DefaultSetup;
+import Locations.Intro1;
 import Locations.SuperLocation;
 
 import java.awt.event.ActionEvent;
@@ -14,7 +16,7 @@ public class Game {
    UI ui = new UI();
    VisibilityManager vm = new VisibilityManager(ui);
    SuperLocation superLocation = new SuperLocation(this, ui, vm, music, soundEffect);
-   Story story = new Story(this, ui, vm, music, soundEffect);
+   LocationSwitch story = new LocationSwitch(this, ui, vm, music, soundEffect);
 
    public String nextPosition1;
    public String nextPosition2;
@@ -29,7 +31,7 @@ public class Game {
     public Game() {
 
         ui.createUI(cHandler);
-        story.defaultSetup();
+        DefaultSetup.defaultSetup();
         vm.showTitleScreen();
     }
 
@@ -39,8 +41,11 @@ public class Game {
 
             String yourChoice = event.getActionCommand();
 
+            soundEffect.setFile(5);
+            soundEffect.play();
+
             switch(yourChoice){
-                case "start": vm.titleToMainScreen(); story.intro1(); break;
+                case "start": vm.titleToMainScreen(); Intro1.intro1(); break;
                 case "c1": story.selectPosition(nextPosition1); break;
                 case "c2": story.selectPosition(nextPosition2); break;
                 case "c3": story.selectPosition(nextPosition3); break;
@@ -54,9 +59,7 @@ public class Game {
 // - Balance audio levels
 // - End game after 5 snuggles with dog
 // - Hide spouse quests if quests complete
-// - Add attackmessage to each enemy combat action
 // - finish troll fight locations
-// - figure out why dying on any hit from any enemy
 // -
 // -
 // -

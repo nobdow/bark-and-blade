@@ -14,7 +14,6 @@ public class ForestBanditFight extends SuperLocation{
     public static void forestBanditFight(){
         player.currentWeapon.Damage();
         enemy.hp = enemy.hp - player.currentWeapon.damage;
-        playSoundEffect(5);
 
         enemy.Damage();
         player.hp = player.hp - enemy.attack;
@@ -36,12 +35,12 @@ public class ForestBanditFight extends SuperLocation{
             game.nextPosition4 = "";
         }
 
-        // Enemy alive & player dead
-        else if(enemy.hp > 0 && player.hp < 1){
+        // Enemy alive & player dead OR Enemy dead & player dead
+        else if(enemy.hp > 0 && player.hp < 1 || enemy.hp < 1 && player.hp < 1){
             player.hp = 0;
             ui.hpNumberLabel.setText("" + player.hp);
 
-            ui.mainTextArea.setText(player.currentWeapon.attackMessage + "\n\nYou received " + enemy.attack + " damage!\n\n" + enemy.name + ": " + enemy.hp + " HP");
+            ui.mainTextArea.setText(player.currentWeapon.attackMessage + "\n\n" + enemy.attackMessage + " You received " + enemy.attack + " damage!\n\n" + enemy.name + ": " + enemy.hp + " HP");
             ui.choice1.setText("Continue");
             ui.choice2.setText("");
             ui.choice3.setText("");
@@ -65,13 +64,6 @@ public class ForestBanditFight extends SuperLocation{
             game.nextPosition2 = "forest";
             game.nextPosition3 = "";
             game.nextPosition4 = "";
-        }
-
-        // Enemy dead & player dead
-        else if(enemy.hp < 1 && player.hp < 1) {
-            player.hp = 0;
-            ui.hpNumberLabel.setText("" + player.hp);
-            NoHealth.noHealth();
         }
     }
 }

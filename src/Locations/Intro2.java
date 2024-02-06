@@ -9,8 +9,6 @@ public class Intro2 extends SuperLocation{
     }
 
     public static void intro2(){
-        playSoundEffect(5);
-
         ui.mainTextArea.setText("But that is someone else's problem! Your eyes flick open to a mellow orange glow peeking through your window. Your favorite little furball is curled between your feet, claiming a more than their share of the covers.");
         ui.choice1.setText("Continue");
         ui.choice2.setText("");

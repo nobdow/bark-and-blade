@@ -12,6 +12,7 @@ public class Lose extends SuperLocation{
     }
 
     public static void lose(){
+        stopSoundEffect();
         playSoundEffect(2);
 
         ui.mainTextArea.setText("Thanks for playing. Try again and see if you can finish all the quests.");

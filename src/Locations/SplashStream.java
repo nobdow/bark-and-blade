@@ -12,8 +12,6 @@ public class SplashStream extends SuperLocation{
     }
 
     public static void splashStream(){
-        playSoundEffect(5);
-
         if (splashPoint == false) {
             dogPoints = dogPoints + 1;
             splashPoint = true;

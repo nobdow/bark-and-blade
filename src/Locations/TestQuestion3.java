@@ -12,8 +12,6 @@ public class TestQuestion3 extends SuperLocation{
     }
 
     public static void testQuestion3(){
-        playSoundEffect(5);
-
         ui.mainTextArea.setText("Doc. Milton:\n\"Night.\"");
         ui.choice1.setText("Campfire");
         ui.choice2.setText("Dream");

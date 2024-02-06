@@ -12,6 +12,7 @@ public class NoHealth extends SuperLocation{
     }
 
     public static void noHealth(){
+        stopSoundEffect();
         playSoundEffect(3);
 
         ui.mainTextArea.setText("You feel very weak and dizzy...");

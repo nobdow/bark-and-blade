@@ -14,6 +14,7 @@ public class BushCoins extends SuperLocation{
     public static void bushCoins(){
         coins = coins + 10;
         ui.coinCountLabel.setText(coins + "");
+        stopSoundEffect();
         playSoundEffect(6);
 
         ui.mainTextArea.setText("A small bag of loot falls out of the bush, you open it to find some gold pieces\n[You obtain 10 coins]");

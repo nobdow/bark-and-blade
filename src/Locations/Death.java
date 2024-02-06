@@ -16,8 +16,6 @@ public class Death extends SuperLocation{
             deathCounter = deathCounter + 1;
             player.hp = 25;
             ui.hpNumberLabel.setText("" + player.hp);
-            playSoundEffect(5);
-
 
             ui.mainTextArea.setText("Doc. Milton:\n\"Whoa, easy there. You have been out cold a couple of days now. I am proud of my needle work, but what do you say we go through a couple questions? See if your hounds are still howling.\"");
             ui.choice1.setText("Continue");
