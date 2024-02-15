@@ -12,12 +12,12 @@ public class Berries extends SuperLocation{
     }
 
     public static void berries(){
-        if(hasBerries == false) {
-            hasBerries = true;
+        if(hasCherries == false) {
+            hasCherries = true;
             ui.mainTextArea.setText("You collect some deliciously ripe cherries but find no blackberries.\n(You obtained cherries)");
             //playSoundEffect(4);
         }
-        else if (hasBerries == true){
+        else if (hasCherries == true){
             ui.mainTextArea.setText("It looks like you have picked all of the berries for now. Maybe some will grow back later.");
         }
 

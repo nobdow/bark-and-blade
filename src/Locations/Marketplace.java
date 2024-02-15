@@ -14,12 +14,12 @@ public class Marketplace extends SuperLocation{
     public static void marketplace(){
         ui.mainTextArea.setText("There are lots of merchants working on their trades.");
         ui.choice1.setText("Talk to the tailor");
-        ui.choice2.setText("Talk to the armorer");
+        ui.choice2.setText("Talk to the blacksmith");
         ui.choice3.setText("Talk to the baker");
         ui.choice4.setText("Return to the town center");
 
         game.nextPosition1 = "tailor";
-        game.nextPosition2 = "armorer";
+        game.nextPosition2 = "blacksmith";
         game.nextPosition3 = "baker";
         game.nextPosition4 = "town";
     }

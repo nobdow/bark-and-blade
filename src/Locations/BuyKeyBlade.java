@@ -4,41 +4,44 @@ import Base_Elements.Game;
 import Base_Elements.Sound;
 import Base_Elements.UI;
 import Base_Elements.VisibilityManager;
+import Equipment.Weapon_ChaosWand;
+import Equipment.Weapon_KeyBlade;
 
-public class BuyFormalAttire extends SuperLocation{
+public class BuyKeyBlade extends SuperLocation{
 
-    public BuyFormalAttire(Game g, UI userInterface, VisibilityManager vManager, Sound sndfft, Sound msc) {
+    public BuyKeyBlade(Game g, UI userInterface, VisibilityManager vManager, Sound sndfft, Sound msc) {
         super(g, userInterface, vManager, sndfft, msc);
     }
 
-    public static void buyFormalAttire(){
-        if(coins >= 10) {
-            boughtFormalAttire = true;
-            ui.presentQuestObjectiveLabel.setText("  + return to wife");
-            coins = coins - 10;
+    public static void buyKeyBlade(){
+        if(coins >= 15) {
+            boughtKeyBlade = true;
+            coins = coins - 15;
             ui.coinCountLabel.setText(coins + "");
+            player.currentWeapon = new Weapon_KeyBlade();
+            ui.weaponNameLabel.setText(player.currentWeapon.name);
             stopSoundEffect();
             playSoundEffect(4);
 
-            ui.mainTextArea.setText("Tailor:\n\"Whoever you are going to give this too is going to really like it.\"");
+            ui.mainTextArea.setText("Blacksmith:\n\"Excellent choice! Here you go.\"\n[Obtained the key shaped blade]");
             ui.choice1.setText("Continue");
             ui.choice2.setText("");
             ui.choice3.setText("");
             ui.choice4.setText("");
 
-            game.nextPosition1 = "tailor";
+            game.nextPosition1 = "blacksmith";
             game.nextPosition2 = "";
             game.nextPosition3 = "";
             game.nextPosition4 = "";
         }
-        else if(coins < 10){
-            ui.mainTextArea.setText("Tailor:\n\"I'm sorry but you need more coins to buy that.\"");
+        else if(coins < 15){
+            ui.mainTextArea.setText("Blacksmith:\n\"I will need 15 coins to part with this blade.\"");
             ui.choice1.setText("Continue");
             ui.choice2.setText("");
             ui.choice3.setText("");
             ui.choice4.setText("");
 
-            game.nextPosition1 = "tailor";
+            game.nextPosition1 = "blacksmith";
             game.nextPosition2 = "";
             game.nextPosition3 = "";
             game.nextPosition4 = "";

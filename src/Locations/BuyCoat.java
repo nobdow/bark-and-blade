@@ -31,7 +31,7 @@ public class BuyCoat extends SuperLocation{
             game.nextPosition3 = "";
             game.nextPosition4 = "";
         }
-        else if(bearDead == false && coins >= 10 || bearDead == true && coins < 10){
+        else if(bearDead == false || coins < 10){
             ui.mainTextArea.setText("Tailor:\n\"I'm sorry but you lack what I need to make the coat.\"");
             ui.choice1.setText("Continue");
             ui.choice2.setText("");

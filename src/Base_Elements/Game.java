@@ -57,10 +57,10 @@ public class Game {
 
 // TO DO LIST:
 // - Balance audio levels
-// - End game after 5 snuggles with dog
+// - End game after 5 snuggles with dog?
 // - Hide spouse quests if quests complete
 // - finish troll fight locations
-// -
+// - add spouse receive blackberries & formal attire
 // -
 // -
 // -

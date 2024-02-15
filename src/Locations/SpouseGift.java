@@ -21,7 +21,7 @@ public class SpouseGift extends SuperLocation{
         stopSoundEffect();
         playSoundEffect(4);
 
-        ui.mainTextArea.setText("Spouse:\n\"Wait, its dangerous to go alone. Have my " + player.currentWeapon.name.toLowerCase() + " and a few coins to run your errands!\"\n(You obtained a knife and 10 coins)");
+        ui.mainTextArea.setText("Spouse:\n\"Wait, its dangerous to go alone. Have my " + player.currentWeapon.name.toLowerCase() + " and a few coins to run your errands!\"\n[You obtained a knife and 10 coins]");
         ui.choice1.setText("Continue");
         ui.choice2.setText("");
         ui.choice3.setText("");

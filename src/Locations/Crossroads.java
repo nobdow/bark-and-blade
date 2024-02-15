@@ -17,7 +17,7 @@ public class Crossroads extends SuperLocation{
         if(bush == false) {
             ui.choice1.setText("Mosey over to town");
             ui.choice2.setText("Head into the forest");
-            ui.choice3.setText("Scramble up the mountains");
+            ui.choice3.setText("WIP // Scramble up the mountains");
             ui.choice4.setText("Return to your farmhouse");
 
             game.nextPosition1 = "town";
@@ -28,7 +28,7 @@ public class Crossroads extends SuperLocation{
         else if(bush == true){
             ui.choice1.setText("Go into town");
             ui.choice2.setText("Go to the forest");
-            ui.choice3.setText("Go up to the mountains");
+            ui.choice3.setText("WIP // Go up to the mountains");
             ui.choice4.setText("Go to your farmhouse");
 
             game.nextPosition1 = "town";

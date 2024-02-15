@@ -14,7 +14,7 @@ public class Tailor extends SuperLocation{
     public static void tailor(){
         if(boughtCoat == false && boughtFormalAttire == false) {
             ui.mainTextArea.setText("Tailor:\n\"Hello! I've just run out of all my stock except this formal attire which costs 10 coins. If you happen upon an fur pelt, I could make you a warm coat for only 10 coins.\"");
-            ui.choice1.setText("Order a coat");
+            ui.choice1.setText("Order a custom coat");
             ui.choice2.setText("Buy formal attire");
             ui.choice3.setText("Return to marketplace");
             ui.choice4.setText("");

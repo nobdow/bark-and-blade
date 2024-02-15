@@ -21,7 +21,7 @@ public class Bush extends SuperLocation{
         ui.choice3.setText("");
         ui.choice4.setText("");
 
-        game.nextPosition2 = "";
+        game.nextPosition2 = "forest";
         game.nextPosition3 = "";
         game.nextPosition4 = "";
 

@@ -12,7 +12,7 @@ public class SnuggleDog extends SuperLocation{
     }
 
     public static void snuggleDog(){
-        if (player.hp <= 99 && snugglePoint == false){
+        if (player.hp <= player.maxHP && snugglePoint == false){
             player.hp = 100;
             ui.hpNumberLabel.setText("" + player.hp);
             snugglePoint = true;
@@ -21,14 +21,14 @@ public class SnuggleDog extends SuperLocation{
             ui.mainTextArea.setText("A quick rest can't hurt.\n\nDOGNAME:\n*Woof in agreeance*\n\nYou wake up feeling fantastic and your dog seems more loyal for the affection.\n[HP restored and companion point earned]");
 
         }
-        else if(player.hp >= 100 & snugglePoint == false){
+        else if(player.hp >= player.maxHP & snugglePoint == false){
             snugglePoint = true;
             dogPoints = dogPoints + 1;
 
             ui.mainTextArea.setText("You feel great and your dog feels more loyal for the snuggles\n[companion point earned]");
 
         }
-        else if(player.hp < 100 && snugglePoint == true){
+        else if(player.hp < player.maxHP && snugglePoint == true){
             player.hp = 100;
             ui.hpNumberLabel.setText("" + player.hp);
             snugglePoint = true;
@@ -36,7 +36,7 @@ public class SnuggleDog extends SuperLocation{
 
             ui.mainTextArea.setText("You feel revived and your health is restored.");
         }
-        else if(player.hp >= 100 && snugglePoint == true){
+        else if(player.hp >= player.maxHP && snugglePoint == true){
             ui.mainTextArea.setText("Snuggles with [DOGNAME] are the best!");
             ui.choice1.setText("Continue");
         }

@@ -2,6 +2,7 @@ package Locations;
 
 import Base_Elements.*;
 import Enemies.SuperEnemy;
+import java.util.ArrayList;
 
 public class SuperLocation {
     static Game game;
@@ -10,10 +11,15 @@ public class SuperLocation {
     static Sound soundEffect;
     Sound music;
 
+    // ALl the variables used in the different locations
     public static Player player = new Player();
     public static SuperEnemy enemy;
-    public static int VetVisitQuest, BlackBerriesQuest, CoatQuest, dogPoints, coins, birthdayQuest, deathCounter;
-    public static boolean snugglePoint, bush, spouseGift, splashPoint, hasBerries, bearDead, boughtCoat, boughtFormalAttire;
+    public static int dogPoints, coins, deathCounter, diceRoll, drunkMoney, jailTime;
+    // Quest tracking, 0 = not given, 1 = in progress, 2 = complete
+    public static int VetVisitQuest, BlackBerriesQuest, CoatQuest, birthdayQuest, cherriesQuest, oldHagQuest;
+    public static boolean snugglePoint, bush, spouseGift, splashPoint, hasCherries, bearDead, boughtCoat, boughtFormalAttire, trollDead, trollHorn, boughtDice, boughtKeyBlade, boughtRubberChicken, hasBlackBerries, thiefDead, drunkDead;
+
+    public static ArrayList<Class<?>> weaponList = new ArrayList<>();
 
     public SuperLocation(Game g, UI userInterface, VisibilityManager vManager, Sound sndfft, Sound msc) {
         game = g;
@@ -23,6 +29,7 @@ public class SuperLocation {
         music = msc;
     }
 
+    // The methods to play and stop both sound effects and music
     public void playMusic(int i) {
         music.setFile(i);
         music.play();

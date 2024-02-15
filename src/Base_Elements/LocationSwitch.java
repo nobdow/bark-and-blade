@@ -55,14 +55,34 @@ public class LocationSwitch {
             case "testResults": TestResults.testResults(); break;
             case "lose": Lose.lose(); break;
             case "toTitle": ToTitle.toTitle(); break;
-            //case "mountain": mountain(); break;
-            case "trollEncounter": TrollEncounter.trollEncounter(); break;
-            case "trollFight": TrollFight.trollFight(); break;
             case "town": Town.town(); break;
             case "marketplace": Marketplace.marketplace(); break;
             case "tailor": Tailor.tailor(); break;
             case "buyCoat": BuyCoat.buyCoat(); break;
             case "buyFormalAttire": BuyFormalAttire.buyFormalAttire(); break;
+            case "blacksmith": Blacksmith.blacksmith(); break;
+            case "buyKeyBlade": BuyKeyBlade.buyKeyBlade(); break;
+            case "buyDice": BuyDice.buyDice(); break;
+            case "buyRubberChicken": BuyRubberChicken.buyRubberChicken(); break;
+            case "baker": Baker.baker(); break;
+            case "cherriesQuest": CherriesQuest.cherriesQuest(); break;
+            case "backAlley": BackAlley.backAlley(); break;
+            case "oldHag": OldHag.oldHag(); break;
+            case "oldHagHelp": OldHagHelp.oldHagHelp(); break;
+            case "oldHagHelpAccept": OldHagHelpAccept.oldHagHelpAccept(); break;
+            case "oldHagHelpRefuse": OldHagHelpRefuse.oldHagHelpRefuse(); break;
+            case "gamble": Gamble.gamble(); break;
+            case "betSmall": BetSmall.betSmall(); break;
+            case "betLarge": BetLarge.betLarge(); break;
+            case "drunkFight": DrunkFight.drunkFight(); break;
+            case "accuseCheating": AccuseCheating.accuseCheating(); break;
+            case "drunkWin": DrunkWin.drunkWin(); break;
+            case "jail": Jail.jail(); break;
+            case "bailBond": BailBond.bailBond(); break;
+
+            //case "mountain": mountain(); break;
+            case "trollEncounter": TrollEncounter.trollEncounter(); break;
+            case "trollFight": TrollFight.trollFight(); break;
 
         }
     }
