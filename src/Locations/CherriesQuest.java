@@ -47,7 +47,7 @@ public class CherriesQuest extends SuperLocation{
             stopSoundEffect();
             playSoundEffect(1);
 
-            ui.mainTextArea.setText("\"Baker:\n\"I am in your debt! Here are my leftover blackberries, some coins, and even a treat for your pup as a show of my appreciation!\"");
+            ui.mainTextArea.setText("\"Baker:\n\"I am in your debt! Here are my leftover blackberries, some coins, and even a treat for your pup as a show of my appreciation!\"\n\nYour dog is more loyal to you.\n[You obtained 10 coins abd blackberries]");
             ui.choice1.setText("Continue");
             ui.choice2.setText("");
             ui.choice3.setText("");

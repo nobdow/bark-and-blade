@@ -17,7 +17,7 @@ public class SuperLocation {
     public static int dogPoints, coins, deathCounter, diceRoll, drunkMoney, jailTime;
     // Quest tracking, 0 = not given, 1 = in progress, 2 = complete
     public static int VetVisitQuest, BlackBerriesQuest, CoatQuest, birthdayQuest, cherriesQuest, oldHagQuest;
-    public static boolean snugglePoint, bush, spouseGift, splashPoint, hasCherries, bearDead, boughtCoat, boughtFormalAttire, trollDead, trollHorn, boughtDice, boughtKeyBlade, boughtRubberChicken, hasBlackBerries, thiefDead, drunkDead;
+    public static boolean snugglePoint, bush, spouseGift, splashPoint, hasCherries, bearDead, boughtCoat, boughtFormalAttire, trollDead, trollHorn, boughtDice, boughtKeyBlade, boughtRubberChicken, hasBlackBerries, thiefDead, drunkDead, hasCrown, banditCompanion, banditLeaderDead;
 
     public static ArrayList<Class<?>> weaponList = new ArrayList<>();
 

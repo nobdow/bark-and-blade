@@ -54,7 +54,6 @@ public class DefaultSetup extends SuperLocation{
         //Class<?> weaponClass = Class.forName(weaponName);
         // Object instance = weaponClass.newInstance();
         player.currentWeapon = new Weapon_None();
-
         ui.weaponNameLabel.setText(player.currentWeapon.name);
         soundEffect.setFile(0);
         soundEffect.play();

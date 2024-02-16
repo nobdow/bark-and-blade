@@ -79,11 +79,18 @@ public class LocationSwitch {
             case "drunkWin": DrunkWin.drunkWin(); break;
             case "jail": Jail.jail(); break;
             case "bailBond": BailBond.bailBond(); break;
+            case "castleGate": CastleGate.castleGate(); break;
+            case "showCrown": ShowCrown.showCrown(); break;
+            case "throneRoom": ThroneRoom.throneRoom(); break;
+            case "royalReward": RoyalReward.royalReward(); break;
+            case "royalVet": RoyalVet.royalVet(); break;
+            case "banditBetray": BanditBetray.banditBetray(); break;
+            case "banditLeaderFight": BanditLeaderFight.banditLeaderFight(); break;
+            case "banditLeaderWin": BanditLeaderWin.banditLeaderWin(); break;
 
             //case "mountain": mountain(); break;
             case "trollEncounter": TrollEncounter.trollEncounter(); break;
             case "trollFight": TrollFight.trollFight(); break;
-
         }
     }
 }
