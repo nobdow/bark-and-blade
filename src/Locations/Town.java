@@ -14,12 +14,12 @@ public class Town extends SuperLocation{
     public static void town(){
         ui.mainTextArea.setText("You walk into the center of town.");
         ui.choice1.setText("Go to the marketplace");
-        ui.choice2.setText("WIP // Go to the castle");
+        ui.choice2.setText("Go to the castle");
         ui.choice3.setText("Look for trouble");
         ui.choice4.setText("Go to the crossroads");
 
         game.nextPosition1 = "marketplace";
-        game.nextPosition2 = "castle";
+        game.nextPosition2 = "castleGate";
         game.nextPosition3 = "backAlley";
         game.nextPosition4 = "crossroads";
     }

@@ -18,8 +18,8 @@ public class Troll extends SuperEnemy {
         }
         else if (chance >= 2 && hp <= 40) {
             attack = 0;
-            hp = hp + 40;
-            attackMessage = "The troll recovered 40HP!";
+            hp = hp + 30;
+            attackMessage = "The troll recovered 30HP!";
         }
 //        else if (chance >= 2 && hp > 40) {
 //            attack = new java.util.Random().nextInt(2) + 1;

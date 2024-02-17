@@ -14,16 +14,29 @@ public class NoHealth extends SuperLocation{
     public static void noHealth(){
         stopSoundEffect();
         playSoundEffect(3);
-
         ui.mainTextArea.setText("You feel very weak and dizzy...");
-        ui.choice1.setText("Continue");
-        ui.choice2.setText("");
-        ui.choice3.setText("");
-        ui.choice4.setText("");
 
-        game.nextPosition1 = "death";
-        game.nextPosition2 = "";
-        game.nextPosition3 = "";
-        game.nextPosition4 = "";
+        if(banditLeaderCompanion == false) {
+            ui.choice1.setText("Continue");
+            ui.choice2.setText("");
+            ui.choice3.setText("");
+            ui.choice4.setText("");
+
+            game.nextPosition1 = "death";
+            game.nextPosition2 = "";
+            game.nextPosition3 = "";
+            game.nextPosition4 = "";
+        }
+        else if(banditLeaderCompanion == true) {
+            ui.choice1.setText("Continue");
+            ui.choice2.setText("");
+            ui.choice3.setText("");
+            ui.choice4.setText("");
+
+            game.nextPosition1 = "lose";
+            game.nextPosition2 = "";
+            game.nextPosition3 = "";
+            game.nextPosition4 = "";
+        }
     }
 }

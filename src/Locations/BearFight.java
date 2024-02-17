@@ -37,6 +37,9 @@ public class BearFight extends SuperLocation{
 
         // Enemy alive & player dead OR Enemy dead & player dead
         else if(enemy.hp > 0 && player.hp < 1 || enemy.hp < 1 && player.hp < 1){
+            if(enemy.hp < 1){
+                enemy.hp = 0;
+            }
             player.hp = 0;
             ui.hpNumberLabel.setText("" + player.hp);
 

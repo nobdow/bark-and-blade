@@ -5,13 +5,13 @@ import Base_Elements.Sound;
 import Base_Elements.UI;
 import Base_Elements.VisibilityManager;
 
-public class BanditLeaderFight extends SuperLocation{
+public class BanditGruntFight extends SuperLocation{
 
-    public BanditLeaderFight(Game g, UI userInterface, VisibilityManager vManager, Sound sndfft, Sound msc) {
+    public BanditGruntFight(Game g, UI userInterface, VisibilityManager vManager, Sound sndfft, Sound msc) {
         super(g, userInterface, vManager, sndfft, msc);
     }
 
-    public static void banditLeaderFight(){
+    public static void banditGruntFight(){
         player.currentWeapon.Damage();
         enemy.hp = enemy.hp - player.currentWeapon.damage;
 
@@ -29,7 +29,14 @@ public class BanditLeaderFight extends SuperLocation{
             ui.choice3.setText("");
             ui.choice4.setText("");
 
-            game.nextPosition1 = "banditLeaderWin";
+            if (banditGruntOneDead == false) {
+                banditGruntOneDead = true;
+                game.nextPosition1 = "banditGruntTwoEncounter";
+            }
+            else if(banditGruntOneDead == true) {
+                banditGruntTwoDead = true;
+                game.nextPosition1 = "banditLeaderEncounter";
+            }
             game.nextPosition2 = "";
             game.nextPosition3 = "";
             game.nextPosition4 = "";
@@ -56,29 +63,15 @@ public class BanditLeaderFight extends SuperLocation{
         }
 
         // Enemy alive & player alive
-        else if(enemy.hp > 0 && player.hp > 0 && banditLeaderCompanion == false) {
+        else if(enemy.hp > 0 && player.hp > 0) {
             ui.mainTextArea.setText(player.currentWeapon.attackMessage + "\n\n" + enemy.attackMessage + " You received " + enemy.attack + " damage!\n\n" + enemy.name + ": " + enemy.hp + " HP");
             ui.choice1.setText("Attack again");
             ui.choice2.setText("Run Away");
             ui.choice3.setText("");
             ui.choice4.setText("");
 
-            game.nextPosition1 = "banditLeaderFight";
+            game.nextPosition1 = "banditGruntFight";
             game.nextPosition2 = "hideout";
-            game.nextPosition3 = "";
-            game.nextPosition4 = "";
-        }
-
-        // Enemy alive & player alive
-        else if(enemy.hp > 0 && player.hp > 0 && banditLeaderCompanion == true) {
-            ui.mainTextArea.setText(player.currentWeapon.attackMessage + "\n\n" + enemy.attackMessage + " You received " + enemy.attack + " damage!\n\n" + enemy.name + ": " + enemy.hp + " HP");
-            ui.choice1.setText("Attack again");
-            ui.choice2.setText("");
-            ui.choice3.setText("");
-            ui.choice4.setText("");
-
-            game.nextPosition1 = "banditLeaderFight";
-            game.nextPosition2 = "";
             game.nextPosition3 = "";
             game.nextPosition4 = "";
         }

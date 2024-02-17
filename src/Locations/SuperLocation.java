@@ -9,15 +9,15 @@ public class SuperLocation {
     static UI ui;
     static VisibilityManager vm;
     static Sound soundEffect;
-    Sound music;
+    static Sound music;
 
     // ALl the variables used in the different locations
     public static Player player = new Player();
     public static SuperEnemy enemy;
-    public static int dogPoints, coins, deathCounter, diceRoll, drunkMoney, jailTime;
+    public static int dogPoints, coins, deathCounter, diceRoll, drunkMoney, jailTime, snuggleCount;;
     // Quest tracking, 0 = not given, 1 = in progress, 2 = complete
     public static int VetVisitQuest, BlackBerriesQuest, CoatQuest, birthdayQuest, cherriesQuest, oldHagQuest;
-    public static boolean snugglePoint, bush, spouseGift, splashPoint, hasCherries, bearDead, boughtCoat, boughtFormalAttire, trollDead, trollHorn, boughtDice, boughtKeyBlade, boughtRubberChicken, hasBlackBerries, thiefDead, drunkDead, hasCrown, banditCompanion, banditLeaderDead;
+    public static boolean snugglePoint, bush, spouseGift, splashPoint, hasCherries, bearDead, boughtCoat, boughtFormalAttire, trollDead, trollHorn, boughtDice, boughtKeyBlade, boughtRubberChicken, hasBlackBerries, thiefDead, drunkDead, hasCrown, banditLeaderCompanion, banditLeaderDead, fetchPoint, banditGruntOneDead, banditGruntTwoDead;
 
     public static ArrayList<Class<?>> weaponList = new ArrayList<>();
 
@@ -30,13 +30,13 @@ public class SuperLocation {
     }
 
     // The methods to play and stop both sound effects and music
-    public void playMusic(int i) {
+    public static void playMusic(int i) {
         music.setFile(i);
         music.play();
         music.loop();
     }
 
-    public void stopMusic() {
+    public static void stopMusic() {
         music.stop();
     }
 

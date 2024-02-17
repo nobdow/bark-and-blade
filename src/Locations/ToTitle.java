@@ -12,6 +12,8 @@ public class ToTitle extends SuperLocation{
     }
 
     public static void toTitle(){
+        stopSoundEffect();
+        stopMusic();
         DefaultSetup.defaultSetup();
         vm.showTitleScreen();
     }

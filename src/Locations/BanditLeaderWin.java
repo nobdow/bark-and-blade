@@ -12,9 +12,10 @@ public class BanditLeaderWin extends SuperLocation{
     }
 
     public static void banditLeaderWin(){
-        if(banditCompanion == false) {
+        if(banditLeaderCompanion == false) {
             ui.mainTextArea.setText("You defeated the " + enemy.name.toLowerCase() + " and collect the king's crown off of his body.\n[You obtained the king's crown]");
             banditLeaderDead = true;
+            hasCrown = true;
             stopSoundEffect();
             playSoundEffect(4);
 
@@ -23,23 +24,21 @@ public class BanditLeaderWin extends SuperLocation{
             ui.choice3.setText("");
             ui.choice4.setText("");
 
-            game.nextPosition1 = "hideout";
+            game.nextPosition1 = "mountainPass";
             game.nextPosition2 = "";
             game.nextPosition3 = "";
             game.nextPosition4 = "";
         }
-        else if(banditCompanion == true) {
+        else if(banditLeaderCompanion == true) {
             ui.mainTextArea.setText("You defeated the " + enemy.name.toLowerCase());
             banditLeaderDead = true;
-            stopSoundEffect();
-            playSoundEffect(4);
 
             ui.choice1.setText("Continue");
             ui.choice2.setText("");
             ui.choice3.setText("");
             ui.choice4.setText("");
 
-            game.nextPosition1 = "hideout";
+            game.nextPosition1 = "royalReward";
             game.nextPosition2 = "";
             game.nextPosition3 = "";
             game.nextPosition4 = "";

@@ -8,7 +8,7 @@ import java.io.InputStream;
 public class UI {
 
     JFrame window;
-    JPanel titleNamePanel, startButtonPanel, mainTextPanel, choiceButtonPanel, playerPanel, exampleImagePanel, questLogPanel;
+    JPanel titleNamePanel, startButtonPanel, debugButtonPanel, mainTextPanel, choiceButtonPanel, playerPanel, exampleImagePanel, questLogPanel;
     JLabel titleNameLabel;
     JLabel hpLabel;
     public JLabel hpNumberLabel;
@@ -26,7 +26,7 @@ public class UI {
     public JLabel coatQuestObjectiveLabel;
     public JLabel presentQuestTitleLabel;
     public JLabel presentQuestObjectiveLabel;
-    JButton startButton;
+    JButton startButton, debugButton;
     public JButton choice1;
     public JButton choice2;
     public JButton choice3;
@@ -34,6 +34,7 @@ public class UI {
     public JTextArea mainTextArea;
     Font titleFont = new Font("Alagard", Font.PLAIN,150);
     Font startFont = new Font("Alagard", Font.PLAIN,70);
+    Font debugFont = new Font("Alagard", Font.PLAIN,57);
     Font normalFont = new Font("Alagard", Font.PLAIN,45);
     Font statFont = new Font("Alagard", Font.PLAIN,35);
     Font Alagard;
@@ -72,7 +73,7 @@ public class UI {
         titleNamePanel.add(titleNameLabel);
 
         startButtonPanel = new JPanel();
-        startButtonPanel.setBounds(810,650,300,150);
+        startButtonPanel.setBounds(810,650,300,100);
         startButtonPanel.setBackground(Color.black);
         startButton = new JButton("Start");
         startButton.setBackground(Color.black);
@@ -83,8 +84,21 @@ public class UI {
         startButton.setActionCommand("start");
         startButtonPanel.add(startButton);
 
+        debugButtonPanel = new JPanel();
+        debugButtonPanel.setBounds(810,765,300,150);
+        debugButtonPanel.setBackground(Color.black);
+        debugButton = new JButton("Debug");
+        debugButton.setBackground(Color.black);
+        debugButton.setForeground(Color.white);
+        debugButton.setFont(debugFont);
+        debugButton.setFocusPainted(false);
+        debugButton.addActionListener(cHandler);
+        debugButton.setActionCommand("debug");
+        debugButtonPanel.add(debugButton);
+
         window.add(titleNamePanel);
         window.add(startButtonPanel);
+        window.add(debugButtonPanel);
 
         //Game screen
         mainTextPanel = new JPanel();

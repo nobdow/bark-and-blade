@@ -4,6 +4,8 @@ import Base_Elements.Game;
 import Base_Elements.Sound;
 import Base_Elements.UI;
 import Base_Elements.VisibilityManager;
+import Equipment.Weapon_ChaosWand;
+import Equipment.Weapon_HeavyMace;
 import Equipment.Weapon_Knife;
 import Equipment.Weapon_None;
 
@@ -33,6 +35,7 @@ public class DefaultSetup extends SuperLocation{
         birthdayQuest = 0;
         deathCounter = 0;
         drunkMoney = 30;
+        snuggleCount = 0;
 
 //        weaponList.add(Weapon_None.class);
 //        Class<?> weaponName = weaponList.get(0)

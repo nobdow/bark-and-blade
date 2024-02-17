@@ -1,7 +1,7 @@
 package Base_Elements;
 
 import Locations.DefaultSetup;
-import Locations.Intro1;
+import Locations.*;
 import Locations.SuperLocation;
 
 import java.awt.event.ActionEvent;
@@ -46,6 +46,7 @@ public class Game {
 
             switch(yourChoice){
                 case "start": vm.titleToMainScreen(); Intro1.intro1(); break;
+                case "debug": vm.titleToMainScreen(); DebugSetup.debugSetup(); break;
                 case "c1": story.selectPosition(nextPosition1); break;
                 case "c2": story.selectPosition(nextPosition2); break;
                 case "c3": story.selectPosition(nextPosition3); break;
@@ -55,12 +56,31 @@ public class Game {
     }
 }
 
-// TO DO LIST:
-// - Balance audio levels
-// - End game after 5 snuggles with dog?
-// - Hide spouse quests if quests complete
+// ALPHA TO DO LIST:
+// - Hide spouse hints if quests complete
 // - finish troll fight locations
-// - add spouse receive blackberries & formal attire
+// - add spouse receive quests (fixes broken vet at end of game)
+// - add changing enemy attack messages that are tied to damage
+// - add weapon cycling system
+// - add look for trouble thug who steals weapon and fights you with it
+// - add dog finds special weapon if you have enough companion points
+// - add random dog coughs?
+// - add run away fail chance to enemy encounters
+// -
+// -
+// -
+
+// BETA TO DO LIST:
+// -
+// -
+// -
+// -
+
+// FINAL TO DO LIST:
+// - update default set up to have starting values so upon reset the game wipes
+// - Balance audio levels
+// -
+// -
 // -
 // -
 // -

@@ -87,10 +87,23 @@ public class LocationSwitch {
             case "banditBetray": BanditBetray.banditBetray(); break;
             case "banditLeaderFight": BanditLeaderFight.banditLeaderFight(); break;
             case "banditLeaderWin": BanditLeaderWin.banditLeaderWin(); break;
-
-            //case "mountain": mountain(); break;
-            case "trollEncounter": TrollEncounter.trollEncounter(); break;
+            case "kingBetray": KingBetray.kingBetray(); break;
+            case "castleGuardFight": CastleGuardFight.castleGuardFight(); break;
+            case "castleGuardEncounter": CastleGuardEncounter.castleGuardEncounter(); break;
+            case "kingAdopt": KingAdopt.kingAdopt(); break;
+            case "snuggleDogMax": SnuggleDogMax.snuggleDogMax(); break;
+            case "mountains": Mountains.mountains(); break;
+            case "playFetch": PlayFetch.playFetch(); break;
+            case "mountainPass": MountainPass.mountainPass(); break;
             case "trollFight": TrollFight.trollFight(); break;
+            case "trollWin": TrollWin.trollWin(); break;
+            case "hideout": Hideout.hideout(); break;
+            case "noSoliciting": NoSoliciting.noSoliciting(); break;
+            case "banditGruntOneEncounter": BanditGruntOneEncounter.banditGruntOneEncounter(); break;
+            case "banditGruntTwoEncounter": BanditGruntTwoEncounter.banditGruntTwoEncounter(); break;
+            case "banditGruntFight": BanditGruntFight.banditGruntFight(); break;
+            case "banditLeaderEncounter": BanditLeaderEncounter.banditLeaderEncounter(); break;
+            case "banditLeaderCompanion": BanditLeaderCompanion.banditLeaderCompanion(); break;
         }
     }
 }
