@@ -27,10 +27,6 @@ public class Spouse extends SuperLocation{
 
 
         if (BlackBerriesQuest == 0 && CoatQuest == 0 && VetVisitQuest == 0) {
-            spouseTips.add("Spouse:\n\"Don't forget the blackberries! I always have luck when looking in the forest.\"");
-            spouseTips.add("Spouse:\n\"If you feel worn out, try snuggling with your dog.\"");
-            spouseTips.add("Spouse:\n\"Remember, you need a new coat. It is already snowing in the mountains. It should be easy to find one at market.\"");
-
             VetVisitQuest = 1;
             ui.vetQuestTitleLabel.setText("Pup-uprofen");
             ui.vetQuestObjectiveLabel.setText("  + visit the royal vet");
@@ -48,12 +44,10 @@ public class Spouse extends SuperLocation{
 
             game.nextPosition1 = "farmHouse";
 
-            if(i <= spouseTips.size()) {
-                ui.mainTextArea.setText(spouseTips.get(i));
-                i = i + 1;
-                if(i == spouseTips.size()){
-                    i = 0;
-                }
+            ui.mainTextArea.setText(spouseTips.get(i));
+            i = i + 1;
+            if(i >= spouseTips.size()){
+                i = 0;
             }
 
             if(BlackBerriesQuest == 2 && birthdayQuest != 2){

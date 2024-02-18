@@ -21,10 +21,12 @@ public class DebugSetup extends SuperLocation{
         ui.coinCountLabel.setText(coins + "");
         player.currentWeapon = new Weapon_ChaosWand();
         ui.weaponNameLabel.setText(player.currentWeapon.name);
-        boughtCoat = true;
         trollDead = true;
         stopSoundEffect();
         dogPoints = 3;
-        Crossroads.crossroads();
+        coins = 20;
+        spouseGift = true;
+        boughtCoat = true;
+        Hideout.hideout();
     }
 }

@@ -14,9 +14,11 @@ public class BuyCoat extends SuperLocation{
     public static void buyCoat(){
         if(bearDead == true && coins >= 10) {
             boughtCoat = true;
+            CoatQuest = 2;
             coins = coins - 10;
             ui.coinCountLabel.setText(coins + "");
-            ui.coatQuestObjectiveLabel.setText("  + complete");
+            ui.coatQuestObjectiveLabel.setText("");
+            spouseTips.remove("Spouse:\n\"Remember, you need a new coat. It is already snowing in the mountains. It should be easy to find one at market.\"");
             stopSoundEffect();
             playSoundEffect(1);
 

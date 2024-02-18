@@ -18,12 +18,12 @@ public class RoyalVet extends SuperLocation{
         playSoundEffect(1);
 
         ui.mainTextArea.setText("Royal Vet:\n\"Hello NAME! I have been expecting you. I have the medicine that DOGNAME needs. Here you go, I hope he feels better soon.\"\n[You obtained dog medicine]");
-        ui.choice1.setText("Return to farmhouse");
+        ui.choice1.setText("Continue");
         ui.choice2.setText("");
         ui.choice3.setText("");
         ui.choice4.setText("");
 
-        game.nextPosition1 = "farmHouse";
+        game.nextPosition1 = "endCredits";
         game.nextPosition2 = "";
         game.nextPosition3 = "";
         game.nextPosition4 = "";

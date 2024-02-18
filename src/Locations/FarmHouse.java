@@ -24,7 +24,7 @@ public class FarmHouse extends SuperLocation{
             game.nextPosition3 = "";
             game.nextPosition4 = "";
         }
-        else if (VetVisitQuest != 0 && BlackBerriesQuest != 0 && CoatQuest != 0 && birthdayQuest != 0 && spouseGift == false) {
+        else if (spouseGift == false) {
             ui.mainTextArea.setText("You are at your cozy farm house in the living room. DOGNAME crawls into your knapsack and you hoist it onto your back.");
             ui.choice1.setText("Talk to spouse");
             ui.choice2.setText("Snuggle with your dog");
@@ -37,7 +37,7 @@ public class FarmHouse extends SuperLocation{
             game.nextPosition4 = "";
         }
 
-        else if (VetVisitQuest != 0 && BlackBerriesQuest != 0 && CoatQuest != 0 && birthdayQuest != 0 && spouseGift == true) {
+        else if (spouseGift == true) {
             ui.mainTextArea.setText("You are at your cozy farm house in the living room.");
             ui.choice1.setText("Talk to spouse");
             ui.choice2.setText("Snuggle with your dog");

@@ -15,7 +15,7 @@ public class SuperLocation {
     public static Player player = new Player();
     public static SuperEnemy enemy;
     public static int dogPoints, coins, deathCounter, diceRoll, drunkMoney, jailTime, snuggleCount;;
-    // Quest tracking, 0 = not given, 1 = in progress, 2 = complete
+    // Quest tracking, 0 = not given, 1 = in progress, 2 = complete, 3 = over and not tracking
     public static int VetVisitQuest, BlackBerriesQuest, CoatQuest, birthdayQuest, cherriesQuest, oldHagQuest;
     public static boolean snugglePoint, bush, spouseGift, splashPoint, hasCherries, bearDead, boughtCoat, boughtFormalAttire, trollDead, trollHorn, boughtDice, boughtKeyBlade, boughtRubberChicken, hasBlackBerries, thiefDead, drunkDead, hasCrown, banditLeaderCompanion, banditLeaderDead, fetchPoint, banditGruntOneDead, banditGruntTwoDead;
     public static ArrayList<String> spouseTips = new ArrayList<String>();
@@ -28,6 +28,11 @@ public class SuperLocation {
         vm = vManager;
         soundEffect = sndfft;
         music = msc;
+
+        spouseTips.add("Spouse:\n\"Don't forget the blackberries! I always have luck when looking in the forest.\"");
+        spouseTips.add("Spouse:\n\"If you feel worn out, try snuggling with your dog.\"");
+        spouseTips.add("Spouse:\n\"Remember, you need a new coat. It is already snowing in the mountains. It should be easy to find one at market.\"");
+        spouseTips.add("Spouse:\n\"If it helps, I wear a medium, and there are only 14 hours left until my birthday.\"");
     }
 
     // The methods to play and stop both sound effects and music

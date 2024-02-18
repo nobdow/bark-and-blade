@@ -57,16 +57,11 @@ public class Game {
 }
 
 // ALPHA TO DO LIST:
-// - Hide spouse hints if quests complete
-// - finish troll fight locations
-// - add spouse receive quests (fixes broken vet at end of game)
-// - add changing enemy attack messages that are tied to damage
 // - add weapon cycling system
 // - add look for trouble thug who steals weapon and fights you with it
-// - add dog finds special weapon if you have enough companion points
 // - add random dog coughs?
 // - add run away fail chance to enemy encounters
-// -
+// - fix "null" you receive 0 damage when running away from fight before it begins
 // -
 // -
 

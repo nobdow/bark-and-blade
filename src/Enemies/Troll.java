@@ -21,10 +21,5 @@ public class Troll extends SuperEnemy {
             hp = hp + 30;
             attackMessage = "The troll recovered 30HP!";
         }
-//        else if (chance >= 2 && hp > 40) {
-//            attack = new java.util.Random().nextInt(2) + 1;
-//            attack = attack * 10;
-//            attackMessage = "The troll smashed his club into you!";
-//        }
     }
 }
