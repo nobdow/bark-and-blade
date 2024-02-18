@@ -15,7 +15,12 @@ public class SplashStream extends SuperLocation{
         if (splashPoint == false) {
             dogPoints = dogPoints + 1;
             splashPoint = true;
-            ui.mainTextArea.setText("Your dog loved paying in the water. He is now more loyal to you.");
+            if(dogPoints == 3) {
+                ui.mainTextArea.setText("Your dog loved paying in the water. He is now more loyal to you but is barking and trying to get your attention. It seems like he is on the scent trail for something. He wants you to go to either the forest or the mountains, you cannot tell.\n[Companion point earned]");
+            }
+            else if(dogPoints != 3){
+                ui.mainTextArea.setText("Your dog loved paying in the water. He is now more loyal to you.\n[Companion point earned]");
+            }
         }
         else if (splashPoint == true) {
             ui.mainTextArea.setText("Your dog loved paying in the water.");

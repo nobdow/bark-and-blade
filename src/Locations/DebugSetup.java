@@ -24,6 +24,7 @@ public class DebugSetup extends SuperLocation{
         boughtCoat = true;
         trollDead = true;
         stopSoundEffect();
-        MountainPass.mountainPass();
+        dogPoints = 3;
+        Crossroads.crossroads();
     }
 }

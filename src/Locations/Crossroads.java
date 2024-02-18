@@ -29,7 +29,7 @@ public class Crossroads extends SuperLocation{
         else if(bush == true){
             ui.choice1.setText("Go into town");
             ui.choice2.setText("Go to the forest");
-            ui.choice3.setText("WIP // Go up to the mountains");
+            ui.choice3.setText("Go up to the mountains");
             ui.choice4.setText("Go to your farmhouse");
 
             game.nextPosition1 = "town";

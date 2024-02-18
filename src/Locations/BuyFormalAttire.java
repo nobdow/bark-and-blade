@@ -19,6 +19,7 @@ public class BuyFormalAttire extends SuperLocation{
             ui.coinCountLabel.setText(coins + "");
             stopSoundEffect();
             playSoundEffect(4);
+            birthdayQuest = 2;
 
             ui.mainTextArea.setText("Tailor:\n\"Whoever you are going to give this too is going to really like it.\"");
             ui.choice1.setText("Continue");

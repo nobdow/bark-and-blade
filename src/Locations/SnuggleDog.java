@@ -23,15 +23,24 @@ public class SnuggleDog extends SuperLocation{
                 ui.hpNumberLabel.setText("" + player.hp);
                 snugglePoint = true;
                 dogPoints = dogPoints + 1;
-
-                ui.mainTextArea.setText("A quick rest can't hurt.\n\nDOGNAME:\n*Woof in agreeance*\n\nYou wake up feeling fantastic and your dog seems more loyal for the affection.\n[HP restored and companion point earned]");
+                if(dogPoints == 3) {
+                    ui.mainTextArea.setText("A quick rest can't hurt. Your dog seems more loyal for the affection but is barking and trying to get your attention. It seems like he is on the scent trail for something. He wants you to go to either the forest or the mountains, you cannot tell.\n[HP restored and companion point earned]");
+                }
+                else if(dogPoints != 3){
+                    ui.mainTextArea.setText("A quick rest can't hurt.\n\nDOGNAME:\n*Woof in agreeance*\n\nYou wake up feeling fantastic and your dog seems more loyal for the affection.\n[HP restored and companion point earned]");
+                }
 
             } else if (player.hp >= player.maxHP & snugglePoint == false) {
                 snuggleCount = snuggleCount + 1;
                 snugglePoint = true;
                 dogPoints = dogPoints + 1;
+                if(dogPoints == 3) {
+                    ui.mainTextArea.setText("You feel great and your dog feels more loyal for the snuggles but is barking and trying to get your attention. It seems like he is on the scent trail for something. He wants you to go to either the forest or the mountains, you cannot tell.\n[Companion point earned]");
+                }
+                else if(dogPoints != 3){
+                    ui.mainTextArea.setText("You feel great and your dog feels more loyal for the snuggles.\n[Companion point earned]");
+                }
 
-                ui.mainTextArea.setText("You feel great and your dog feels more loyal for the snuggles\n[companion point earned]");
 
             } else if (player.hp < player.maxHP && snugglePoint == true) {
                 snuggleCount = snuggleCount + 1;
