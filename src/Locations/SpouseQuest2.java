@@ -18,7 +18,7 @@ public class SpouseQuest2 extends SuperLocation{
         ui.coatQuestTitleLabel.setText("Winter is Coming");
         ui.coatQuestObjectiveLabel.setText("  + obtain a coat");
 
-        ui.mainTextArea.setText("Spouse:\n\"By the way, winter is coming, so you need a new coat! It is already snowing in the mountains. Brr. The tailor mentioned a new merch drop this week. Check it out!\"");
+        ui.mainTextArea.setText(player.spouseName + ":\n\"By the way, winter is coming, so you need a new coat! It is already snowing in the mountains. Brr. The tailor mentioned a new merch drop this week. Check it out!\"");
         ui.choice1.setText("No problem, \"Accept Quest(s)\"");
         ui.choice2.setText("");
         ui.choice3.setText("");

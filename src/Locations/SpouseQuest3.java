@@ -18,7 +18,7 @@ public class SpouseQuest3 extends SuperLocation{
         ui.presentQuestTitleLabel.setText("That's tomorrow!?!");
         ui.presentQuestObjectiveLabel.setText("  + obtain a gift");
 
-        ui.mainTextArea.setText("Spouse:\n\"Last thing! While grabbing your coat, if you see something I'd like, it wouldn't hurt my feelings if you got me something fun and new! It is my birthday tomorrow.\"");
+        ui.mainTextArea.setText(player.spouseName + ":\n\"Last thing! While grabbing your coat, if you see something I'd like, it wouldn't hurt my feelings if you got me something fun and new! It is my birthday tomorrow.\"");
         ui.choice1.setText("Birthday Quest!");
         ui.choice2.setText("");
         ui.choice3.setText("");

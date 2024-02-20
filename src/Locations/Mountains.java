@@ -21,7 +21,7 @@ public class Mountains extends SuperLocation{
             playSoundEffect(4);
             dogPoints = dogPoints + 1;
 
-            ui.mainTextArea.setText("DOGNAME:\n\"Woof woof!\"\n\nIt looks like your dog has found a new weapon. It is a shiny silver mace!\n[You obtained a heavy mace]");
+            ui.mainTextArea.setText(player.dogName + ":\n\"Woof woof!\"\n\nIt looks like your dog has found a new weapon. It is a shiny silver mace!\n[You obtained a heavy mace]");
             ui.choice1.setText("Continue");
             ui.choice2.setText("");
             ui.choice3.setText("");

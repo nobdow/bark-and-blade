@@ -12,7 +12,7 @@ public class SnuggleDogMax extends SuperLocation{
     }
 
     public static void snuggleDogMax(){
-        ui.mainTextArea.setText("Snuggles with your dog really are the best. You got so cozy, you fell asleep, and just kept sleeping...");
+        ui.mainTextArea.setText("Snuggles with " + player.dogName + " really are the best. You got so cozy, you fell asleep, and just kept sleeping...");
         ui.choice1.setText("Restart");
         ui.choice2.setText("");
         ui.choice3.setText("");

@@ -14,8 +14,8 @@ public class FarmHouse extends SuperLocation{
     public static void farmHouse(){
         if(VetVisitQuest == 0 && BlackBerriesQuest == 0 && CoatQuest == 0 && birthdayQuest == 0) {
             ui.mainTextArea.setText("You are at your cozy farm house in the living room.");
-            ui.choice1.setText("Talk to spouse");
-            ui.choice2.setText("Snuggle with your dog");
+            ui.choice1.setText("Talk to " + player.spouseName);
+            ui.choice2.setText("Snuggle with " + player.dogName);
             ui.choice3.setText("");
             ui.choice4.setText("");
 
@@ -25,9 +25,9 @@ public class FarmHouse extends SuperLocation{
             game.nextPosition4 = "";
         }
         else if (spouseGift == false) {
-            ui.mainTextArea.setText("You are at your cozy farm house in the living room. DOGNAME crawls into your knapsack and you hoist it onto your back.");
-            ui.choice1.setText("Talk to spouse");
-            ui.choice2.setText("Snuggle with your dog");
+            ui.mainTextArea.setText("You are at your cozy farm house in the living room. " + player.dogName + " crawls into your knapsack and you hoist it onto your back.");
+            ui.choice1.setText("Talk to " + player.spouseName);
+            ui.choice2.setText("Snuggle with " + player.dogName);
             ui.choice3.setText("Leave");
             ui.choice4.setText("");
 
@@ -39,8 +39,8 @@ public class FarmHouse extends SuperLocation{
 
         else if (spouseGift == true) {
             ui.mainTextArea.setText("You are at your cozy farm house in the living room.");
-            ui.choice1.setText("Talk to spouse");
-            ui.choice2.setText("Snuggle with your dog");
+            ui.choice1.setText("Talk to " + player.spouseName);
+            ui.choice2.setText("Snuggle with " + player.dogName);
             ui.choice3.setText("Leave");
             ui.choice4.setText("");
 

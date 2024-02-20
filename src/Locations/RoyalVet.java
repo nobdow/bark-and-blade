@@ -17,7 +17,7 @@ public class RoyalVet extends SuperLocation{
         stopSoundEffect();
         playSoundEffect(1);
 
-        ui.mainTextArea.setText("Royal Vet:\n\"Hello NAME! I have been expecting you. I have the medicine that DOGNAME needs. Here you go, I hope he feels better soon.\"\n[You obtained dog medicine]");
+        ui.mainTextArea.setText("Royal Vet:\n\"Hello NAME! I have been expecting you. I have the medicine that " + player.dogName + " needs. Here you go, I hope he feels better soon.\"\n[You obtained dog medicine]");
         ui.choice1.setText("Continue");
         ui.choice2.setText("");
         ui.choice3.setText("");

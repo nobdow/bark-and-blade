@@ -19,7 +19,7 @@ public class BushWand extends SuperLocation{
         playSoundEffect(4);
 
         ui.mainTextArea.setText("A beautiful maple wand falls out of the bush. It seems to be humming with magic. You have read about magic wands before, now you have one of your own! If only you could predict what it could do...\n[You obtained the chaos wand]");
-        ui.choice1.setText("You're a wizard PLAYERNAME!");
+        ui.choice1.setText("You're a wizard " + player.playerName + "!");
         ui.choice2.setText("");
         ui.choice3.setText("");
         ui.choice4.setText("");

@@ -21,7 +21,7 @@ public class Forest extends SuperLocation{
             playSoundEffect(4);
             dogPoints = dogPoints + 1;
 
-            ui.mainTextArea.setText("DOGNAME:\n\"Woof woof!\"\n\nIt looks like your dog has found a new weapon. It is a super sharp stick!\n[You obtained a really pointy stick]");
+            ui.mainTextArea.setText(player.dogName + ":\n\"Woof woof!\"\n\nIt looks like your dog has found a new weapon. It is a super sharp stick!\n[You obtained a really pointy stick]");
             ui.choice1.setText("Continue");
             ui.choice2.setText("");
             ui.choice3.setText("");
@@ -37,7 +37,7 @@ public class Forest extends SuperLocation{
             ui.mainTextArea.setText("You hear the pleasant gurgling of a mountain stream. Soon, the small river crosses your path and a simple bridge lies before you.");
             ui.choice1.setText("Cross the bridge");
             ui.choice2.setText("Drink the fresh water");
-            ui.choice3.setText("Let DOGNAME go for a swim");
+            ui.choice3.setText("Let " + player.dogName + " go for a swim");
             ui.choice4.setText("Go to the crossroads");
 
             game.nextPosition1 = "clearing";

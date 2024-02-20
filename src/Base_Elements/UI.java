@@ -1,7 +1,9 @@
 package Base_Elements;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.*;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -9,17 +11,16 @@ public class UI {
 
     JFrame window;
     Container con;
-    public JPanel titleNamePanel, startButtonPanel, debugButtonPanel, mainTextPanel, choiceButtonPanel, playerPanel, exampleImagePanel, questLogPanel,inputPanel;
+    public JPanel titleNamePanel, startButtonPanel, debugButtonPanel, mainTextPanel, choiceButtonPanel, playerPanel, exampleImagePanel, questLogPanel,inputPanel, inputButtonPanel;
     public JLabel titleNameLabel, hpLabel, hpNumberLabel, weaponLabel, weaponNameLabel, coinLabel, coinCountLabel, exampleImageLabel, questLogLabel, vetQuestTitleLabel, vetQuestObjectiveLabel, blackberriesQuestTitleLabel, blackberriesQuestObjectiveLabel, coatQuestTitleLabel, coatQuestObjectiveLabel, presentQuestTitleLabel, presentQuestObjectiveLabel;
-    public JButton startButton, debugButton, choice1, choice2, choice3, choice4;
+    public JButton startButton, debugButton, inputButton, choice1, choice2, choice3, choice4;
     public JTextArea mainTextArea;
-    public JTextField inputField;
+    public JTextField inputPlayerNameField, inputSpouseNameField, inputDogNameField, number4;
     Font titleFont = new Font("Alagard", Font.PLAIN,150);
     Font startFont = new Font("Alagard", Font.PLAIN,70);
     Font debugFont = new Font("Alagard", Font.PLAIN,57);
     Font normalFont = new Font("Alagard", Font.PLAIN,45);
     Font statFont = new Font("Alagard", Font.PLAIN,35);
-    Font Alagard;
 
     ImageIcon icon = new ImageIcon(getClass().getResource("/images/Example Logo.png"));
     ImageIcon exampleImage;
@@ -82,6 +83,120 @@ public class UI {
         window.add(startButtonPanel);
         window.add(debugButtonPanel);
 
+        //Input screen
+        inputButtonPanel = new JPanel();
+        inputButtonPanel.setBounds(810,790,300,150);
+        inputButtonPanel.setBackground(Color.black);
+        inputButton = new JButton("Submit");
+        inputButton.setBackground(Color.black);
+        inputButton.setForeground(Color.white);
+        inputButton.setFont(normalFont);
+        inputButton.setFocusPainted(false);
+        inputButton.addActionListener(cHandler);
+        inputButton.setActionCommand("submit");
+        inputButtonPanel.add(inputButton);
+
+        inputPanel = new JPanel();
+        inputPanel.setBounds(760,350,400,375);
+        inputPanel.setBackground(Color.black);
+        inputPanel.setLayout(new GridLayout(3,1));
+
+        inputPlayerNameField = new JTextField();
+        inputPlayerNameField.setBorder(BorderFactory.createLineBorder(Color.black, 15));
+        inputPlayerNameField.setFont(statFont);
+        inputPlayerNameField.setText("Your Name");
+        inputPlayerNameField.setHorizontalAlignment(SwingConstants.CENTER);
+        inputPlayerNameField.setBackground(Color.white);
+        inputPlayerNameField.setForeground(Color.black);
+        inputPlayerNameField.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (inputPlayerNameField.getText().equals("Your Name")) {
+                    inputPlayerNameField.setText("");
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (inputPlayerNameField.getText().isEmpty()) {
+                    inputPlayerNameField.setText("Your Name");
+                }
+            }
+        });
+        inputPanel.add(inputPlayerNameField);
+
+        inputSpouseNameField = new JTextField();
+        inputSpouseNameField.setBorder(BorderFactory.createLineBorder(Color.black, 15));
+        inputSpouseNameField.setFont(statFont);
+        inputSpouseNameField.setText("Spouse Name");
+        inputSpouseNameField.setHorizontalAlignment(SwingConstants.CENTER);
+        inputSpouseNameField.setBackground(Color.white);
+        inputSpouseNameField.setForeground(Color.black);
+        inputSpouseNameField.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (inputSpouseNameField.getText().equals("Spouse Name")) {
+                    inputSpouseNameField.setText("");
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (inputSpouseNameField.getText().isEmpty()) {
+                    inputSpouseNameField.setText("Spouse Name");
+                }
+            }
+        });
+        inputPanel.add(inputSpouseNameField);
+
+        inputDogNameField = new JTextField();
+        inputDogNameField.setBorder(BorderFactory.createLineBorder(Color.black, 15));
+        inputDogNameField.setFont(statFont);
+        inputDogNameField.setText("Dog Name");
+        inputDogNameField.setHorizontalAlignment(SwingConstants.CENTER);
+        inputDogNameField.setBackground(Color.white);
+        inputDogNameField.setForeground(Color.black);
+        inputDogNameField.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (inputDogNameField.getText().equals("Dog Name")) {
+                    inputDogNameField.setText("");
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (inputDogNameField.getText().isEmpty()) {
+                    inputDogNameField.setText("Dog Name");
+                }
+            }
+        });
+        inputPanel.add(inputDogNameField);
+
+//        number4 = new JTextField();
+//        number4.setBackground(Color.black);
+//        inputPanel.add(number4);
+//        number4.addFocusListener(new FocusListener() {
+//            @Override
+//            public void focusGained(FocusEvent e) {
+//                if (number4.getText().equals("number4")) {
+//                    number4.setText("");
+//                }
+//            }
+//
+//            @Override
+//            public void focusLost(FocusEvent e) {
+//                if (number4.getText().isEmpty()) {
+//                    number4.setText("number4");
+//                }
+//            }
+//        });
+
+
+        window.add(inputPanel);
+        window.add(inputButtonPanel);
+
+
         //Game screen
         mainTextPanel = new JPanel();
         mainTextPanel.setBounds(560,150,900,450);
@@ -98,14 +213,6 @@ public class UI {
         mainTextArea.setEditable(false);
         mainTextPanel.add(mainTextArea);
 
-        inputPanel = new JPanel();
-        inputPanel.setBounds(585,500,750,50);
-        inputPanel.setBackground(Color.blue);
-        inputPanel.setLayout(new GridLayout(1,2));
-
-        inputField = new JTextField();
-        inputPanel.add(inputField);
-        window.add(inputPanel);
 
         choiceButtonPanel = new JPanel();
         choiceButtonPanel.setBounds(585,600,750,350);

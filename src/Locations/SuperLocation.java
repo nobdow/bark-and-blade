@@ -29,10 +29,10 @@ public class SuperLocation {
         soundEffect = sndfft;
         music = msc;
 
-        spouseTips.add("Spouse:\n\"Don't forget the blackberries! I always have luck when looking in the forest.\"");
-        spouseTips.add("Spouse:\n\"If you feel worn out, try snuggling with your dog.\"");
-        spouseTips.add("Spouse:\n\"Remember, you need a new coat. It is already snowing in the mountains. It should be easy to find one at market.\"");
-        spouseTips.add("Spouse:\n\"If it helps, I wear a medium, and there are only 14 hours left until my birthday.\"");
+        spouseTips.add(("\n\"Don't forget the blackberries! I always have luck when looking in the forest.\""));
+        spouseTips.add("\n\"If you feel worn out, try snuggling with " + player.dogName + ".\"");
+        spouseTips.add("\n\"Remember, you need a new coat. It is already snowing in the mountains. It should be easy to find one at market.\"");
+        spouseTips.add("\n\"If it helps, I wear a medium, and there are only 14 hours left until my birthday.\"");
     }
 
     // The methods to play and stop both sound effects and music

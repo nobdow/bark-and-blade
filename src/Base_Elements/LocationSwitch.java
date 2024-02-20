@@ -21,6 +21,7 @@ public class LocationSwitch {
 
     public void selectPosition(String nextPosition){
         switch(nextPosition){
+            case "userInput": UserInput.userInput(); break;
             case "intro1": Intro1.intro1(); break;
             case "intro2": Intro2.intro2(); break;
             case "intro3": Intro3.intro3(); break;

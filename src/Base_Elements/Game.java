@@ -18,6 +18,8 @@ public class Game {
    SuperLocation superLocation = new SuperLocation(this, ui, vm, music, soundEffect);
    LocationSwitch story = new LocationSwitch(this, ui, vm, music, soundEffect);
 
+   public static Player player = new Player();
+
    public String nextPosition1;
    public String nextPosition2;
    public String nextPosition3;
@@ -31,8 +33,8 @@ public class Game {
     public Game() {
 
         ui.createUI(cHandler);
-        DefaultSetup.defaultSetup();
         vm.showTitleScreen();
+        DefaultSetup.defaultSetup();
     }
 
     public class ChoiceHandler implements ActionListener{
@@ -45,12 +47,33 @@ public class Game {
             soundEffect.play();
 
             switch(yourChoice){
-                case "start": vm.titleToMainScreen(); Intro1.intro1(); String playerName = ui.inputField.getText(); break;
-                case "debug": vm.titleToMainScreen(); DebugSetup.debugSetup(); break;
-                case "c1": story.selectPosition(nextPosition1); break;
-                case "c2": story.selectPosition(nextPosition2); break;
-                case "c3": story.selectPosition(nextPosition3); break;
-                case "c4": story.selectPosition(nextPosition4); break;
+                case "start":
+                    vm.showMainScreen();
+                    UserInput.userInput();
+                    break;
+                case "debug":
+                    vm.showMainScreen();
+                    DebugSetup.debugSetup();
+                    break;
+                case "submit":
+                    vm.showMainScreen();
+                    player.playerName = ui.inputPlayerNameField.getText();
+                    player.spouseName = ui.inputSpouseNameField.getText();
+                    player.dogName = ui.inputDogNameField.getText();
+                    Intro1.intro1();
+                    break;
+                case "c1":
+                    story.selectPosition(nextPosition1);
+                    break;
+                case "c2":
+                    story.selectPosition(nextPosition2);
+                    break;
+                case "c3":
+                    story.selectPosition(nextPosition3);
+                    break;
+                case "c4":
+                    story.selectPosition(nextPosition4);
+                    break;
             }
         }
     }

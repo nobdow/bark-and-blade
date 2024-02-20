@@ -12,9 +12,8 @@ public class Intro1 extends SuperLocation{
     }
 
     public static void intro1(){
-        stopSoundEffect();
-
-        ui.mainTextArea.setText("Hello " + Game.ChoiceHandler + "\n\nIn the kingdom of Eriduun, a peaceful realm ruled by King Oswin the Noble, a dark shadow looms over the land. The legendary Crown of Radiance has been stolen!");
+        vm.showMainScreen();
+        ui.mainTextArea.setText("In the kingdom of Eriduun, a peaceful realm ruled by King Oswin the Noble, a dark shadow looms over the land. The legendary Crown of Radiance has been stolen!");
         ui.choice1.setText("Continue");
         ui.choice2.setText("");
         ui.choice3.setText("");

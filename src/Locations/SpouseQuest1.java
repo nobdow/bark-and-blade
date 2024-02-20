@@ -18,7 +18,7 @@ public class SpouseQuest1 extends SuperLocation {
         ui.blackberriesQuestTitleLabel.setText("Ye Olde Grocer");
         ui.blackberriesQuestObjectiveLabel.setText("  + obtain blackberries");
 
-        ui.mainTextArea.setText("Spouse:\n\"Oh, also, I need black berries for cobbler tonight. Can you swing by the market and get some for me?\"");
+        ui.mainTextArea.setText(player.spouseName + ":\n\"Oh, also, I need black berries for cobbler tonight. Can you swing by the market and get some for me?\"");
         ui.choice1.setText("Oops, now \"Accept Quest\"");
         ui.choice2.setText("");
         ui.choice3.setText("");

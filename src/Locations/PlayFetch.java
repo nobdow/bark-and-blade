@@ -16,14 +16,14 @@ public class PlayFetch extends SuperLocation{
             dogPoints = dogPoints + 1;
             fetchPoint = true;
             if(dogPoints == 3) {
-                ui.mainTextArea.setText("Fetch has to be DOGNAME's favorite game. He is now more loyal to you but is barking and trying to get your attention. It seems like he is on the scent trail for something. He wants you to go to either the forest or the mountains, you cannot tell.\n[Companion point earned]");
+                ui.mainTextArea.setText("Fetch has to be " + player.dogName + "'s favorite game. He is now more loyal to you but is barking and trying to get your attention. It seems like he is on the scent trail for something. He wants you to go to either the forest or the mountains, you cannot tell.\n[Companion point earned]");
             }
             else if(dogPoints != 3){
-                ui.mainTextArea.setText("Fetch has to be DOGNAME's favorite game. He is now more loyal to you.\n[Companion point earned]");
+                ui.mainTextArea.setText("Fetch has to be " + player.dogName + "'s favorite game. He is now more loyal to you.\n[Companion point earned]");
             }
         }
         else if (fetchPoint == true) {
-            ui.mainTextArea.setText("Fetch has to be DOGNAME's favorite game.");
+            ui.mainTextArea.setText("Fetch has to be " + player.dogName + "'s favorite game.");
         }
 
         ui.choice1.setText("Continue");

@@ -33,7 +33,7 @@ public class Spouse extends SuperLocation{
             stopSoundEffect();
             playSoundEffect(1);
 
-            ui.mainTextArea.setText("Spouse:\n\"Good morning dear! I hate to be a bother but don't forget that DOGNAME has an appointment in the castle with the King's Vet. It is important to get his medicine so he gets over this cold. DOGNAME loves riding in your knapsack so he should be no trouble to bring along\"");
+            ui.mainTextArea.setText(player.spouseName + ":\n\"Good morning dear! I hate to be a bother but don't forget that " + player.dogName + " has an appointment in the castle with the King's Vet. It is important to get his medicine so he gets over this cold. " + player.dogName + " loves riding in your knapsack so he should be no trouble to bring along\"");
             ui.choice1.setText("Accept Quest");
 
             game.nextPosition1 = "spouseQuest1";
@@ -44,7 +44,7 @@ public class Spouse extends SuperLocation{
 
             game.nextPosition1 = "farmHouse";
 
-            ui.mainTextArea.setText(spouseTips.get(i));
+            ui.mainTextArea.setText(player.spouseName + ":" + spouseTips.get(i));
             i = i + 1;
             if(i >= spouseTips.size()){
                 i = 0;
@@ -53,9 +53,9 @@ public class Spouse extends SuperLocation{
             if(BlackBerriesQuest == 2 && birthdayQuest != 2){
                 ui.blackberriesQuestObjectiveLabel.setText("");
                 BlackBerriesQuest = 3;
-                spouseTips.remove("Spouse:\n\"Don't forget the blackberries! I always have luck when looking in the forest.\"");
+                spouseTips.remove(player.spouseName + ":\n\"Don't forget the blackberries! I always have luck when looking in the forest.\"");
 
-                ui.mainTextArea.setText("SPOUSENAME:\n\"Thank you so much for getting these blackberries. You are the best!\"");
+                ui.mainTextArea.setText(player.spouseName + ":\n\"Thank you so much for getting these blackberries. You are the best!\"");
                 ui.choice1.setText("Continue");
 
                 game.nextPosition1 = "farmHouse";
@@ -65,7 +65,7 @@ public class Spouse extends SuperLocation{
                 birthdayQuest = 3;
                 ui.presentQuestObjectiveLabel.setText("");
 
-                ui.mainTextArea.setText("SPOUSENAME:\n\"Oh you shouldn't have! What a wonderful birthday gift. You know me so well!\"");
+                ui.mainTextArea.setText(player.spouseName + ":\n\"Oh you shouldn't have! What a wonderful birthday gift. You know me so well!\"");
                 ui.choice1.setText("Continue");
                 game.nextPosition1 = "farmHouse";
             }
@@ -75,16 +75,12 @@ public class Spouse extends SuperLocation{
                 ui.blackberriesQuestObjectiveLabel.setText("");
                 birthdayQuest = 3;
                 BlackBerriesQuest = 3;
-                spouseTips.remove("Spouse:\n\"Don't forget the blackberries! I always have luck when looking in the forest.\"");
+                spouseTips.remove(player.spouseName + ":\n\"Don't forget the blackberries! I always have luck when looking in the forest.\"");
 
-                ui.mainTextArea.setText("SPOUSENAME:\n\"Oh you shouldn't have! What a wonderful birthday gift. You know me so well! Oh and thank you so much for getting these blackberries. You are the best!\"");
+                ui.mainTextArea.setText(player.spouseName + ":\n\"Oh you shouldn't have! What a wonderful birthday gift. You know me so well! Oh and thank you so much for getting these blackberries. You are the best!\"");
                 ui.choice1.setText("Continue");
                 game.nextPosition1 = "farmHouse";
             }
-
-
-
-
         }
     }
 }

@@ -15,7 +15,7 @@ public class Bush extends SuperLocation{
         bush = true;
         int bushFind = new java.util.Random().nextInt(3);
 
-        ui.mainTextArea.setText("Dog:\n\"Woof woof!\"\n\nYour dog seems to be barking at a bush.");
+        ui.mainTextArea.setText(player.dogName + ":\n\"Woof woof!\"\n\nYour dog seems to be barking at a bush.");
         ui.choice1.setText("Shake the bush");
         ui.choice2.setText("Avoid the bush");
         ui.choice3.setText("");
