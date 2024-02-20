@@ -106,6 +106,8 @@ public class LocationSwitch {
             case "banditLeaderCompanion": BanditLeaderCompanion.banditLeaderCompanion(); break;
             case "endCredits": EndCredits.endCredits(); break;
             case "banditGruntFailedEscape": BanditGruntFailedEscape.banditGruntFailedEscape(); break;
+            case "forestBanditFailedEscape": ForestBanditFailedEscape.forestBanditFailedEscape(); break;
+            case "trollFailedEscape": TrollFailedEscape.trollFailedEscape(); break;
         }
     }
 }

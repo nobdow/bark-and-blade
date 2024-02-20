@@ -5,6 +5,7 @@ import Base_Elements.Sound;
 import Base_Elements.UI;
 import Base_Elements.VisibilityManager;
 import Equipment.Weapon_ChaosWand;
+import Equipment.Weapon_Knife;
 import Equipment.Weapon_None;
 
 public class DebugSetup extends SuperLocation{
@@ -19,14 +20,12 @@ public class DebugSetup extends SuperLocation{
         ui.hpNumberLabel.setText("" + player.hp);
         coins = 0;
         ui.coinCountLabel.setText(coins + "");
-        player.currentWeapon = new Weapon_ChaosWand();
+        player.currentWeapon = new Weapon_Knife();
         ui.weaponNameLabel.setText(player.currentWeapon.name);
-        trollDead = true;
         stopSoundEffect();
-        dogPoints = 3;
         coins = 20;
         spouseGift = true;
         boughtCoat = true;
-        Hideout.hideout();
+        Mountains.mountains();
     }
 }

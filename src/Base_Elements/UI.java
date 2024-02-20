@@ -8,30 +8,12 @@ import java.io.InputStream;
 public class UI {
 
     JFrame window;
-    JPanel titleNamePanel, startButtonPanel, debugButtonPanel, mainTextPanel, choiceButtonPanel, playerPanel, exampleImagePanel, questLogPanel;
-    JLabel titleNameLabel;
-    JLabel hpLabel;
-    public JLabel hpNumberLabel;
-    JLabel weaponLabel;
-    public JLabel weaponNameLabel;
-    JLabel coinLabel;
-    public JLabel coinCountLabel;
-    JLabel exampleImageLabel;
-    JLabel questLogLabel;
-    public JLabel vetQuestTitleLabel;
-    public JLabel vetQuestObjectiveLabel;
-    public JLabel blackberriesQuestTitleLabel;
-    public JLabel blackberriesQuestObjectiveLabel;
-    public JLabel coatQuestTitleLabel;
-    public JLabel coatQuestObjectiveLabel;
-    public JLabel presentQuestTitleLabel;
-    public JLabel presentQuestObjectiveLabel;
-    JButton startButton, debugButton;
-    public JButton choice1;
-    public JButton choice2;
-    public JButton choice3;
-    public JButton choice4;
+    Container con;
+    public JPanel titleNamePanel, startButtonPanel, debugButtonPanel, mainTextPanel, choiceButtonPanel, playerPanel, exampleImagePanel, questLogPanel,inputPanel;
+    public JLabel titleNameLabel, hpLabel, hpNumberLabel, weaponLabel, weaponNameLabel, coinLabel, coinCountLabel, exampleImageLabel, questLogLabel, vetQuestTitleLabel, vetQuestObjectiveLabel, blackberriesQuestTitleLabel, blackberriesQuestObjectiveLabel, coatQuestTitleLabel, coatQuestObjectiveLabel, presentQuestTitleLabel, presentQuestObjectiveLabel;
+    public JButton startButton, debugButton, choice1, choice2, choice3, choice4;
     public JTextArea mainTextArea;
+    public JTextField inputField;
     Font titleFont = new Font("Alagard", Font.PLAIN,150);
     Font startFont = new Font("Alagard", Font.PLAIN,70);
     Font debugFont = new Font("Alagard", Font.PLAIN,57);
@@ -115,6 +97,15 @@ public class UI {
         mainTextArea.setWrapStyleWord(true);
         mainTextArea.setEditable(false);
         mainTextPanel.add(mainTextArea);
+
+        inputPanel = new JPanel();
+        inputPanel.setBounds(585,500,750,50);
+        inputPanel.setBackground(Color.blue);
+        inputPanel.setLayout(new GridLayout(1,2));
+
+        inputField = new JTextField();
+        inputPanel.add(inputField);
+        window.add(inputPanel);
 
         choiceButtonPanel = new JPanel();
         choiceButtonPanel.setBounds(585,600,750,350);

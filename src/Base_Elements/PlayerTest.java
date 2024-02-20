@@ -1,17 +1,10 @@
 package Base_Elements;
 
-import Equipment.*;
-
-//public class Player {
-//
-//    public static int hp;
-//    public static int maxHP;
-//    public SuperWeapon currentWeapon;
-//}
+import Equipment.SuperWeapon;
 
 import java.util.ArrayList;
 
-public class Player {
+public class PlayerTest {
 
     public static int hp;
     public static int maxHP;

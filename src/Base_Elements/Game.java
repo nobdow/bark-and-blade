@@ -45,7 +45,7 @@ public class Game {
             soundEffect.play();
 
             switch(yourChoice){
-                case "start": vm.titleToMainScreen(); Intro1.intro1(); break;
+                case "start": vm.titleToMainScreen(); Intro1.intro1(); String playerName = ui.inputField.getText(); break;
                 case "debug": vm.titleToMainScreen(); DebugSetup.debugSetup(); break;
                 case "c1": story.selectPosition(nextPosition1); break;
                 case "c2": story.selectPosition(nextPosition2); break;
@@ -59,14 +59,11 @@ public class Game {
 // ALPHA TO DO LIST:
 // - add weapon cycling system
 // - add look for trouble thug who steals weapon and fights you with it
-// - add random dog coughs?
-// - add run away fail chance to enemy encounters
-// - fix "null" you receive 0 damage when running away from fight before it begins
 // -
 // -
 
 // BETA TO DO LIST:
-// -
+// - add light and heavy attacks with stamina
 // -
 // -
 // -

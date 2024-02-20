@@ -59,12 +59,12 @@ public class BanditLeaderFight extends SuperLocation{
         else if(enemy.hp > 0 && player.hp > 0 && banditLeaderCompanion == false) {
             ui.mainTextArea.setText(player.currentWeapon.attackMessage + "\n\n" + enemy.attackMessage + " You received " + enemy.attack + " damage!\n\n" + enemy.name + ": " + enemy.hp + " HP");
             ui.choice1.setText("Attack again");
-            ui.choice2.setText("Run Away");
+            ui.choice2.setText("");
             ui.choice3.setText("");
             ui.choice4.setText("");
 
             game.nextPosition1 = "banditLeaderFight";
-            game.nextPosition2 = "hideout";
+            game.nextPosition2 = "";
             game.nextPosition3 = "";
             game.nextPosition4 = "";
         }

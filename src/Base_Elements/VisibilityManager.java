@@ -15,6 +15,7 @@ public class VisibilityManager {
         ui.titleNamePanel.setVisible(true);
         ui.startButtonPanel.setVisible(true);
         ui.debugButtonPanel.setVisible(true);
+        ui.inputPanel.setVisible(true);
 
         //Hide game screen
         ui.mainTextPanel.setVisible(false);

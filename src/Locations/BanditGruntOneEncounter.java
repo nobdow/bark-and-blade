@@ -23,16 +23,7 @@ public class BanditGruntOneEncounter extends SuperLocation{
             ui.choice4.setText("");
 
             game.nextPosition1 = "banditGruntFight";
-
-            int escapeChange = new Random().nextInt(5) + 1;
-            if(escapeChange <= 2) {
-                game.nextPosition2 = "banditGruntFailedEscape";
-            }
-
-            else if(escapeChange >= 3) {
-                game.nextPosition2 = "hideout";
-            }
-
+            game.nextPosition2 = "hideout";
             game.nextPosition3 = "";
             game.nextPosition4 = "";
     }

@@ -5,6 +5,8 @@ import Base_Elements.Sound;
 import Base_Elements.UI;
 import Base_Elements.VisibilityManager;
 
+import java.util.Random;
+
 public class TrollFight extends SuperLocation{
 
     public TrollFight(Game g, UI userInterface, VisibilityManager vManager, Sound sndfft, Sound msc) {
@@ -64,7 +66,16 @@ public class TrollFight extends SuperLocation{
             ui.choice4.setText("");
 
             game.nextPosition1 = "trollFight";
-            game.nextPosition2 = "mountain";
+
+            int escapeChange = new Random().nextInt(5) + 1;
+            if(escapeChange <= 2) {
+                game.nextPosition2 = "trollFailedEscape";
+            }
+
+            else if(escapeChange >= 3) {
+                game.nextPosition2 = "mountains";
+            }
+
             game.nextPosition3 = "";
             game.nextPosition4 = "";
         }
