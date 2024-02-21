@@ -11,7 +11,7 @@ public class Weapon_HeavyMace extends SuperWeapon {
     }
 
     @Override
-    public void Damage(){
+    public int Damage(){
         if(chargeUp == 0){
             chargeUp = chargeUp + 1;
             damage = 0;
@@ -22,6 +22,7 @@ public class Weapon_HeavyMace extends SuperWeapon {
             damage  = 100;
             attackMessage = ("You bludgeon with your mace and it dealt " + damage + " damage.");
         }
+        return 0;
     }
 }
 

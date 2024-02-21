@@ -6,13 +6,15 @@ public class Weapon_None extends SuperWeapon {
 
         name = "None";
         attackSpeed = 1;
+        equipped = false;
     }
 
     @Override
-    public void Damage(){
+    public int Damage(){
         //Does 10 damage
         damage  = 10;
         attackMessage = ("You punched for " + damage + " damage.");
+        return damage;
     }
 }
 

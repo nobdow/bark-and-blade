@@ -9,7 +9,7 @@ public class Weapon_DiceSet extends SuperWeapon {
     }
 
     @Override
-    public void Damage(){
+    public int Damage(){
         //Does 6-60 damage
         int d4, d6, d8, d10, d12, d20;
         d4 = new java.util.Random().nextInt(4) + 1;
@@ -22,6 +22,7 @@ public class Weapon_DiceSet extends SuperWeapon {
 
         attackMessage = ("You rolled a " + d4 + ", " + d6 + ", " + d8 + ", " + d10 + ", " + d12 + ", and " + d20 + " totalling " + damage + " damage.");
 
+        return d4;
     }
 }
 

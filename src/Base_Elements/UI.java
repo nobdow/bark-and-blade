@@ -1,11 +1,15 @@
 package Base_Elements;
 
+import Equipment.SuperWeapon;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class UI {
 
@@ -90,7 +94,7 @@ public class UI {
         inputButton = new JButton("Submit");
         inputButton.setBackground(Color.black);
         inputButton.setForeground(Color.white);
-        inputButton.setFont(normalFont);
+        inputButton.setFont(debugFont);
         inputButton.setFocusPainted(false);
         inputButton.addActionListener(cHandler);
         inputButton.setActionCommand("submit");
@@ -173,29 +177,8 @@ public class UI {
         });
         inputPanel.add(inputDogNameField);
 
-//        number4 = new JTextField();
-//        number4.setBackground(Color.black);
-//        inputPanel.add(number4);
-//        number4.addFocusListener(new FocusListener() {
-//            @Override
-//            public void focusGained(FocusEvent e) {
-//                if (number4.getText().equals("number4")) {
-//                    number4.setText("");
-//                }
-//            }
-//
-//            @Override
-//            public void focusLost(FocusEvent e) {
-//                if (number4.getText().isEmpty()) {
-//                    number4.setText("number4");
-//                }
-//            }
-//        });
-
-
         window.add(inputPanel);
         window.add(inputButtonPanel);
-
 
         //Game screen
         mainTextPanel = new JPanel();
@@ -342,6 +325,22 @@ public class UI {
         exampleImagePanel.add(exampleImageLabel);
         window.add(exampleImagePanel);
 
+
+//        ArrayList<SuperWeapon> weaponList = new ArrayList<>();
+//
+//        int weaponIndex = 2; // Assuming you want to edit the flag of the item at index 2
+//        SuperWeapon weaponToEquipped = weaponList.get(weaponIndex);
+//        weaponToEquipped.isEquipped(true); // Set the flag to true
+//
+//        Iterator<SuperWeapon> weaponIterator = weaponList.iterator();
+//        while (weaponIterator.hasNext()) {
+//            SuperWeapon weapon = weaponIterator.next();
+//            if(weapon.isEquipped(true)) {
+//                // Do something with the selected item
+//            }
+//        }
+
         window.setVisible(true);
+
     }
 }

@@ -2,11 +2,19 @@ package Equipment;
 
 public class SuperWeapon {
 
-    public String name, attackMessage;
+    public String name;
+    public String attackMessage;
     public double attackSpeed;
     public int damage;
+    public boolean equipped;
 
-    public void Damage(){
+    public int Damage(){
+        return damage;
+    }
+
+    public boolean isEquipped(boolean equipped) {
+        this.equipped = equipped;
+        return equipped;
     }
 }
 

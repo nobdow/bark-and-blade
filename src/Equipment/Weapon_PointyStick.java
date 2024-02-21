@@ -9,10 +9,11 @@ public class Weapon_PointyStick extends SuperWeapon {
     }
 
     @Override
-    public void Damage(){
+    public int Damage(){
         //Does 50 damage
         damage  = 50;
         attackMessage = ("You poked with your stick and it dealt " + damage + " damage.");
+        return 0;
     }
 }
 

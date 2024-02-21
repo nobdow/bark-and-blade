@@ -9,12 +9,13 @@ public class Weapon_KeyBlade extends SuperWeapon {
         }
 
         @Override
-        public void Damage(){
+        public int Damage(){
             //Does 30-50 damage
             damage = new java.util.Random().nextInt(3) + 3;
             damage  = damage * 10;
             attackMessage = ("You slashed with your blade and it dealt " + damage + " damage.");
 
+            return damage;
         }
     }
 

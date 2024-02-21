@@ -4,6 +4,7 @@ import Base_Elements.Game;
 import Base_Elements.Sound;
 import Base_Elements.UI;
 import Base_Elements.VisibilityManager;
+import Equipment.SuperWeapon;
 import Equipment.Weapon_ChaosWand;
 import Equipment.Weapon_Knife;
 import Equipment.Weapon_None;
@@ -20,8 +21,8 @@ public class DebugSetup extends SuperLocation{
         ui.hpNumberLabel.setText("" + player.hp);
         coins = 0;
         ui.coinCountLabel.setText(coins + "");
-        player.currentWeapon = new Weapon_Knife();
-        ui.weaponNameLabel.setText(player.currentWeapon.name);
+//        player.currentWeapon = new Weapon_Knife();
+//        ui.weaponNameLabel.setText(player.currentWeapon.name);
         stopSoundEffect();
         coins = 20;
         spouseGift = true;

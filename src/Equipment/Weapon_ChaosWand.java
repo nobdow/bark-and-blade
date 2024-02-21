@@ -9,7 +9,7 @@ public class Weapon_ChaosWand extends SuperWeapon {
     }
 
     @Override
-    public void Damage() {
+    public int Damage() {
         //Does either 0, 20, 40, 60,or 80 damage
         damage = new java.util.Random().nextInt(5) + 1;
         if (damage == 1) {
@@ -28,5 +28,6 @@ public class Weapon_ChaosWand extends SuperWeapon {
             damage = 80;
             attackMessage = ("You cast disintegrate dealing " + damage + " damage.");
         }
+        return 0;
     }
 }

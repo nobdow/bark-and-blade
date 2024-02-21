@@ -31,12 +31,15 @@ public class DefaultSetup extends SuperLocation{
         deathCounter = 0;
         drunkMoney = 30;
         snuggleCount = 0;
+        boughtCoat = true;
 
 
         //player.setCurrentWeapon(Weapon_Knife);
-        
-        player.currentWeapon = new Weapon_None();
-        ui.weaponNameLabel.setText(player.currentWeapon.name);
+        weaponList.add(none);
+        ui.weaponNameLabel.setText(weaponList.getFirst().name);
+
+        //player.currentWeapon = new Weapon_None();
+        //ui.weaponNameLabel.setText(player.currentWeapon.name);
         soundEffect.setFile(0);
         soundEffect.play();
     }

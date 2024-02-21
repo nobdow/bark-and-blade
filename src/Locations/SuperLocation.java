@@ -2,6 +2,11 @@ package Locations;
 
 import Base_Elements.*;
 import Enemies.SuperEnemy;
+import Equipment.SuperWeapon;
+import Equipment.Weapon_KeyBlade;
+import Equipment.Weapon_Knife;
+import Equipment.Weapon_None;
+
 import java.util.ArrayList;
 
 public class SuperLocation {
@@ -19,8 +24,9 @@ public class SuperLocation {
     public static int VetVisitQuest, BlackBerriesQuest, CoatQuest, birthdayQuest, cherriesQuest, oldHagQuest;
     public static boolean snugglePoint, bush, spouseGift, splashPoint, hasCherries, bearDead, boughtCoat, boughtFormalAttire, trollDead, trollHorn, boughtDice, boughtKeyBlade, boughtRubberChicken, hasBlackBerries, thiefDead, drunkDead, hasCrown, banditLeaderCompanion, banditLeaderDead, fetchPoint, banditGruntOneDead, banditGruntTwoDead;
     public static ArrayList<String> spouseTips = new ArrayList<String>();
-
-    public static ArrayList<Class<?>> weaponList = new ArrayList<>();
+    public static ArrayList<SuperWeapon> weaponList = new ArrayList<>(2);
+    public static Weapon_None none = new Weapon_None();
+    public static Weapon_Knife knife = new Weapon_Knife();
 
     public SuperLocation(Game g, UI userInterface, VisibilityManager vManager, Sound sndfft, Sound msc) {
         game = g;

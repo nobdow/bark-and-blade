@@ -4,7 +4,7 @@ import Base_Elements.Game;
 import Base_Elements.Sound;
 import Base_Elements.UI;
 import Base_Elements.VisibilityManager;
-import Equipment.Weapon_Knife;
+import Equipment.*;
 
 public class SpouseGift extends SuperLocation{
 
@@ -14,14 +14,15 @@ public class SpouseGift extends SuperLocation{
 
     public static void spouseGift(){
         spouseGift = true;
-        player.currentWeapon = new Weapon_Knife();
-        ui.weaponNameLabel.setText(player.currentWeapon.name);
+        weaponList.add(knife);
+        weaponList.getLast().isEquipped(true);
+        ui.weaponNameLabel.setText(weaponList.getLast().name);
         coins = coins + 10;
         ui.coinCountLabel.setText(coins + "");
         stopSoundEffect();
         playSoundEffect(4);
 
-        ui.mainTextArea.setText(player.spouseName + ":\n\"Wait, its dangerous to go alone. Have my " + player.currentWeapon.name.toLowerCase() + " and a few coins to run your errands!\"\n[You obtained a knife and 10 coins]");
+        ui.mainTextArea.setText(player.spouseName + ":\n\"Wait, its dangerous to go alone. Have my " + weaponList.getLast().name.toLowerCase() + " and a few coins to run your errands!\"\n[You obtained a knife and 10 coins]");
         ui.choice1.setText("Continue");
         ui.choice2.setText("");
         ui.choice3.setText("");
