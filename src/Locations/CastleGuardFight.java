@@ -12,8 +12,7 @@ public class CastleGuardFight extends SuperLocation{
     }
 
     public static void castleGuardFight(){
-        player.currentWeapon.Damage();
-        enemy.hp = enemy.hp - player.currentWeapon.damage;
+        enemy.hp = enemy.hp - weaponList.getLast().Damage();
 
         enemy.Damage();
         player.hp = player.hp - enemy.attack;
@@ -22,7 +21,7 @@ public class CastleGuardFight extends SuperLocation{
         //Enemy dead & player alive
         if(enemy.hp < 1 && player.hp > 0){
             enemy.hp = 0;
-            ui.mainTextArea.setText(player.currentWeapon.attackMessage + "\n\n" + enemy.attackMessage + " You received " + enemy.attack + " damage!\n\n" + enemy.name + ": " + enemy.hp + " HP");
+            ui.mainTextArea.setText(weaponList.getLast().attackMessage + "\n\n" + enemy.attackMessage + " You received " + enemy.attack + " damage!\n\n" + enemy.name + ": " + enemy.hp + " HP");
 
             ui.choice1.setText("Continue");
             ui.choice2.setText("");
@@ -40,7 +39,7 @@ public class CastleGuardFight extends SuperLocation{
             player.hp = 0;
             ui.hpNumberLabel.setText("" + player.hp);
 
-            ui.mainTextArea.setText(player.currentWeapon.attackMessage + "\n\n" + enemy.attackMessage + " You received " + enemy.attack + " damage!\n\n" + enemy.name + ": " + enemy.hp + " HP");
+            ui.mainTextArea.setText(weaponList.getLast().attackMessage + "\n\n" + enemy.attackMessage + " You received " + enemy.attack + " damage!\n\n" + enemy.name + ": " + enemy.hp + " HP");
             ui.choice1.setText("Continue");
             ui.choice2.setText("");
             ui.choice3.setText("");
@@ -54,7 +53,7 @@ public class CastleGuardFight extends SuperLocation{
 
         // Enemy alive & player alive
         else if(enemy.hp > 0 && player.hp > 0) {
-            ui.mainTextArea.setText(player.currentWeapon.attackMessage + "\n\n" + enemy.attackMessage + " You received " + enemy.attack + " damage!\n\n" + enemy.name + ": " + enemy.hp + " HP");
+            ui.mainTextArea.setText(weaponList.getLast().attackMessage + "\n\n" + enemy.attackMessage + " You received " + enemy.attack + " damage!\n\n" + enemy.name + ": " + enemy.hp + " HP");
             ui.choice1.setText("Attack again");
             ui.choice2.setText("");
             ui.choice3.setText("");

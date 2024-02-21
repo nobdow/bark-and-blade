@@ -15,8 +15,9 @@ public class Forest extends SuperLocation{
 
     public static void forest(){
         if(dogPoints == 3) {
-            player.currentWeapon = new Weapon_PointyStick();
-            ui.weaponNameLabel.setText(player.currentWeapon.name);
+            weaponList.add(pointyStick);
+            weaponList.getLast().isEquipped(true);
+            ui.weaponNameLabel.setText(weaponList.getLast().name);
             stopSoundEffect();
             playSoundEffect(4);
             dogPoints = dogPoints + 1;

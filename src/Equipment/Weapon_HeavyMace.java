@@ -22,7 +22,7 @@ public class Weapon_HeavyMace extends SuperWeapon {
             damage  = 100;
             attackMessage = ("You bludgeon with your mace and it dealt " + damage + " damage.");
         }
-        return 0;
+        return damage;
     }
 }
 

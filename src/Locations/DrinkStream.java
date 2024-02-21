@@ -16,9 +16,9 @@ public class DrinkStream extends SuperLocation{
             ui.mainTextArea.setText("You drank some of the water from the stream and it refreshes you.\n(+ 30HP)");
         }
 
-        else if (player.hp > 70 && player.hp < player.maxHP) {
-            ui.mainTextArea.setText("You drank some of the water from the stream and it refreshes you.\n(+ " + ((player.hp - 100) * -1) + "HP)");
-            player.hp = 100;
+        else if (player.hp > (player.maxHP - 30) && player.hp < player.maxHP) {
+            ui.mainTextArea.setText("You drank some of the water from the stream and it refreshes you.\n(+ " + ((player.hp - player.maxHP) * -1) + "HP)");
+            player.hp = player.maxHP;
             ui.hpNumberLabel.setText("" + player.hp);
         }
 

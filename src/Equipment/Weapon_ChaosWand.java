@@ -28,6 +28,6 @@ public class Weapon_ChaosWand extends SuperWeapon {
             damage = 80;
             attackMessage = ("You cast disintegrate dealing " + damage + " damage.");
         }
-        return 0;
+        return damage;
     }
 }

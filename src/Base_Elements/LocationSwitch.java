@@ -109,6 +109,7 @@ public class LocationSwitch {
             case "banditGruntFailedEscape": BanditGruntFailedEscape.banditGruntFailedEscape(); break;
             case "forestBanditFailedEscape": ForestBanditFailedEscape.forestBanditFailedEscape(); break;
             case "trollFailedEscape": TrollFailedEscape.trollFailedEscape(); break;
+            case "userInputDead": UserInputDead.userInputDead(); break;
         }
     }
 }

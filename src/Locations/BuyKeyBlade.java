@@ -18,8 +18,9 @@ public class BuyKeyBlade extends SuperLocation{
             boughtKeyBlade = true;
             coins = coins - 15;
             ui.coinCountLabel.setText(coins + "");
-            player.currentWeapon = new Weapon_KeyBlade();
-            ui.weaponNameLabel.setText(player.currentWeapon.name);
+            weaponList.add(keyBlade);
+            weaponList.getLast().isEquipped(true);
+            ui.weaponNameLabel.setText(weaponList.getLast().name);
             stopSoundEffect();
             playSoundEffect(4);
 

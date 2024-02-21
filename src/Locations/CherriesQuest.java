@@ -42,7 +42,7 @@ public class CherriesQuest extends SuperLocation{
             dogPoints = dogPoints + 1;
             coins = coins + 10;
             ui.coinCountLabel.setText(coins + "");
-            ui.blackberriesQuestObjectiveLabel.setText("  + return to wife");
+            ui.blackberriesQuestObjectiveLabel.setText("  + return to " + player.spouseName);
             hasBlackBerries = true;
             BlackBerriesQuest = 2;
             stopSoundEffect();

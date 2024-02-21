@@ -44,13 +44,14 @@ public class SnuggleDog extends SuperLocation{
 
             } else if (player.hp < player.maxHP && snugglePoint == true) {
                 snuggleCount = snuggleCount + 1;
-                player.hp = 100;
+                player.hp = player.maxHP;
                 ui.hpNumberLabel.setText("" + player.hp);
                 snugglePoint = true;
-                dogPoints = dogPoints + 1;
 
                 ui.mainTextArea.setText("You feel revived and your health is restored.");
-            } else if (player.hp >= player.maxHP && snugglePoint == true) {
+            }
+
+            else if (player.hp >= player.maxHP && snugglePoint == true) {
                 snuggleCount = snuggleCount + 1;
                 ui.mainTextArea.setText("Snuggles with " + player.dogName + " are the best!");
                 ui.choice1.setText("Continue");

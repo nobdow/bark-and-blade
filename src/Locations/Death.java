@@ -14,7 +14,7 @@ public class Death extends SuperLocation{
     public static void death(){
         if(deathCounter < 2) {
             deathCounter = deathCounter + 1;
-            player.hp = 25;
+            player.hp = player.maxHP - 80;
             ui.hpNumberLabel.setText("" + player.hp);
 
             ui.mainTextArea.setText("Doc. Milton:\n\"Whoa, easy there. You have been out cold a couple of days now. I am proud of my needle work, but what do you say we go through a couple questions? See if your hounds are still howling.\"");
@@ -23,7 +23,7 @@ public class Death extends SuperLocation{
             ui.choice3.setText("");
             ui.choice4.setText("");
 
-            game.nextPosition1 = "testQuestion1";
+            game.nextPosition1 = "userInputDead";
             game.nextPosition2 = "";
             game.nextPosition3 = "";
             game.nextPosition4 = "";

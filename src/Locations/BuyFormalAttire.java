@@ -14,7 +14,7 @@ public class BuyFormalAttire extends SuperLocation{
     public static void buyFormalAttire(){
         if(coins >= 10) {
             boughtFormalAttire = true;
-            ui.presentQuestObjectiveLabel.setText("  + return to wife");
+            ui.presentQuestObjectiveLabel.setText("  + return to " + player.spouseName);
             coins = coins - 10;
             ui.coinCountLabel.setText(coins + "");
             stopSoundEffect();

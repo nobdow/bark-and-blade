@@ -22,7 +22,7 @@ public class Weapon_DiceSet extends SuperWeapon {
 
         attackMessage = ("You rolled a " + d4 + ", " + d6 + ", " + d8 + ", " + d10 + ", " + d12 + ", and " + d20 + " totalling " + damage + " damage.");
 
-        return d4;
+        return damage;
     }
 }
 

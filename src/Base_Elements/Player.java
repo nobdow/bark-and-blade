@@ -18,7 +18,5 @@ public class Player {
     public static String dogName;
     public static int hp;
     public static int maxHP;
-    public int weaponCapacity;
     public SuperWeapon currentWeapon;
-    public ArrayList<SuperWeapon> weapons;
 }

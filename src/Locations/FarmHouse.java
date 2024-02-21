@@ -24,7 +24,25 @@ public class FarmHouse extends SuperLocation{
             game.nextPosition3 = "";
             game.nextPosition4 = "";
         }
-        else if (spouseGift == false) {
+        else if(spouseGift == false && questNoiseCount == 0) {
+            questNoiseCount = 1;
+            stopSoundEffect();
+            playSoundEffect(1);
+
+            ui.mainTextArea.setText("You are at your cozy farm house in the living room. " + player.dogName + " crawls into your knapsack and you hoist it onto your back.");
+            ui.choice1.setText("Talk to " + player.spouseName);
+            ui.choice2.setText("Snuggle with " + player.dogName);
+            ui.choice3.setText("Leave");
+            ui.choice4.setText("");
+
+            game.nextPosition1 = "spouse";
+            game.nextPosition2 = "snuggleDog";
+            game.nextPosition3 = "spouseGift";
+            game.nextPosition4 = "";
+
+        }
+
+        else if (spouseGift == false && questNoiseCount == 1) {
             ui.mainTextArea.setText("You are at your cozy farm house in the living room. " + player.dogName + " crawls into your knapsack and you hoist it onto your back.");
             ui.choice1.setText("Talk to " + player.spouseName);
             ui.choice2.setText("Snuggle with " + player.dogName);

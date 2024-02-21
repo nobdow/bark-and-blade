@@ -14,7 +14,6 @@ public class TrollFight extends SuperLocation{
     }
 
     public static void trollFight(){
-        weaponList.getLast().Damage();
         enemy.hp = enemy.hp - weaponList.getLast().Damage();
 
         enemy.Damage();

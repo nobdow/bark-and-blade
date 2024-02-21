@@ -2,10 +2,7 @@ package Locations;
 
 import Base_Elements.*;
 import Enemies.SuperEnemy;
-import Equipment.SuperWeapon;
-import Equipment.Weapon_KeyBlade;
-import Equipment.Weapon_Knife;
-import Equipment.Weapon_None;
+import Equipment.*;
 
 import java.util.ArrayList;
 
@@ -16,17 +13,27 @@ public class SuperLocation {
     static Sound soundEffect;
     static Sound music;
 
-    // ALl the variables used in the different locations
     public static Player player = new Player();
     public static SuperEnemy enemy;
-    public static int dogPoints, coins, deathCounter, diceRoll, drunkMoney, jailTime, snuggleCount;;
+
+    // ALl the variables used in the different locations
+    public static int dogPoints, coins, deathCounter, diceRoll, drunkMoney, jailTime, snuggleCount, questNoiseCount;
+    public static boolean snugglePoint, bush, spouseGift, splashPoint, hasCherries, bearDead, boughtCoat, boughtFormalAttire, trollDead, trollHorn, boughtDice, boughtKeyBlade, boughtRubberChicken, hasBlackBerries, thiefDead, drunkDead, hasCrown, banditLeaderCompanion, banditLeaderDead, fetchPoint, banditGruntOneDead, banditGruntTwoDead;
+
     // Quest tracking, 0 = not given, 1 = in progress, 2 = complete, 3 = over and not tracking
     public static int VetVisitQuest, BlackBerriesQuest, CoatQuest, birthdayQuest, cherriesQuest, oldHagQuest;
-    public static boolean snugglePoint, bush, spouseGift, splashPoint, hasCherries, bearDead, boughtCoat, boughtFormalAttire, trollDead, trollHorn, boughtDice, boughtKeyBlade, boughtRubberChicken, hasBlackBerries, thiefDead, drunkDead, hasCrown, banditLeaderCompanion, banditLeaderDead, fetchPoint, banditGruntOneDead, banditGruntTwoDead;
+
     public static ArrayList<String> spouseTips = new ArrayList<String>();
+
+    //Adding the weapons objects and the ArrayList
     public static ArrayList<SuperWeapon> weaponList = new ArrayList<>(2);
     public static Weapon_None none = new Weapon_None();
     public static Weapon_Knife knife = new Weapon_Knife();
+    public static Weapon_ChaosWand chaosWand = new Weapon_ChaosWand();
+    public static Weapon_DiceSet diceSet = new Weapon_DiceSet();
+    public static Weapon_HeavyMace heavyMace = new Weapon_HeavyMace();
+    public static Weapon_KeyBlade keyBlade = new Weapon_KeyBlade();
+    public static Weapon_PointyStick pointyStick = new Weapon_PointyStick();
 
     public SuperLocation(Game g, UI userInterface, VisibilityManager vManager, Sound sndfft, Sound msc) {
         game = g;
@@ -35,6 +42,7 @@ public class SuperLocation {
         soundEffect = sndfft;
         music = msc;
 
+        // Adding the spouses tips to the ArrayList
         spouseTips.add(("\n\"Don't forget the blackberries! I always have luck when looking in the forest.\""));
         spouseTips.add("\n\"If you feel worn out, try snuggling with " + player.dogName + ".\"");
         spouseTips.add("\n\"Remember, you need a new coat. It is already snowing in the mountains. It should be easy to find one at market.\"");

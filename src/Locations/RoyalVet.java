@@ -13,7 +13,7 @@ public class RoyalVet extends SuperLocation{
 
     public static void royalVet(){
         VetVisitQuest = 2;
-        ui.vetQuestObjectiveLabel.setText("  + return to wife");
+        ui.vetQuestObjectiveLabel.setText("  + return to " + player.spouseName);
         stopSoundEffect();
         playSoundEffect(1);
 

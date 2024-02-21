@@ -30,8 +30,6 @@ public class Spouse extends SuperLocation{
             VetVisitQuest = 1;
             ui.vetQuestTitleLabel.setText("Pup-uprofen");
             ui.vetQuestObjectiveLabel.setText("  + visit the royal vet");
-            stopSoundEffect();
-            playSoundEffect(1);
 
             ui.mainTextArea.setText(player.spouseName + ":\n\"Good morning dear! I hate to be a bother but don't forget that " + player.dogName + " has an appointment in the castle with the King's Vet. It is important to get his medicine so he gets over this cold. " + player.dogName + " loves riding in your knapsack so he should be no trouble to bring along\"");
             ui.choice1.setText("Accept Quest");

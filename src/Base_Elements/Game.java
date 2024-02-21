@@ -60,7 +60,12 @@ public class Game {
                     player.playerName = ui.inputPlayerNameField.getText();
                     player.spouseName = ui.inputSpouseNameField.getText();
                     player.dogName = ui.inputDogNameField.getText();
-                    Intro1.intro1();
+                    if (SuperLocation.deathCounter == 0) {
+                        Intro1.intro1();
+                    }
+                    else if(SuperLocation.deathCounter >= 1) {
+                        TestQuestion1.testQuestion1();
+                    }
                     break;
                 case "c1":
                     story.selectPosition(nextPosition1);
@@ -82,8 +87,8 @@ public class Game {
 // ALPHA TO DO LIST:
 // - add weapon cycling system
 // - add look for trouble thug who steals weapon and fights you with it
-// -
-// -
+// - add dog message when hitting dog points at snuggle
+// - adjust bandit leader attack value to be weaker
 
 // BETA TO DO LIST:
 // - add light and heavy attacks with stamina
