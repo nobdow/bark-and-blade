@@ -4,6 +4,7 @@ import Base_Elements.Game;
 import Base_Elements.Sound;
 import Base_Elements.UI;
 import Base_Elements.VisibilityManager;
+import Equipment.SuperWeapon;
 import Equipment.Weapon_ChaosWand;
 import Equipment.Weapon_KeyBlade;
 
@@ -21,6 +22,7 @@ public class BuyKeyBlade extends SuperLocation{
             weaponList.add(keyBlade);
             weaponList.getLast().isEquipped(true);
             ui.weaponNameLabel.setText(weaponList.getLast().name);
+            SuperWeapon.equippedWeapon += 1;
             stopSoundEffect();
             playSoundEffect(4);
 

@@ -17,8 +17,8 @@ public class SuperLocation {
     public static SuperEnemy enemy;
 
     // ALl the variables used in the different locations
-    public static int dogPoints, coins, deathCounter, diceRoll, drunkMoney, jailTime, snuggleCount, questNoiseCount;
-    public static boolean snugglePoint, bush, spouseGift, splashPoint, hasCherries, bearDead, boughtCoat, boughtFormalAttire, trollDead, trollHorn, boughtDice, boughtKeyBlade, boughtRubberChicken, hasBlackBerries, thiefDead, drunkDead, hasCrown, banditLeaderCompanion, banditLeaderDead, fetchPoint, banditGruntOneDead, banditGruntTwoDead;
+    public static int dogPoints, coins, deathCounter, diceRoll, drunkMoney, jailTime, snuggleCount, questNoiseCount, banditGruntsDead;
+    public static boolean snugglePoint, bush, spouseGift, splashPoint, hasCherries, bearDead, boughtCoat, boughtFormalAttire, trollDead, trollHorn, boughtDice, boughtKeyBlade, boughtRubberChicken, hasBlackBerries, thiefDead, drunkDead, hasCrown, banditLeaderCompanion, banditLeaderDead, fetchPoint;
 
     // Quest tracking, 0 = not given, 1 = in progress, 2 = complete, 3 = over and not tracking
     public static int VetVisitQuest, BlackBerriesQuest, CoatQuest, birthdayQuest, cherriesQuest, oldHagQuest;

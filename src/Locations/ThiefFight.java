@@ -6,13 +6,15 @@ import Base_Elements.UI;
 import Base_Elements.VisibilityManager;
 import Equipment.SuperWeapon;
 
-public class BanditLeaderFight extends SuperLocation{
+import java.util.Random;
 
-    public BanditLeaderFight(Game g, UI userInterface, VisibilityManager vManager, Sound sndfft, Sound msc) {
+public class ThiefFight extends SuperLocation{
+
+    public ThiefFight(Game g, UI userInterface, VisibilityManager vManager, Sound sndfft, Sound msc) {
         super(g, userInterface, vManager, sndfft, msc);
     }
 
-    public static void banditLeaderFight(){
+    public static void thiefFight(){
         enemy.hp = enemy.hp - weaponList.get(SuperWeapon.equippedWeapon).Damage();
 
         enemy.Damage();
@@ -22,14 +24,14 @@ public class BanditLeaderFight extends SuperLocation{
         //Enemy dead & player alive
         if(enemy.hp < 1 && player.hp > 0){
             enemy.hp = 0;
-            ui.mainTextArea.setText(weaponList.get(SuperWeapon.equippedWeapon).attackMessage + "\n\n" + enemy.attackMessage + " You received " + enemy.attack + " damage!\n\n" + enemy.name + ": " + enemy.hp + " HP");
+            ui.mainTextArea.setText(weaponList.get(SuperWeapon.equippedWeapon).attackMessage + "\n\nYou received " + enemy.attack + " damage!\n\n" + enemy.name + ": " + enemy.hp + " HP");
 
             ui.choice1.setText("Continue");
             ui.choice2.setText("");
             ui.choice3.setText("");
             ui.choice4.setText("");
 
-            game.nextPosition1 = "banditLeaderWin";
+            game.nextPosition1 = "thiefWin";
             game.nextPosition2 = "";
             game.nextPosition3 = "";
             game.nextPosition4 = "";
@@ -56,29 +58,24 @@ public class BanditLeaderFight extends SuperLocation{
         }
 
         // Enemy alive & player alive
-        else if(enemy.hp > 0 && player.hp > 0 && banditLeaderCompanion == false) {
-            ui.mainTextArea.setText(weaponList.get(SuperWeapon.equippedWeapon).attackMessage + "\n\n" + enemy.attackMessage + " You received " + enemy.attack + " damage!\n\n" + enemy.name + ": " + enemy.hp + " HP");
+        else if(enemy.hp > 0 && player.hp > 0) {
+            ui.mainTextArea.setText(weaponList.get(SuperWeapon.equippedWeapon).attackMessage + "\n\nYou received " + enemy.attack + " damage!\n\n" + enemy.name + ": " + enemy.hp + " HP");
             ui.choice1.setText("Attack again");
-            ui.choice2.setText("");
+            ui.choice2.setText("Run Away");
             ui.choice3.setText("");
             ui.choice4.setText("");
 
-            game.nextPosition1 = "banditLeaderFight";
-            game.nextPosition2 = "";
-            game.nextPosition3 = "";
-            game.nextPosition4 = "";
-        }
+            game.nextPosition1 = "forestBanditFight";
 
-        // Enemy alive & player alive
-        else if(enemy.hp > 0 && player.hp > 0 && banditLeaderCompanion == true) {
-            ui.mainTextArea.setText(weaponList.get(SuperWeapon.equippedWeapon).attackMessage + "\n\n" + enemy.attackMessage + " You received " + enemy.attack + " damage!\n\n" + enemy.name + ": " + enemy.hp + " HP");
-            ui.choice1.setText("Attack again");
-            ui.choice2.setText("");
-            ui.choice3.setText("");
-            ui.choice4.setText("");
+            int escapeChange = new Random().nextInt(5) + 1;
+            if(escapeChange <= 2) {
+                game.nextPosition2 = "forestBanditFailedEscape";
+            }
 
-            game.nextPosition1 = "banditLeaderFight";
-            game.nextPosition2 = "";
+            else if(escapeChange >= 3) {
+                game.nextPosition2 = "forest";
+            }
+
             game.nextPosition3 = "";
             game.nextPosition4 = "";
         }

@@ -1,5 +1,6 @@
 package Base_Elements;
 
+import Equipment.SuperWeapon;
 import Locations.DefaultSetup;
 import Locations.*;
 import Locations.SuperLocation;
@@ -79,28 +80,46 @@ public class Game {
                 case "c4":
                     story.selectPosition(nextPosition4);
                     break;
+                case "switch":
+                    System.out.println("Weapon position before = " + SuperWeapon.equippedWeapon);
+                    System.out.println("Weapon ArrayList before size = " + SuperLocation.weaponList.size());
+                    System.out.println("Before weapon = " + SuperLocation.weaponList.get(SuperWeapon.equippedWeapon).name);
+                    if (SuperWeapon.equippedWeapon < (SuperLocation.weaponList.size() - 1)) {
+                        SuperWeapon.equippedWeapon += 1;
+                    }
+                    else if(SuperWeapon.equippedWeapon == (SuperLocation.weaponList.size() - 1)) {
+                        SuperWeapon.equippedWeapon = 0;
+                    }
+                    System.out.println("Weapon position after = " + SuperWeapon.equippedWeapon);
+                    System.out.println("Weapon ArrayList after size = " + SuperLocation.weaponList.size());
+                    ui.weaponNameLabel.setText(SuperLocation.weaponList.get(SuperWeapon.equippedWeapon).name);
+                    System.out.println("After weapon = " + SuperLocation.weaponList.get(SuperWeapon.equippedWeapon).name);
+                    break;
             }
         }
     }
 }
 
 // ALPHA TO DO LIST:
-// - add weapon cycling system
 // - add look for trouble thug who steals weapon and fights you with it
 // - add dog message when hitting dog points at snuggle
 // - adjust bandit leader attack value to be weaker
+// - add coin or item drops to bandit grunts, castle guards, and to drunk
+// - remove coat hint after buying coat, collecting blackberries, and buying birthday gift
+// - fix null dog name in spouse hint
 
 // BETA TO DO LIST:
 // - add light and heavy attacks with stamina
-// -
-// -
-// -
+// - add classes and abilities
+// - update all dialog options
+// - add key listener for "enter" on user input screen
+// - add armor defensive value
 
 // FINAL TO DO LIST:
 // - update default set up to have starting values so upon reset the game wipes
-// - Balance audio levels
-// -
-// -
-// -
-// -
+// - balance audio levels
+// - implement new gui
+// - spell check all text
+// - balance coin rate, item costs, weapon damage, enemy health and damage
+// - bug test
 // -

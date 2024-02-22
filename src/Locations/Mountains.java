@@ -4,6 +4,7 @@ import Base_Elements.Game;
 import Base_Elements.Sound;
 import Base_Elements.UI;
 import Base_Elements.VisibilityManager;
+import Equipment.SuperWeapon;
 import Equipment.Weapon_HeavyMace;
 import Equipment.Weapon_PointyStick;
 
@@ -18,6 +19,7 @@ public class Mountains extends SuperLocation{
             weaponList.add(heavyMace);
             weaponList.getLast().isEquipped(true);
             ui.weaponNameLabel.setText(weaponList.getLast().name);
+            SuperWeapon.equippedWeapon += 1;
             stopSoundEffect();
             playSoundEffect(4);
             dogPoints = dogPoints + 1;

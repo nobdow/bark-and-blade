@@ -21,7 +21,7 @@ public class BackAlley extends SuperLocation{
             ui.choice4.setText("Return to the town center");
 
             game.nextPosition1 = "gamble";
-            game.nextPosition2 = "thief";
+            game.nextPosition2 = "thiefEncounter";
             game.nextPosition3 = "oldHag";
             game.nextPosition4 = "town";
         }
@@ -32,7 +32,7 @@ public class BackAlley extends SuperLocation{
             ui.choice4.setText("");
 
             game.nextPosition1 = "gamble";
-            game.nextPosition2 = "thief";
+            game.nextPosition2 = "thiefEncounter";
             game.nextPosition3 = "town";
             game.nextPosition4 = "";
         }
@@ -64,7 +64,7 @@ public class BackAlley extends SuperLocation{
             ui.choice3.setText("Return to the town center");
             ui.choice4.setText("");
 
-            game.nextPosition1 = "thief";
+            game.nextPosition1 = "thiefEncounter";
             game.nextPosition2 = "oldHag";
             game.nextPosition3 = "town";
             game.nextPosition4 = "";
@@ -75,7 +75,7 @@ public class BackAlley extends SuperLocation{
             ui.choice3.setText("");
             ui.choice4.setText("");
 
-            game.nextPosition1 = "thief";
+            game.nextPosition1 = "thiefEncounter";
             game.nextPosition2 = "town";
             game.nextPosition3 = "";
             game.nextPosition4 = "";

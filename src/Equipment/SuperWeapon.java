@@ -7,6 +7,7 @@ public class SuperWeapon {
     public double attackSpeed;
     public int damage;
     public boolean equipped;
+    public static int equippedWeapon;
 
     public int Damage(){
         return damage;

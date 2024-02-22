@@ -110,6 +110,8 @@ public class LocationSwitch {
             case "forestBanditFailedEscape": ForestBanditFailedEscape.forestBanditFailedEscape(); break;
             case "trollFailedEscape": TrollFailedEscape.trollFailedEscape(); break;
             case "userInputDead": UserInputDead.userInputDead(); break;
+            case "thiefEncounter": ThiefEncounter.thiefEncounter(); break;
+            case "thiefFight": ThiefFight.thiefFight(); break;
         }
     }
 }

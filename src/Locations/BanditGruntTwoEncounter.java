@@ -13,7 +13,6 @@ public class BanditGruntTwoEncounter extends SuperLocation{
     }
 
     public static void banditGruntTwoEncounter(){
-        if(bearDead == false) {
             enemy = new BanditGrunt();
             ui.mainTextArea.setText("Bandit Grunt:\n\"My turn!\n\n" + enemy.name + ": " + enemy.hp + " HP");
             ui.choice1.setText("Fight");
@@ -25,6 +24,5 @@ public class BanditGruntTwoEncounter extends SuperLocation{
             game.nextPosition2 = "mountainPass";
             game.nextPosition3 = "";
             game.nextPosition4 = "";
-        }
     }
 }

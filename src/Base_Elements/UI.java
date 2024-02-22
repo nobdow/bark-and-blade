@@ -15,11 +15,11 @@ public class UI {
 
     JFrame window;
     Container con;
-    public JPanel titleNamePanel, startButtonPanel, debugButtonPanel, mainTextPanel, choiceButtonPanel, playerPanel, exampleImagePanel, questLogPanel,inputPanel, inputButtonPanel;
+    public JPanel titleNamePanel, startButtonPanel, debugButtonPanel, mainTextPanel, choiceButtonPanel, playerPanel, exampleImagePanel, questLogPanel,inputPanel, inputButtonPanel, switchButtonPanel;
     public JLabel titleNameLabel, hpLabel, hpNumberLabel, weaponLabel, weaponNameLabel, coinLabel, coinCountLabel, exampleImageLabel, questLogLabel, vetQuestTitleLabel, vetQuestObjectiveLabel, blackberriesQuestTitleLabel, blackberriesQuestObjectiveLabel, coatQuestTitleLabel, coatQuestObjectiveLabel, presentQuestTitleLabel, presentQuestObjectiveLabel;
-    public JButton startButton, debugButton, inputButton, choice1, choice2, choice3, choice4;
+    public JButton startButton, debugButton, inputButton, choice1, choice2, choice3, choice4, switchButton;
     public JTextArea mainTextArea;
-    public JTextField inputPlayerNameField, inputSpouseNameField, inputDogNameField, number4;
+    public JTextField inputPlayerNameField, inputSpouseNameField, inputDogNameField;
     Font titleFont = new Font("Alagard", Font.PLAIN,150);
     Font startFont = new Font("Alagard", Font.PLAIN,70);
     Font debugFont = new Font("Alagard", Font.PLAIN,57);
@@ -196,7 +196,6 @@ public class UI {
         mainTextArea.setEditable(false);
         mainTextPanel.add(mainTextArea);
 
-
         choiceButtonPanel = new JPanel();
         choiceButtonPanel.setBounds(585,600,750,350);
         choiceButtonPanel.setBackground(Color.black);
@@ -285,7 +284,7 @@ public class UI {
 
         // Player stats panel and labels
         playerPanel = new JPanel();
-        playerPanel.setBounds(1500,140,380,450);
+        playerPanel.setBounds(1500,140,180,450);
         playerPanel.setBackground(Color.black);
         playerPanel.setLayout(new GridLayout(9,1));
         window.add(playerPanel);
@@ -314,6 +313,19 @@ public class UI {
         coinCountLabel.setForeground(Color.white);
         coinCountLabel.setFont(statFont);
         playerPanel.add(coinCountLabel);
+
+        switchButtonPanel = new JPanel();
+        switchButtonPanel.setBounds(1680,240,115,50);
+        switchButtonPanel.setBackground(Color.black);
+        switchButton = new JButton("Switch");
+        switchButton.setBackground(Color.black);
+        switchButton.setForeground(Color.white);
+        switchButton.setFont(statFont);
+        switchButton.setFocusPainted(false);
+        switchButton.addActionListener(cHandler);
+        switchButton.setActionCommand("switch");
+        switchButtonPanel.add(switchButton);
+        window.add(switchButtonPanel);
 
         exampleImagePanel = new JPanel();
         exampleImagePanel.setBounds(75,150,350,800);

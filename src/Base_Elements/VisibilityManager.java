@@ -22,6 +22,7 @@ public class VisibilityManager {
         ui.playerPanel.setVisible(false);
         ui.exampleImagePanel.setVisible(false);
         ui.questLogPanel.setVisible(false);
+        ui.switchButtonPanel.setVisible(false);
 
         //Hide user input elements
         ui.inputPanel.setVisible(false);
@@ -41,6 +42,7 @@ public class VisibilityManager {
         ui.playerPanel.setVisible(true);
         ui.exampleImagePanel.setVisible(true);
         ui.questLogPanel.setVisible(true);
+        ui.switchButtonPanel.setVisible(true);
 
         //Hide user input elements
         ui.inputPanel.setVisible(false);
@@ -58,6 +60,7 @@ public class VisibilityManager {
         ui.playerPanel.setVisible(true);
         ui.exampleImagePanel.setVisible(true);
         ui.questLogPanel.setVisible(true);
+        ui.switchButtonPanel.setVisible(true);
 
         //Hide some game elements
         ui.choiceButtonPanel.setVisible(false);

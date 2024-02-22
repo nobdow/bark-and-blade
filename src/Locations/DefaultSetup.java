@@ -31,7 +31,9 @@ public class DefaultSetup extends SuperLocation{
         deathCounter = 0;
         drunkMoney = 30;
         snuggleCount = 0;
-        boughtCoat = true;
+        boughtCoat = false;
+        SuperWeapon.equippedWeapon = 0;
+
 
 
         //player.setCurrentWeapon(Weapon_Knife);

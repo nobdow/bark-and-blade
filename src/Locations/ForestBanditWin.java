@@ -15,13 +15,13 @@ public class ForestBanditWin extends SuperLocation{
         int coinFlip = new java.util.Random().nextInt(2);
 
         if(coinFlip == 0) {
-            coins = coins + 5;
-            ui.mainTextArea.setText("You defeated the " + enemy.name.toLowerCase() + " and he dropped some coins as he ran away!\n[You obtained 5 coins]");
+            coins = coins + 10;
+            ui.mainTextArea.setText("You defeated the " + enemy.name.toLowerCase() + " and he dropped some coins as he ran away!\n[You obtained 10 coins]");
 
         }
         else if (coinFlip == 1) {
-            coins = coins + 10;
-            ui.mainTextArea.setText("You defeated the " + enemy.name.toLowerCase() + " and he dropped some coins as he ran away!\n[You obtained 10 coins]");
+            coins = coins + 15;
+            ui.mainTextArea.setText("You defeated the " + enemy.name.toLowerCase() + " and he dropped some coins as he ran away!\n[You obtained 15 coins]");
         }
 
         ui.coinCountLabel.setText(coins + "");

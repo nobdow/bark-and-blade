@@ -4,6 +4,7 @@ import Base_Elements.Game;
 import Base_Elements.Sound;
 import Base_Elements.UI;
 import Base_Elements.VisibilityManager;
+import Equipment.SuperWeapon;
 
 import java.util.Random;
 
@@ -14,7 +15,7 @@ public class BanditGruntFight extends SuperLocation{
     }
 
     public static void banditGruntFight(){
-        enemy.hp = enemy.hp - weaponList.getLast().Damage();
+        enemy.hp = enemy.hp - weaponList.get(SuperWeapon.equippedWeapon).Damage();
 
         enemy.Damage();
         player.hp = player.hp - enemy.attack;
@@ -23,19 +24,18 @@ public class BanditGruntFight extends SuperLocation{
         //Enemy dead & player alive
         if(enemy.hp < 1 && player.hp > 0){
             enemy.hp = 0;
-            banditGruntOneDead = true;
-            ui.mainTextArea.setText(weaponList.getLast().attackMessage + "\n\n" + enemy.attackMessage + " You received " + enemy.attack + " damage!\n\n" + enemy.name + ": " + enemy.hp + " HP");
+            banditGruntsDead = banditGruntsDead + 1;
+            ui.mainTextArea.setText(weaponList.get(SuperWeapon.equippedWeapon).attackMessage + "\n\n" + enemy.attackMessage + " You received " + enemy.attack + " damage!\n\n" + enemy.name + ": " + enemy.hp + " HP");
 
             ui.choice1.setText("Continue");
             ui.choice2.setText("");
             ui.choice3.setText("");
             ui.choice4.setText("");
 
-            if (banditGruntTwoDead == false) {
+            if (banditGruntsDead == 1) {
                 game.nextPosition1 = "banditGruntTwoEncounter";
-                banditGruntTwoDead = true;
             }
-            else if(banditGruntOneDead == true) {
+            else if(banditGruntsDead == 2) {
                 game.nextPosition1 = "banditLeaderEncounter";
             }
             game.nextPosition2 = "";
@@ -51,7 +51,7 @@ public class BanditGruntFight extends SuperLocation{
             player.hp = 0;
             ui.hpNumberLabel.setText("" + player.hp);
 
-            ui.mainTextArea.setText(weaponList.getLast().attackMessage + "\n\n" + enemy.attackMessage + " You received " + enemy.attack + " damage!\n\n" + enemy.name + ": " + enemy.hp + " HP");
+            ui.mainTextArea.setText(weaponList.get(SuperWeapon.equippedWeapon).attackMessage + "\n\n" + enemy.attackMessage + " You received " + enemy.attack + " damage!\n\n" + enemy.name + ": " + enemy.hp + " HP");
             ui.choice1.setText("Continue");
             ui.choice2.setText("");
             ui.choice3.setText("");
@@ -65,7 +65,7 @@ public class BanditGruntFight extends SuperLocation{
 
         // Enemy alive & player alive
         else if(enemy.hp > 0 && player.hp > 0) {
-            ui.mainTextArea.setText(weaponList.getLast().attackMessage + "\n\n" + enemy.attackMessage + " You received " + enemy.attack + " damage!\n\n" + enemy.name + ": " + enemy.hp + " HP");
+            ui.mainTextArea.setText(weaponList.get(SuperWeapon.equippedWeapon).attackMessage + "\n\n" + enemy.attackMessage + " You received " + enemy.attack + " damage!\n\n" + enemy.name + ": " + enemy.hp + " HP");
             ui.choice1.setText("Attack again");
             ui.choice2.setText("Run Away");
             ui.choice3.setText("");
