@@ -112,6 +112,8 @@ public class LocationSwitch {
             case "userInputDead": UserInputDead.userInputDead(); break;
             case "thiefEncounter": ThiefEncounter.thiefEncounter(); break;
             case "thiefFight": ThiefFight.thiefFight(); break;
+            case "thiefWin": ThiefWin.thiefWin(); break;
+            case "thiefFailedEscape": ThiefFailedEscape.thiefFailedEscape(); break;
         }
     }
 }

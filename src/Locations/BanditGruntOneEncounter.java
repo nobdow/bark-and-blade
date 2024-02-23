@@ -8,6 +8,8 @@ import Enemies.BanditGrunt;
 
 import java.util.Random;
 
+import static Locations.BanditLeaderEncounter.banditLeaderEncounter;
+
 public class BanditGruntOneEncounter extends SuperLocation{
 
     public BanditGruntOneEncounter(Game g, UI userInterface, VisibilityManager vManager, Sound sndfft, Sound msc) {
@@ -15,6 +17,7 @@ public class BanditGruntOneEncounter extends SuperLocation{
     }
 
     public static void banditGruntOneEncounter(){
+        if(banditGruntsDead <= 1) {
             enemy = new BanditGrunt();
             ui.mainTextArea.setText("Bandit Leader:\n\"Who are you? Get him lads!\n\n" + enemy.name + ": " + enemy.hp + " HP");
             ui.choice1.setText("Fight");
@@ -26,5 +29,9 @@ public class BanditGruntOneEncounter extends SuperLocation{
             game.nextPosition2 = "hideout";
             game.nextPosition3 = "";
             game.nextPosition4 = "";
+        }
+        else if(banditGruntsDead == 2) {
+            banditLeaderEncounter();
+        }
     }
 }

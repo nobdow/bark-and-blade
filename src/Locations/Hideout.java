@@ -19,6 +19,7 @@ public class Hideout extends SuperLocation{
             ui.choice3.setText("Knock like a normal person");
             ui.choice4.setText("Return to the pass");
 
+
             game.nextPosition1 = "banditGruntOneEncounter";
             game.nextPosition2 = "banditGruntOneEncounter";
             game.nextPosition3 = "noSoliciting";

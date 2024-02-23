@@ -15,7 +15,7 @@ public class BushWand extends SuperLocation{
 
     public static void bushWand(){
         weaponList.add(chaosWand);
-        weaponList.getLast().isEquipped(true);
+        //weaponList.getLast().isEquipped(true);
         ui.weaponNameLabel.setText(weaponList.getLast().name);
         SuperWeapon.equippedWeapon += 1;
         stopSoundEffect();

@@ -2,7 +2,7 @@ package Equipment;
 
 public class Weapon_HeavyMace extends SuperWeapon {
 
-    int chargeUp = 0;
+    public int chargeUp = 0;
 
     public Weapon_HeavyMace(){
 

@@ -81,19 +81,26 @@ public class Game {
                     story.selectPosition(nextPosition4);
                     break;
                 case "switch":
-                    System.out.println("Weapon position before = " + SuperWeapon.equippedWeapon);
-                    System.out.println("Weapon ArrayList before size = " + SuperLocation.weaponList.size());
-                    System.out.println("Before weapon = " + SuperLocation.weaponList.get(SuperWeapon.equippedWeapon).name);
+                    System.out.println("----------------");
+                    System.out.println("WHEN SWITCHING");
+                    System.out.println("Before index # " + SuperWeapon.equippedWeapon);
+                    System.out.println("Before ArrayList size: " + SuperLocation.weaponList.size());
+                    System.out.println("Before weapon: " + SuperLocation.weaponList.get(SuperWeapon.equippedWeapon).name);
+                    System.out.println("Before damage: " + SuperLocation.weaponList.get(SuperWeapon.equippedWeapon).Damage());
+
                     if (SuperWeapon.equippedWeapon < (SuperLocation.weaponList.size() - 1)) {
                         SuperWeapon.equippedWeapon += 1;
                     }
                     else if(SuperWeapon.equippedWeapon == (SuperLocation.weaponList.size() - 1)) {
                         SuperWeapon.equippedWeapon = 0;
                     }
-                    System.out.println("Weapon position after = " + SuperWeapon.equippedWeapon);
-                    System.out.println("Weapon ArrayList after size = " + SuperLocation.weaponList.size());
+                    System.out.println("---");
+                    System.out.println("After index #" + SuperWeapon.equippedWeapon);
+                    System.out.println("After ArrayList size: " + SuperLocation.weaponList.size());
                     ui.weaponNameLabel.setText(SuperLocation.weaponList.get(SuperWeapon.equippedWeapon).name);
-                    System.out.println("After weapon = " + SuperLocation.weaponList.get(SuperWeapon.equippedWeapon).name);
+                    System.out.println("After weapon: " + SuperLocation.weaponList.get(SuperWeapon.equippedWeapon).name);
+                    System.out.println("After damage: " + SuperLocation.weaponList.get(SuperWeapon.equippedWeapon).Damage());
+
                     break;
             }
         }
@@ -101,12 +108,9 @@ public class Game {
 }
 
 // ALPHA TO DO LIST:
-// - add look for trouble thug who steals weapon and fights you with it
-// - add dog message when hitting dog points at snuggle
-// - adjust bandit leader attack value to be weaker
-// - add coin or item drops to bandit grunts, castle guards, and to drunk
 // - remove coat hint after buying coat, collecting blackberries, and buying birthday gift
 // - fix null dog name in spouse hint
+// - fix inability to continue to bandit leader if bandit 2 dead and player has health and after first death to them?
 
 // BETA TO DO LIST:
 // - add light and heavy attacks with stamina
@@ -114,6 +118,9 @@ public class Game {
 // - update all dialog options
 // - add key listener for "enter" on user input screen
 // - add armor defensive value
+// - add dog message when hitting dog points at snuggle
+// - add coin or item drops to bandit grunts, castle guards, and to drunk
+
 
 // FINAL TO DO LIST:
 // - update default set up to have starting values so upon reset the game wipes

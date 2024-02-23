@@ -15,11 +15,28 @@ public class ThiefFight extends SuperLocation{
     }
 
     public static void thiefFight(){
+        System.out.println("----------------");
+        System.out.println("DURING FIGHT");
+        System.out.println("Index #" + SuperWeapon.equippedWeapon);
+        System.out.println("ArrayList size: " + SuperLocation.weaponList.size());
+        System.out.println("Weapon: " + weaponList.get(SuperWeapon.equippedWeapon).name);
+        System.out.println("Damage: " + SuperLocation.weaponList.get(SuperWeapon.equippedWeapon).Damage());
+
         enemy.hp = enemy.hp - weaponList.get(SuperWeapon.equippedWeapon).Damage();
 
         enemy.Damage();
         player.hp = player.hp - enemy.attack;
         ui.hpNumberLabel.setText("" + player.hp);
+
+        ui.choice1.setText("");
+        ui.choice2.setText("");
+        ui.choice3.setText("");
+        ui.choice4.setText("");
+
+        game.nextPosition1 = "";
+        game.nextPosition2 = "";
+        game.nextPosition3 = "";
+        game.nextPosition4 = "";
 
         //Enemy dead & player alive
         if(enemy.hp < 1 && player.hp > 0){
@@ -27,14 +44,8 @@ public class ThiefFight extends SuperLocation{
             ui.mainTextArea.setText(weaponList.get(SuperWeapon.equippedWeapon).attackMessage + "\n\nYou received " + enemy.attack + " damage!\n\n" + enemy.name + ": " + enemy.hp + " HP");
 
             ui.choice1.setText("Continue");
-            ui.choice2.setText("");
-            ui.choice3.setText("");
-            ui.choice4.setText("");
 
             game.nextPosition1 = "thiefWin";
-            game.nextPosition2 = "";
-            game.nextPosition3 = "";
-            game.nextPosition4 = "";
         }
 
         // Enemy alive & player dead OR Enemy dead & player dead
@@ -47,14 +58,8 @@ public class ThiefFight extends SuperLocation{
 
             ui.mainTextArea.setText(weaponList.get(SuperWeapon.equippedWeapon).attackMessage + "\n\n" + enemy.attackMessage + " You received " + enemy.attack + " damage!\n\n" + enemy.name + ": " + enemy.hp + " HP");
             ui.choice1.setText("Continue");
-            ui.choice2.setText("");
-            ui.choice3.setText("");
-            ui.choice4.setText("");
 
             game.nextPosition1 = "noHealth";
-            game.nextPosition2 = "";
-            game.nextPosition3 = "";
-            game.nextPosition4 = "";
         }
 
         // Enemy alive & player alive
@@ -62,22 +67,17 @@ public class ThiefFight extends SuperLocation{
             ui.mainTextArea.setText(weaponList.get(SuperWeapon.equippedWeapon).attackMessage + "\n\nYou received " + enemy.attack + " damage!\n\n" + enemy.name + ": " + enemy.hp + " HP");
             ui.choice1.setText("Attack again");
             ui.choice2.setText("Run Away");
-            ui.choice3.setText("");
-            ui.choice4.setText("");
 
-            game.nextPosition1 = "forestBanditFight";
+            game.nextPosition1 = "thiefFight";
 
             int escapeChange = new Random().nextInt(5) + 1;
             if(escapeChange <= 2) {
-                game.nextPosition2 = "forestBanditFailedEscape";
+                game.nextPosition2 = "thiefFailedEscape";
             }
 
             else if(escapeChange >= 3) {
-                game.nextPosition2 = "forest";
+                game.nextPosition2 = "backAlley";
             }
-
-            game.nextPosition3 = "";
-            game.nextPosition4 = "";
         }
     }
 }

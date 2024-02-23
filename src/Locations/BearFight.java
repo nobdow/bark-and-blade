@@ -13,6 +13,12 @@ public class BearFight extends SuperLocation{
     }
 
     public static void bearFight(){
+        System.out.println("----------------");
+        System.out.println("DURING FIGHT");
+        System.out.println("Index #" + SuperWeapon.equippedWeapon);
+        System.out.println("ArrayList size: " + SuperLocation.weaponList.size());
+        System.out.println("Weapon: " + weaponList.get(SuperWeapon.equippedWeapon).name);
+        System.out.println("Damage: " + SuperLocation.weaponList.get(SuperWeapon.equippedWeapon).Damage());
         enemy.hp = enemy.hp - weaponList.get(SuperWeapon.equippedWeapon).Damage();
 
         enemy.Damage();

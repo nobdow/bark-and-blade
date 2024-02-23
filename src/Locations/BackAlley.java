@@ -16,7 +16,7 @@ public class BackAlley extends SuperLocation{
 
         if(oldHagQuest < 2 && thiefDead == false && drunkDead == false) {
             ui.choice1.setText("Gamble with the town drunk");
-            ui.choice2.setText("WIP // Approach the dark cloaked figure");
+            ui.choice2.setText("WApproach the dark cloaked figure");
             ui.choice3.setText("Approach the mysterious old hag");
             ui.choice4.setText("Return to the town center");
 
@@ -27,7 +27,7 @@ public class BackAlley extends SuperLocation{
         }
         else if (oldHagQuest == 2 && thiefDead == false && drunkDead == false){
             ui.choice1.setText("Gamble with the town drunk");
-            ui.choice2.setText("WIP // Approach the dark cloaked figure");
+            ui.choice2.setText("Approach the dark cloaked figure");
             ui.choice3.setText("Return to the town center");
             ui.choice4.setText("");
 
@@ -59,7 +59,7 @@ public class BackAlley extends SuperLocation{
             game.nextPosition4 = "";
         }
         else if(oldHagQuest < 2 && thiefDead == false && drunkDead == true) {
-            ui.choice1.setText("WIP // Approach the dark cloaked figure");
+            ui.choice1.setText("Approach the dark cloaked figure");
             ui.choice2.setText("Approach the mysterious old hag");
             ui.choice3.setText("Return to the town center");
             ui.choice4.setText("");
@@ -70,7 +70,7 @@ public class BackAlley extends SuperLocation{
             game.nextPosition4 = "";
         }
         else if (oldHagQuest == 2 && thiefDead == false && drunkDead == true){
-            ui.choice1.setText("WIP // Approach the dark cloaked figure");
+            ui.choice1.setText("Approach the dark cloaked figure");
             ui.choice2.setText("Return to the town center");
             ui.choice3.setText("");
             ui.choice4.setText("");

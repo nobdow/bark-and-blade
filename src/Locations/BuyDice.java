@@ -21,7 +21,7 @@ public class BuyDice extends SuperLocation{
             ui.coinCountLabel.setText(coins + "");
             trollHorn = false;
             weaponList.add(diceSet);
-            weaponList.getLast().isEquipped(true);
+            //weaponList.getLast().isEquipped(true);
             ui.weaponNameLabel.setText(weaponList.getLast().name);
             SuperWeapon.equippedWeapon += 1;
             stopSoundEffect();

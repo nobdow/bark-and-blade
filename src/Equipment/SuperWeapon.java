@@ -12,11 +12,6 @@ public class SuperWeapon {
     public int Damage(){
         return damage;
     }
-
-    public boolean isEquipped(boolean equipped) {
-        this.equipped = equipped;
-        return equipped;
-    }
 }
 
 //    None = 10
