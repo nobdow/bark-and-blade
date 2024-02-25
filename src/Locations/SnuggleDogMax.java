@@ -13,10 +13,10 @@ public class SnuggleDogMax extends SuperLocation{
 
     public static void snuggleDogMax(){
         ui.mainTextArea.setText("Snuggles with " + player.dogName + " really are the best. You got so cozy, you fell asleep, and just kept sleeping...");
-        ui.choice1.setText("Restart");
-        ui.choice2.setText("");
-        ui.choice3.setText("");
-        ui.choice4.setText("");
+        ui.choice1.setText("Zzzzzzzzzzzz");
+        ui.choice2.setText("Zzzzzzzzzzzz");
+        ui.choice3.setText("Zzzzzzzzzzzz");
+        ui.choice4.setText("Zzzzzzzzzzzz");
 
         game.nextPosition1 = "toTitle";
         game.nextPosition2 = "";

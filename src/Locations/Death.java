@@ -17,7 +17,7 @@ public class Death extends SuperLocation{
             player.hp = player.maxHP - 80;
             ui.hpNumberLabel.setText("" + player.hp);
 
-            ui.mainTextArea.setText("Doc. Milton:\n\"Whoa, easy there. You have been out cold a couple of days now. I am proud of my needle work, but what do you say we go through a couple questions? See if your hounds are still howling.\"");
+            ui.mainTextArea.setText("Doc. Milton:\n\"Whoa, easy there. You have been out cold a couple of hours now. I am proud of my needle work, but what do you say we go through a couple questions? See if your hounds are still howling.\"");
             ui.choice1.setText("Continue");
             ui.choice2.setText("");
             ui.choice3.setText("");

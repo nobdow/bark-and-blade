@@ -111,6 +111,7 @@ public class Game {
 // - remove coat hint after buying coat, collecting blackberries, and buying birthday gift
 // - fix null dog name in spouse hint
 // - fix inability to continue to bandit leader if bandit 2 dead and player has health and after first death to them?
+// - prevent thief from stealing your none
 
 // BETA TO DO LIST:
 // - add light and heavy attacks with stamina
@@ -120,7 +121,14 @@ public class Game {
 // - add armor defensive value
 // - add dog message when hitting dog points at snuggle
 // - add coin or item drops to bandit grunts, castle guards, and to drunk
-
+// - make the stream heal only once
+// - make enemy damage read on screen before player damage
+// - name bandits jessy and james
+// - remove coat check but add 10 snow damage each turn in the mountains without it
+// - fix missing thief attack dialog
+// - test switching weapon while charging up mace
+// - team up with bandit leader puts you out at mountain, not pass or hideout
+// - fix castle guard negative health
 
 // FINAL TO DO LIST:
 // - update default set up to have starting values so upon reset the game wipes
@@ -129,4 +137,4 @@ public class Game {
 // - spell check all text
 // - balance coin rate, item costs, weapon damage, enemy health and damage
 // - bug test
-// -
+// - remove enemy hp during encounter but not combat

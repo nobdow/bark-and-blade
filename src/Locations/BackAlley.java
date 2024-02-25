@@ -16,7 +16,7 @@ public class BackAlley extends SuperLocation{
 
         if(oldHagQuest < 2 && thiefDead == false && drunkDead == false) {
             ui.choice1.setText("Gamble with the town drunk");
-            ui.choice2.setText("WApproach the dark cloaked figure");
+            ui.choice2.setText("Approach the dark cloaked figure");
             ui.choice3.setText("Approach the mysterious old hag");
             ui.choice4.setText("Return to the town center");
 
