@@ -14,15 +14,16 @@ public class VisibilityManager {
         //Show title elements
         ui.titleNamePanel.setVisible(true);
         ui.startButtonPanel.setVisible(true);
-        ui.debugButtonPanel.setVisible(true);
+        ui.debugButtonPanel.setVisible(false);
+        ui.titleScreenImagePanel.setVisible(true);
 
         //Hide game elements
         ui.mainTextPanel.setVisible(false);
         ui.choiceButtonPanel.setVisible(false);
-        ui.playerPanel.setVisible(false);
-        ui.exampleImagePanel.setVisible(false);
+        ui.playerHpPanel.setVisible(false);
         ui.questLogPanel.setVisible(false);
         ui.switchButtonPanel.setVisible(false);
+        ui.mainScreenImagePanel.setVisible(false);
 
         //Hide user input elements
         ui.inputPanel.setVisible(false);
@@ -35,14 +36,16 @@ public class VisibilityManager {
         ui.titleNamePanel.setVisible(false);
         ui.startButtonPanel.setVisible(false);
         ui.debugButtonPanel.setVisible(false);
+        ui.titleScreenImagePanel.setVisible(false);
 
         //Show game elements
         ui.mainTextPanel.setVisible(true);
         ui.choiceButtonPanel.setVisible(true);
-        ui.playerPanel.setVisible(true);
-        ui.exampleImagePanel.setVisible(true);
+        ui.playerHpPanel.setVisible(true);
         ui.questLogPanel.setVisible(true);
         ui.switchButtonPanel.setVisible(true);
+        ui.mainScreenImagePanel.setVisible(true);
+
 
         //Hide user input elements
         ui.inputPanel.setVisible(false);
@@ -54,13 +57,14 @@ public class VisibilityManager {
         ui.titleNamePanel.setVisible(false);
         ui.startButtonPanel.setVisible(false);
         ui.debugButtonPanel.setVisible(false);
+        ui.titleScreenImagePanel.setVisible(false);
 
         //Show some game elements
         ui.mainTextPanel.setVisible(true);
-        ui.playerPanel.setVisible(true);
-        ui.exampleImagePanel.setVisible(true);
+        ui.playerHpPanel.setVisible(true);
         ui.questLogPanel.setVisible(true);
         ui.switchButtonPanel.setVisible(true);
+        ui.mainScreenImagePanel.setVisible(true);
 
         //Hide some game elements
         ui.choiceButtonPanel.setVisible(false);

@@ -16,7 +16,8 @@ public class SpouseGift extends SuperLocation{
         spouseGift = true;
         weaponList.add(knife);
         //weaponList.getLast().isEquipped(true);
-        ui.weaponNameLabel.setText(weaponList.getLast().name);
+        ui.weaponNameArea.setText(weaponList.getLast().name);
+        ui.weaponDescriptionArea.setText(weaponList.getLast().description);
         SuperWeapon.equippedWeapon += 1;
         coins = coins + 15;
         ui.coinCountLabel.setText(coins + "");

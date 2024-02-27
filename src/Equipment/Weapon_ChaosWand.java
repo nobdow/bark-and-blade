@@ -6,6 +6,7 @@ public class Weapon_ChaosWand extends SuperWeapon {
 
         name = "Chaos Wand";
         attackSpeed = 1;
+        description = "Damage ranging from 0 to 80 depending on the spell.";
     }
 
     @Override

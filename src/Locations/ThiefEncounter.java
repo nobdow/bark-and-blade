@@ -29,7 +29,8 @@ public class ThiefEncounter extends SuperLocation{
             Thief.stolenWeapon = weaponList.get(SuperWeapon.equippedWeapon).name;
             weaponList.remove(SuperWeapon.equippedWeapon);
             SuperWeapon.equippedWeapon -= 1;
-            ui.weaponNameLabel.setText(SuperLocation.weaponList.get(SuperWeapon.equippedWeapon).name);
+            ui.weaponNameArea.setText(SuperLocation.weaponList.get(SuperWeapon.equippedWeapon).name);
+            ui.weaponDescriptionArea.setText(SuperLocation.weaponList.get(SuperWeapon.equippedWeapon).description);
             weaponStolen = true;
 
             System.out.println("----------------");

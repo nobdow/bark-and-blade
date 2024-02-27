@@ -5,7 +5,7 @@ public class Weapon_Knife extends SuperWeapon {
     public Weapon_Knife(){
         name = "Knife";
         attackSpeed = 1;
-        equipped = false;
+        description = "Only 10-20 damage so better than your fists but not much.";
     }
 
     @Override

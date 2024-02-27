@@ -1,10 +1,11 @@
 package Equipment;
 
-public class Weapon_None extends SuperWeapon {
+public class Weapon_Fists extends SuperWeapon {
 
-    public Weapon_None(){
+    public Weapon_Fists(){
 
-        name = "None";
+        name = "Fists";
+        description = "Not the best weapon, but they do 10 damage per hit.";
         attackSpeed = 1;
         equipped = false;
     }

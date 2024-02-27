@@ -97,7 +97,8 @@ public class Game {
                     System.out.println("---");
                     System.out.println("After index #" + SuperWeapon.equippedWeapon);
                     System.out.println("After ArrayList size: " + SuperLocation.weaponList.size());
-                    ui.weaponNameLabel.setText(SuperLocation.weaponList.get(SuperWeapon.equippedWeapon).name);
+                    ui.weaponNameArea.setText(SuperLocation.weaponList.get(SuperWeapon.equippedWeapon).name);
+                    ui.weaponDescriptionArea.setText(SuperLocation.weaponList.get(SuperWeapon.equippedWeapon).description);
                     System.out.println("After weapon: " + SuperLocation.weaponList.get(SuperWeapon.equippedWeapon).name);
                     System.out.println("After damage: " + SuperLocation.weaponList.get(SuperWeapon.equippedWeapon).Damage());
 

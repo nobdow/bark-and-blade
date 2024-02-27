@@ -37,8 +37,9 @@ public class DefaultSetup extends SuperLocation{
 
 
         //player.setCurrentWeapon(Weapon_Knife);
-        weaponList.add(none);
-        ui.weaponNameLabel.setText(weaponList.getFirst().name);
+        weaponList.add(fists);
+        ui.weaponNameArea.setText(weaponList.getFirst().name);
+        ui.weaponDescriptionArea.setText(weaponList.getFirst().description);
 
         //player.currentWeapon = new Weapon_None();
         //ui.weaponNameLabel.setText(player.currentWeapon.name);

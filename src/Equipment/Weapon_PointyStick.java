@@ -6,6 +6,7 @@ public class Weapon_PointyStick extends SuperWeapon {
 
         name = "Really Pointy Stick";
         attackSpeed = 1;
+        description = "So sharp it always deals 50 damage.";
     }
 
     @Override

@@ -6,6 +6,7 @@ public class Weapon_DiceSet extends SuperWeapon {
 
         name = "Set of Sharp Dice";
         attackSpeed = 1;
+        description = "A damage roll of a D4, D6, D8, D10, D12, and D20.";
     }
 
     @Override

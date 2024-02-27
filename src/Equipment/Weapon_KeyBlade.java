@@ -6,7 +6,8 @@ public class Weapon_KeyBlade extends SuperWeapon {
 
             name = "Key Shaped Blade";
             attackSpeed = 1;
-        }
+            description = "Funny looking but does between 30-50 damage per hit.";
+    }
 
         @Override
         public int Damage(){

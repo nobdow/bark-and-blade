@@ -8,6 +8,7 @@ public class Weapon_HeavyMace extends SuperWeapon {
 
         name = "Heavy Mace";
         attackSpeed = 0.5;
+        description = "100 damage but with a charge up before each swing.";
     }
 
     @Override

@@ -38,7 +38,8 @@ public class ThiefWin extends SuperLocation{
         SuperWeapon.equippedWeapon += 1;
         //ui.weaponNameLabel.setText(SuperLocation.weaponList.get(SuperWeapon.equippedWeapon).name);
         SuperWeapon.equippedWeapon = (weaponList.size() - 1);
-        ui.weaponNameLabel.setText(SuperLocation.weaponList.get(SuperWeapon.equippedWeapon).name);
+        ui.weaponNameArea.setText(SuperLocation.weaponList.get(SuperWeapon.equippedWeapon).name);
+        ui.weaponDescriptionArea.setText(SuperLocation.weaponList.get(SuperWeapon.equippedWeapon).description);
 
         System.out.println("----------------");
         System.out.println("AFTER WIN");

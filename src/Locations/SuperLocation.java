@@ -27,7 +27,7 @@ public class SuperLocation {
 
     //Adding the weapons objects and the ArrayList
     public static ArrayList<SuperWeapon> weaponList = new ArrayList<>(2);
-    public static Weapon_None none = new Weapon_None();
+    public static Weapon_Fists fists = new Weapon_Fists();
     public static Weapon_Knife knife = new Weapon_Knife();
     public static Weapon_ChaosWand chaosWand = new Weapon_ChaosWand();
     public static Weapon_DiceSet diceSet = new Weapon_DiceSet();

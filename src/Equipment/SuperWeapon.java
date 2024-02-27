@@ -8,6 +8,7 @@ public class SuperWeapon {
     public int damage;
     public boolean equipped;
     public static int equippedWeapon;
+    public String description;
 
     public int Damage(){
         return damage;

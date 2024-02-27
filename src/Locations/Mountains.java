@@ -18,7 +18,8 @@ public class Mountains extends SuperLocation{
         if(dogPoints == 3) {
             weaponList.add(heavyMace);
             SuperWeapon.equippedWeapon += 1;
-            ui.weaponNameLabel.setText(weaponList.get(SuperWeapon.equippedWeapon).name);
+            ui.weaponNameArea.setText(weaponList.get(SuperWeapon.equippedWeapon).name);
+            ui.weaponDescriptionArea.setText(weaponList.get(SuperWeapon.equippedWeapon).description);
             stopSoundEffect();
             playSoundEffect(4);
             dogPoints = dogPoints + 1;

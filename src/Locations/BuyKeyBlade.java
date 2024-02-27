@@ -21,7 +21,8 @@ public class BuyKeyBlade extends SuperLocation{
             ui.coinCountLabel.setText(coins + "");
             weaponList.add(keyBlade);
             //weaponList.getLast().isEquipped(true);
-            ui.weaponNameLabel.setText(weaponList.getLast().name);
+            ui.weaponNameArea.setText(weaponList.getLast().name);
+            ui.weaponDescriptionArea.setText(weaponList.getLast().description);
             SuperWeapon.equippedWeapon += 1;
             stopSoundEffect();
             playSoundEffect(4);
